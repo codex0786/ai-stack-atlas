@@ -5,3 +5,6 @@ node_modules
 data/raw/
 data/cache/
 data/*.db*
+next-env.d.ts
+.next
+out

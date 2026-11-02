@@ -22,7 +22,9 @@ export interface CatalogReport {
   warnings: string[];
 }
 
-export const DATA_DIR = path.resolve(import.meta.dirname, "../../data");
+// Resolved from the project root (npm scripts, vitest and `next build` all run there);
+// import.meta.dirname is not stable once Next bundles this module.
+export const DATA_DIR = path.resolve(process.cwd(), "data");
 
 async function readList<T>(file: string, schema: z.ZodType<T>, label: string, errors: string[]): Promise<T[]> {
   const text = await readFile(file, "utf8");
