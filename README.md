@@ -2,6 +2,8 @@
 
 Economic intelligence on the whole AI stack — energy → chips → data centres → compute operators → models → distribution → applications — with sourced unit economics and forecasts. See [PLAN.md](PLAN.md).
 
+**Live:** https://ai-stack-atlas-bay.vercel.app — every number on the site links to its source, tier and verification status.
+
 ## Phase 0: the fact base
 
 ```
@@ -17,6 +19,8 @@ src/lib/resolver.ts        best value per fact + conflicts; latest actual per se
 npm run validate      # schema + reference checks, conflicts, evidence quality, current values
 npm run seed          # rebuild data/atlas.db (refuses on any validation error)
 npm test
+npm run dev         # website on http://localhost:3000
+npm run build       # static export to out/
 ```
 
 ### Rules for adding a number
