@@ -1,8 +1,9 @@
 name: Ingest live data
 
 # Daily pull of EDGAR, OpenRouter and EIA. Clean runs commit straight to main (Vercel
-# redeploys). If the anomaly gate flags anything, the run opens a pull request instead,
-# so a human reviews the numbers before they go live.
+# redeploys). If the anomaly gate flags anything, the data goes to a review branch instead
+# and the run opens a pull request — or, if the repo doesn't let Actions open PRs, an issue
+# with a one-click link to create it — so a human checks the numbers before they go live.
 
 on:
   schedule:
@@ -16,6 +17,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 concurrency:
   group: ingest
@@ -76,7 +78,12 @@ jobs:
               console.log("| Series | Period | Previous | New | Why |\n|---|---|---|---|---|");
               for (const x of a) console.log(`| ${x.series} | ${x.period} | ${x.previous} | ${x.next} | ${x.reason} |`);
             ')
-            gh pr create --base main --head "$BRANCH" --title "Data update ${STAMP}: ${ANOMALIES} value(s) need review" --body "$BODY"
+            TITLE="Data update ${STAMP}: ${ANOMALIES} value(s) need review"
+            if ! gh pr create --base main --head "$BRANCH" --title "$TITLE" --body "$BODY"; then
+              COMPARE="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${BRANCH}?expand=1"
+              gh label create data-review --color FBCA04 --description "Ingest run held by the anomaly gate" 2>/dev/null || true
+              gh issue create --title "$TITLE" --label data-review --body "$(printf '%s\n\n**To publish:** [open the pull request](%s), check each value against its source, then merge.\nTo reject, close this issue and delete branch \`%s\`.' "$BODY" "$COMPARE" "$BRANCH")"
+            fi
           else
             git commit -q -m "Data update ${STAMP}"
             git push -q origin HEAD:main
