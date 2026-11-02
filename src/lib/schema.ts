@@ -18,6 +18,8 @@ export const Source = z.object({
   accessed: isoDate,
   /** True only when the page was opened and the numbers cited from it were checked against it. */
   verified: z.boolean(),
+  /** Pulled by a scheduled feed straight from the publisher's API or filing (machine-checked). */
+  automated: z.boolean().default(false),
   note: z.string().optional(),
 });
 export type Source = z.infer<typeof Source>;

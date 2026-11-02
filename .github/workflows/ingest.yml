@@ -1,0 +1,83 @@
+name: Ingest live data
+
+# Daily pull of EDGAR, OpenRouter and EIA. Clean runs commit straight to main (Vercel
+# redeploys). If the anomaly gate flags anything, the run opens a pull request instead,
+# so a human reviews the numbers before they go live.
+
+on:
+  schedule:
+    - cron: "17 3 * * *" # 03:17 UTC daily (after EIA's overnight update)
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Comma-separated feeds to run (edgar,openrouter,eia); blank = all"
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Pull feeds
+        env:
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: |
+          if [ -n "${{ github.event.inputs.only }}" ]; then
+            npm run ingest -- --only "${{ github.event.inputs.only }}"
+          else
+            npm run ingest
+          fi
+
+      - name: Validate, test and build
+        run: |
+          npm run validate > /dev/null
+          npm test
+          npm run build
+
+      - name: Publish or open a review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "atlas-ingest-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          STAMP=$(date -u +%Y-%m-%d)
+          ANOMALIES=$(node -e 'console.log(require("./data/feeds/anomalies.json").length)')
+          if [ "$ANOMALIES" -gt 0 ]; then
+            BRANCH="ingest/${STAMP}-${GITHUB_RUN_ID}"
+            git switch -c "$BRANCH"
+            git commit -q -m "Data update ${STAMP} (needs review: ${ANOMALIES} anomalies)"
+            git push -q origin "$BRANCH"
+            BODY=$(node -e '
+              const a = require("./data/feeds/anomalies.json");
+              console.log("The anomaly gate flagged these values. Check each against its source, then merge to publish.\n");
+              console.log("| Series | Period | Previous | New | Why |\n|---|---|---|---|---|");
+              for (const x of a) console.log(`| ${x.series} | ${x.period} | ${x.previous} | ${x.next} | ${x.reason} |`);
+            ')
+            gh pr create --base main --head "$BRANCH" --title "Data update ${STAMP}: ${ANOMALIES} value(s) need review" --body "$BODY"
+          else
+            git commit -q -m "Data update ${STAMP}"
+            git push -q origin HEAD:main
+          fi

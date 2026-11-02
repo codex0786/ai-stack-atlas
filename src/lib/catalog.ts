@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { parse as parseYaml } from "yaml";
 import { z } from "zod";
@@ -42,15 +42,34 @@ async function readList<T>(file: string, schema: z.ZodType<T>, label: string, er
   return out;
 }
 
+/** Feed files (data/feeds/<id>.json) written by scripts/ingest.ts; absent until a feed has run. */
+async function readFeeds(dir: string, errors: string[]): Promise<{ sources: Source[]; observations: Observation[] }> {
+  const feedDir = path.join(dir, "feeds");
+  const files = (await readdir(feedDir).catch(() => [] as string[])).filter((f) => f.endsWith(".json") && !["status.json", "anomalies.json"].includes(f)).sort();
+  const out = { sources: [] as Source[], observations: [] as Observation[] };
+  for (const f of files) {
+    const raw = JSON.parse(await readFile(path.join(feedDir, f), "utf8")) as { sources?: unknown[]; observations?: unknown[] };
+    for (const [list, schema, target] of [[raw.sources, Source, out.sources], [raw.observations, Observation, out.observations]] as const) {
+      (list ?? []).forEach((item, i) => {
+        const r = (schema as z.ZodType).safeParse(item);
+        if (r.success) (target as unknown[]).push(r.data);
+        else errors.push(`feeds/${f}[${i}]: ${r.error.issues.map((x) => `${x.path.join(".")} ${x.message}`).join("; ")}`);
+      });
+    }
+  }
+  return out;
+}
+
 export async function loadCatalog(dir = DATA_DIR): Promise<CatalogReport> {
   const errors: string[] = [];
   const seed = (f: string) => path.join(dir, "seed", f);
+  const feeds = await readFeeds(dir, errors);
   const catalog: Catalog = {
     metrics: await readList(path.join(dir, "metrics.yaml"), Metric, "metrics", errors),
-    sources: await readList(seed("sources.json"), Source, "sources", errors),
+    sources: [...(await readList(seed("sources.json"), Source, "sources", errors)), ...feeds.sources],
     entities: await readList(seed("entities.json"), Entity, "entities", errors),
     edges: await readList(seed("edges.json"), Edge, "edges", errors),
-    observations: await readList(seed("observations.json"), Observation, "observations", errors),
+    observations: [...(await readList(seed("observations.json"), Observation, "observations", errors)), ...feeds.observations],
   };
   const { errors: refErrors, warnings } = checkReferences(catalog);
   return { catalog, errors: [...errors, ...refErrors], warnings };

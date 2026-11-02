@@ -4,6 +4,12 @@ Economic intelligence on the whole AI stack — energy → chips → data centre
 
 **Live:** https://ai-stack-atlas-bay.vercel.app — every number on the site links to its source, tier and verification status.
 
+## Live data
+
+A daily GitHub Actions job (`.github/workflows/ingest.yml`) runs `npm run ingest`: SEC EDGAR filings, OpenRouter list prices and EIA grid demand → `data/feeds/*.json`. Clean runs commit to `main` (Vercel redeploys); if the anomaly gate flags a value, the job opens a pull request instead. Optional repo secrets: `EIA_API_KEY` (falls back to EIA's DEMO_KEY) and `SEC_USER_AGENT`. See the [methodology](https://ai-stack-atlas-bay.vercel.app/methodology).
+
+Data: CC BY 4.0 (`DATA-LICENSE.md`). Code: MIT (`LICENSE`).
+
 ## Phase 0: the fact base
 
 ```
@@ -20,7 +26,8 @@ npm run validate      # schema + reference checks, conflicts, evidence quality, 
 npm run seed          # rebuild data/atlas.db (refuses on any validation error)
 npm test
 npm run dev         # website on http://localhost:3000
-npm run build       # static export to out/
+npm run build       # static export to out/ (also writes /data/*.csv and *.json downloads)
+npm run ingest      # pull live feeds (add -- --only openrouter,eia to limit)
 ```
 
 ### Rules for adding a number

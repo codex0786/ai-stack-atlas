@@ -1,0 +1,29 @@
+{
+ "edgar": {
+  "name": "SEC EDGAR filings",
+  "cadenceHours": 24,
+  "homepage": "https://www.sec.gov/edgar/search/",
+  "lastRun": "2026-11-02T19:44:07.555Z",
+  "ok": false,
+  "observations": 0,
+  "error": "No EDGAR data: all 9 companies failed (first: MSFT: HTTP 403)"
+ },
+ "openrouter": {
+  "name": "OpenRouter list prices",
+  "cadenceHours": 24,
+  "homepage": "https://openrouter.ai/models",
+  "lastRun": "2026-11-02T19:38:56.844Z",
+  "lastSuccess": "2026-11-02T19:38:56.844Z",
+  "ok": true,
+  "observations": 23
+ },
+ "eia": {
+  "name": "EIA grid demand",
+  "cadenceHours": 24,
+  "homepage": "https://www.eia.gov/electricity/gridmonitor/",
+  "lastRun": "2026-11-02T19:38:56.844Z",
+  "lastSuccess": "2026-11-02T19:38:56.844Z",
+  "ok": true,
+  "observations": 45
+ }
+}

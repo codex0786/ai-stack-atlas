@@ -1,6 +1,10 @@
-import { loadCatalog, type Catalog } from "./catalog";
+import { execSync } from "node:child_process";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import type { ChangelogEntry, FeedStatus } from "../feeds/types";
+import { DATA_DIR, loadCatalog, type Catalog } from "./catalog";
 import { LAYERS } from "./ontology";
-import { latest, periodEnd, resolve, type Fact } from "./resolver";
+import { dimsKey, latest, periodEnd, resolve, type Fact } from "./resolver";
 import type { Entity, Metric, Observation, Source } from "./schema";
 
 // Build-time view models for the website. Everything here runs during `next build`
@@ -20,7 +24,7 @@ export interface Cited {
   method: Observation["method"];
   confidence: number;
   note?: string;
-  source: Pick<Source, "id" | "title" | "publisher" | "url" | "tier" | "verified"> & { published?: string };
+  source: Pick<Source, "id" | "title" | "publisher" | "url" | "tier" | "verified" | "automated"> & { published?: string };
 }
 
 export interface SiteData {
@@ -55,7 +59,7 @@ async function build(): Promise<SiteData> {
     return {
       id: o.id, value: o.value, low: o.low, high: o.high, currency: o.currency, unit: m.unit, kind: m.kind, period: o.period,
       status: o.status, method: o.method, confidence: o.confidence, note: o.note,
-      source: { id: s.id, title: s.title, publisher: s.publisher, url: s.url, tier: s.tier, verified: s.verified, published: s.published },
+      source: { id: s.id, title: s.title, publisher: s.publisher, url: s.url, tier: s.tier, verified: s.verified, automated: s.automated, published: s.published },
     };
   };
   return {
@@ -137,4 +141,49 @@ export function evidenceStats(site: SiteData) {
   const tiers = [1, 2, 3].map((t) => observations.filter((o) => src.get(o.source_id)?.tier === t).length);
   const verified = observations.filter((o) => src.get(o.source_id)?.verified).length;
   return { total: observations.length, tiers, verified, sources: sources.length, entities: site.catalog.entities.length, facts: site.facts.length, conflicts: site.facts.filter((f) => f.conflict).length };
+}
+
+/* ── Live feeds ────────────────────────────────────────────────────────────── */
+
+
+
+export async function feedStatuses(): Promise<Record<string, FeedStatus>> {
+  try { return JSON.parse(await readFile(path.join(DATA_DIR, "feeds", "status.json"), "utf8")); } catch { return {}; }
+}
+
+/** Release notes written by hand, merged with the ingest log. */
+const RELEASES: ChangelogEntry[] = [
+  { at: "2026-11-02T20:00:00.000Z", kind: "release", title: "Live data feeds, downloads and methodology", notes: [
+    "Daily pipeline (GitHub Actions) pulls SEC EDGAR filings, OpenRouter list prices and EIA grid demand.",
+    "Anomaly gate: unusual moves or revisions open a pull request for review instead of publishing.",
+    "Freshness badges, open downloads (CSV/JSON), methodology page and this changelog.",
+  ] },
+  { at: "2026-11-02T19:20:00.000Z", kind: "release", title: "Website launched", notes: ["Animated site with a source chip on every number; 73 hand-curated observations from 30 sources."] },
+  { at: "2026-11-02T17:30:00.000Z", kind: "release", title: "Phase 0: sourced fact base", notes: ["Ontology, metric dictionary, observation schema, resolver with conflict detection, 73 seed observations."] },
+];
+
+export async function changelog(): Promise<ChangelogEntry[]> {
+  let log: ChangelogEntry[] = [];
+  try { log = JSON.parse(await readFile(path.join(DATA_DIR, "changelog.json"), "utf8")); } catch {}
+  return [...log, ...RELEASES].sort((a, b) => b.at.localeCompare(a.at));
+}
+
+/** All observations in one series, oldest first (best value per period). */
+export function series(site: SiteData, entity: string, metric: string, dims: Record<string, string> = {}): Cited[] {
+  const k = dimsKey(dims);
+  return site.facts
+    .filter((f) => f.entity_id === entity && f.metric_id === metric && dimsKey(f.dims) === k)
+    .sort((a, b) => periodEnd(a.period).localeCompare(periodEnd(b.period)))
+    .map((f) => site.cite(f.best));
+}
+
+export const latestOf = (site: SiteData, entity: string, metric: string, dims: Record<string, string> = {}): Cited | undefined =>
+  series(site, entity, metric, dims).filter((c) => c.status === "actual").at(-1);
+
+/** Dataset version for citations: build date + commit. */
+export function datasetVersion(): { date: string; commit: string } {
+  const date = new Date().toISOString().slice(0, 10);
+  let commit = process.env.VERCEL_GIT_COMMIT_SHA ?? "";
+  if (!commit) { try { commit = execSync("git rev-parse HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim(); } catch {} }
+  return { date, commit: commit.slice(0, 7) || "local" };
 }

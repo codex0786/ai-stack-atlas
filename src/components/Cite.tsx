@@ -2,9 +2,17 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { fmt, fmtPeriod, STATUS_LABEL, TIER_LABEL } from "@/lib/format";
+import { REPO } from "@/lib/constants";
 import type { Cited } from "@/lib/site";
 
 const POP_W = 320;
+
+/** Pre-filled GitHub issue for a correction; carries only the observation and source ids. */
+function reportUrl(c: Cited): string {
+  const title = `Correction: ${c.id}`;
+  const body = `Observation: \`${c.id}\`\nSource: \`${c.source.id}\` (${c.source.url})\nShown value: ${fmt(c)} (${fmtPeriod(c.period)})\n\nWhat looks wrong, and the correct figure with a link:\n`;
+  return `${REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=correction`;
+}
 
 /**
  * Source chip for one number: tier + verified dot. Hover, focus or tap opens the full
@@ -60,7 +68,7 @@ export function Cite({ c, showValue = false }: { c: Cited; showValue?: boolean }
         onFocus={enter}
       >
         <span className="dot" aria-hidden />
-        T{s.tier} · {s.publisher.length > 18 ? `${s.publisher.slice(0, 17)}…` : s.publisher}
+        {s.automated && <span aria-hidden>⚙</span>}T{s.tier} · {s.publisher.length > 18 ? `${s.publisher.slice(0, 17)}…` : s.publisher}
       </button>
       {open && (
         <span
@@ -75,14 +83,17 @@ export function Cite({ c, showValue = false }: { c: Cited; showValue?: boolean }
           <span className="muted">{s.publisher}{s.published ? ` · ${s.published}` : ""}</span>
           <dl>
             <dt>Tier</dt><dd>{s.tier} — {TIER_LABEL[s.tier]}</dd>
-            <dt>Checked</dt><dd>{s.verified ? "✓ Verified against the page" : "○ Not yet verified"}</dd>
+            <dt>Checked</dt><dd>{s.automated ? "⚙ Pulled automatically from the publisher" : s.verified ? "✓ Verified against the page" : "○ Not yet verified"}</dd>
             <dt>Period</dt><dd>{fmtPeriod(c.period)}</dd>
             <dt>Status</dt><dd>{STATUS_LABEL[c.status]} · {c.method}</dd>
             <dt>Confidence</dt><dd>{Math.round(c.confidence * 100)}%</dd>
             {c.low !== undefined && c.high !== undefined && (<><dt>Range</dt><dd>{fmt(c, c.low)} – {fmt(c, c.high)}</dd></>)}
           </dl>
           {c.note && <span className="note" style={{ display: "block" }}>{c.note}</span>}
-          <a href={s.url} target="_blank" rel="noopener noreferrer">Open source ↗</a>
+          <span style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a href={s.url} target="_blank" rel="noopener noreferrer">Open source ↗</a>
+            <a href={reportUrl(c)} target="_blank" rel="noopener noreferrer" className="muted">Report an issue</a>
+          </span>
         </span>
       )}
     </span>

@@ -63,7 +63,11 @@ function CitedTable({ rows }: { rows: { label: string; c: Cited }[] }) {
 /* ── Horizontal bars ─────────────────────────────────────────────────────── */
 
 export function BarList({ title, sub, rows, note }: { title: string; sub?: string; rows: { label: string; c: Cited; emphasis?: boolean }[]; note?: string }) {
-  const max = Math.max(...rows.map((r) => r.c.high ?? r.c.value));
+  // Scale to the values; a whisker reaching past the edge is clipped and drawn open-ended,
+  // so one extreme outlier can't flatten every bar.
+  const maxValue = Math.max(...rows.map((r) => r.c.value));
+  const maxHigh = Math.max(...rows.map((r) => r.c.high ?? r.c.value));
+  const max = Math.min(maxHigh, maxValue * 1.6);
   const [tip, setTip] = useState<number | null>(null);
   const pct = (v: number) => `${(v / max) * 100}%`;
   return (
@@ -84,9 +88,11 @@ export function BarList({ title, sub, rows, note }: { title: string; sub?: strin
               />
               {r.c.low !== undefined && r.c.high !== undefined && (
                 <motion.div aria-hidden initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.9 + i * 0.06 }}
-                  style={{ position: "absolute", left: pct(r.c.low), width: `calc(${pct(r.c.high)} - ${pct(r.c.low)})`, top: 10, height: 2, background: "var(--ink-2)", opacity: 0.6 }}>
+                  style={{ position: "absolute", left: pct(r.c.low), width: `calc(${pct(Math.min(r.c.high, max))} - ${pct(r.c.low)})`, top: 10, height: 2, background: "var(--ink-2)", opacity: 0.6 }}>
                   <span style={{ position: "absolute", left: 0, top: -4, width: 2, height: 10, background: "var(--ink-2)" }} />
-                  <span style={{ position: "absolute", right: 0, top: -4, width: 2, height: 10, background: "var(--ink-2)" }} />
+                  {r.c.high <= max
+                    ? <span style={{ position: "absolute", right: 0, top: -4, width: 2, height: 10, background: "var(--ink-2)" }} />
+                    : <span title={`up to ${fmt(r.c, r.c.high)}`} style={{ position: "absolute", right: -2, top: -5, fontSize: 10, lineHeight: "12px", color: "var(--ink-2)" }}>▸</span>}
                 </motion.div>
               )}
             </div>
@@ -153,6 +159,13 @@ export function TimeChart({ title, sub, series, yMax, legendExtra, bare }: { tit
   const yearStep = Math.ceil(years.length / Math.max(2, Math.floor((W - M.l - M.r) / 44)));
   const [tip, setTip] = useState<{ s: string; c: Cited } | null>(null);
 
+  // End labels: nudge apart so lines that finish close together stay readable.
+  const gap = series.length > 1 ? 30 : 0;
+  const ends = series.map((s, i) => ({ i, y: sy(s.points[s.points.length - 1]!.c.value) })).sort((a, b) => a.y - b.y);
+  for (let k = 1; k < ends.length; k++) ends[k]!.y = Math.max(ends[k]!.y, ends[k - 1]!.y + gap);
+  const overflow = ends.length ? Math.max(0, ends[ends.length - 1]!.y - (H - M.b)) : 0;
+  const labelY = new Map(ends.map((e) => [e.i, e.y - overflow]));
+
   const path = (pts: { c: Cited }[]) => pts.map((p, i) => `${i ? "L" : "M"}${sx(p.c).toFixed(1)},${sy(p.c.value).toFixed(1)}`).join("");
 
   return (
@@ -215,11 +228,11 @@ export function TimeChart({ title, sub, series, yMax, legendExtra, bare }: { tit
                       onMouseEnter={() => setTip({ s: s.name, c: p.c })} onFocus={() => setTip({ s: s.name, c: p.c })} onBlur={() => setTip(null)} />
                   </g>
                 ))}
-                <motion.text className="lbl" x={sx(last.c) + 10} y={sy(last.c.value) + 4} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.3 + si * 0.25 }}>
+                <motion.text className="lbl" x={sx(last.c) + 10} y={labelY.get(si)! + 4} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 1.3 + si * 0.25 }}>
                   {fmt(last.c)}
                 </motion.text>
                 {series.length > 1 && (
-                  <text className="lbl2" x={sx(last.c) + 10} y={sy(last.c.value) + 18}>{s.name}</text>
+                  <text className="lbl2" x={sx(last.c) + 10} y={labelY.get(si)! + 18}>{s.name}</text>
                 )}
               </g>
             );

@@ -2,10 +2,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { BarList, ShareBar, TimeChart } from "@/components/charts";
 import { Cite } from "@/components/Cite";
+import { Freshness } from "@/components/Freshness";
 import { CountUp, Reveal } from "@/components/motion";
 import { StackHero } from "@/components/StackHero";
 import { fmt, fmtPeriod, parts, STATUS_LABEL } from "@/lib/format";
-import { evidenceStats, getSite, layerSummaries, type Cited } from "@/lib/site";
+import { HYPERSCALER_SUM } from "@/feeds/edgar";
+import { evidenceStats, feedStatuses, getSite, latestOf, layerSummaries, series, type Cited } from "@/lib/site";
 import { REPO } from "@/lib/constants";
 
 function Tile({ label, c, ctx, extra = [], badge }: { label: string; c: Cited; ctx: ReactNode; extra?: Cited[]; badge?: string }) {
@@ -33,6 +35,21 @@ export default async function Home() {
   const conflicts = site.facts.filter((f) => f.conflict);
   const tml = site.facts.filter((f) => f.entity_id === "thinking_machines" && f.metric_id === "valuation");
 
+  // Live feeds
+  const statuses = await feedStatuses();
+  const orOut = latestOf(site, "openrouter", "llm_api_price_median", { direction: "output" });
+  const orIn = latestOf(site, "openrouter", "llm_api_price_median", { direction: "input" });
+  const models = latestOf(site, "openrouter", "models_listed");
+  const yoy = (["us_lower48", "ercot", "pjm"] as const).map((e) => ({ e, c: latestOf(site, e, "electricity_load_growth", { window: "trailing_30d" }) }));
+  const labPrices = ["anthropic", "openai", "xai", "moonshot", "alphabet", "minimax", "alibaba", "mistral", "deepseek", "meta"]
+    .map((e) => ({ label: site.entity(e).name.replace(/ \(.*\)$/, ""), c: latestOf(site, e, "llm_api_price_median", { direction: "output", platform: "openrouter" }) }))
+    .filter((r): r is { label: string; c: Cited } => !!r.c)
+    .sort((a, b) => b.c.value - a.c.value);
+  const capexColors = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)"];
+  const capex = HYPERSCALER_SUM.map((e, i) => ({ name: site.entity(e).name.replace(/ \(.*\)$/, ""), color: capexColors[i]!, points: series(site, e, "capex").filter((c) => c.source.automated && c.period >= "2023").map((c) => ({ c })) }))
+    .filter((s) => s.points.length > 1);
+  const orHistory = series(site, "openrouter", "llm_api_price_median", { direction: "output" });
+
   return (
     <>
       <section className="hero">
@@ -56,6 +73,62 @@ export default async function Home() {
             </div>
           </Reveal>
           <StackHero layers={layers.filter((l) => l.id !== "CAP")} cap={layers.find((l) => l.id === "CAP")!} />
+        </div>
+      </section>
+
+
+      <section id="live">
+        <div className="wrap">
+          <Reveal>
+            <div className="live-tag"><span className="fresh ok"><i aria-hidden /></span>Live · refreshed daily</div>
+            <h2 className="sec-title" style={{ marginTop: 10 }}>Live signals</h2>
+            <p className="sec-lede">Pulled every morning by a scheduled job straight from SEC filings, OpenRouter&apos;s price list and the EIA grid monitor. Unusual moves are held for human review before they publish.</p>
+          </Reveal>
+          <div className="feeds">
+            {Object.entries(statuses).map(([id, s], i) => (
+              <Reveal key={id} delay={i * 0.06}>
+                <div className="card feed">
+                  <h3>{s.name}</h3>
+                  <Freshness at={s.lastSuccess} tried={s.lastRun} cadenceHours={s.cadenceHours} ok={s.ok} />
+                  <span className="small muted">{s.observations.toLocaleString("en-US")} numbers · every {s.cadenceHours} h · <a href={s.homepage} target="_blank" rel="noopener noreferrer">source ↗</a></span>
+                  {!s.ok && s.error && <span className="err">Last run: {s.error.length > 140 ? `${s.error.slice(0, 140)}…` : s.error}</span>}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="tiles">
+            {[
+              orOut && <Tile key="o" label="Median output price, OpenRouter" c={orOut} ctx={<>Across {models ? fmt(models) : "all paid models"} listed · {fmtPeriod(orOut.period)}</>} />,
+              orIn && <Tile key="i" label="Median input price, OpenRouter" c={orIn} ctx={<>Cheapest {fmt(orIn, orIn.low ?? orIn.value)}, dearest {fmt(orIn, orIn.high ?? orIn.value)}</>} />,
+              ...yoy.filter((y) => y.c).map((y) => (
+                <Tile key={y.e} label={`${site.entity(y.e).name} demand, trailing 30 days`} c={y.c!} ctx={<>vs the same weekdays a year earlier · to {fmtPeriod(y.c!.period)}</>} />
+              )),
+            ].filter(Boolean).map((t, i) => <Reveal key={i} delay={(i % 4) * 0.06}>{t}</Reveal>)}
+          </div>
+          <div className="charts">
+            <Reveal>
+              {capex.length ? (
+                <TimeChart title="Big-four hyperscaler capex per quarter" sub="Purchases of property and equipment, from each company's 10-Q/10-K (USD)" series={capex} />
+              ) : (
+                <div className="card chart-card">
+                  <h3>Big-four hyperscaler capex per quarter</h3>
+                  <p className="sub">Microsoft, Alphabet, Amazon and Meta, from their SEC filings.</p>
+                  <p className="small muted" style={{ marginTop: 16 }}>Waiting for the first successful EDGAR run — the scheduled job fills this in automatically.</p>
+                </div>
+              )}
+            </Reveal>
+            {labPrices.length > 0 && (
+              <Reveal delay={0.05}>
+                <BarList title="What a million output tokens costs, by lab" sub={`Median list price across each lab's paid models on OpenRouter, ${fmtPeriod(labPrices[0]!.c.period)}`}
+                  rows={labPrices} note="Whiskers span each lab's cheapest to dearest model (▸ = runs off the scale; hover for the full range). Open-weight models are also served by third-party hosts at lower prices." />
+              </Reveal>
+            )}
+            {orHistory.length > 1 && (
+              <Reveal>
+                <TimeChart title="OpenRouter median output price" sub="USD per million output tokens, all paid models, daily" series={[{ name: "Median", color: "var(--s1)", points: orHistory.map((c) => ({ c })) }]} />
+              </Reveal>
+            )}
+          </div>
         </div>
       </section>
 

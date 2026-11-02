@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { latest, periodEnd, resolve } from "../src/lib/resolver";
 import type { Observation, Source } from "../src/lib/schema";
 
-const src = (id: string, tier: 1 | 2 | 3): Source => ({ id, title: id, publisher: id, url: `https://example.com/${id}`, tier, kind: "press", accessed: "2026-11-01", verified: true });
+const src = (id: string, tier: 1 | 2 | 3): Source => ({ id, title: id, publisher: id, url: `https://example.com/${id}`, tier, kind: "press", accessed: "2026-11-01", verified: true, automated: false });
 const sources = [src("filing", 1), src("press", 2), src("blog", 3)];
 
 let n = 0;

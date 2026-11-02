@@ -37,10 +37,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="wrap">
               <Link href="/" className="brand"><Logo />AI Stack Atlas</Link>
               <nav className="nav" aria-label="Main">
-                <Link href="/#layers" className="hide-sm">Layers</Link>
+                <Link href="/#live">Live</Link>
                 <Link href="/explore">Explore</Link>
-                <Link href="/sources">Sources</Link>
-                <a href={REPO} target="_blank" rel="noopener noreferrer" className="hide-sm">GitHub</a>
+                <Link href="/sources" className="hide-sm">Sources</Link>
+                <Link href="/downloads">Data</Link>
+                <Link href="/methodology" className="hide-sm">Method</Link>
+                <Link href="/changelog" className="hide-sm">Changelog</Link>
               </nav>
               <ThemeToggle />
             </div>
@@ -48,8 +50,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <main>{children}</main>
           <footer>
             <div className="wrap">
-              <span>Every number links to its source. Tier 1 = primary, 2 = relay/analyst, 3 = secondary. Hollow dots = not yet verified.</span>
-              <span><a href={REPO} target="_blank" rel="noopener noreferrer">Code &amp; data on GitHub</a> · Research, not investment advice.</span>
+              <span>Every number links to its source. Tier 1 = primary, 2 = relay/analyst, 3 = secondary. Hollow dots = not yet verified; ⚙ = pulled automatically.</span>
+              <span>
+                <Link href="/methodology">Methodology</Link> · <Link href="/sources">Sources</Link> · <Link href="/downloads">Downloads</Link> · <Link href="/changelog">Changelog</Link> ·{" "}
+                <a href={REPO} target="_blank" rel="noopener noreferrer">GitHub</a> · Data CC BY 4.0 · Research, not investment advice.
+              </span>
             </div>
           </footer>
         </MotionProvider>

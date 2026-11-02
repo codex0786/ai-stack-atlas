@@ -141,7 +141,7 @@
   monetary: true
   kind: price
   definition: Median list price across tracked models.
-  dims: [direction]
+  dims: [direction, platform]
 
 - id: llm_price_change
   name: Change in frontier token price
@@ -267,3 +267,19 @@
   unit: ratio
   kind: growth
   definition: Year-on-year change in total electricity demand (0.019 = +1.9%).
+  caveats: dims.window marks short-window measured growth (e.g. trailing 30 days vs the same days a year earlier); without it the value is an annual figure.
+  dims: [window]
+
+- id: grid_demand
+  name: Grid electricity demand
+  layer: L0
+  unit: GWh per day
+  kind: flow
+  definition: Total electricity demand served in the balancing area over one day (EIA-930).
+
+- id: models_listed
+  name: Models listed
+  layer: L5
+  unit: models
+  kind: level
+  definition: Number of models offered on the platform on the day.

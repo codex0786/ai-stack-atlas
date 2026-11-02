@@ -1,0 +1,30 @@
+[
+ {
+  "at": "2026-11-02T19:38:56.844Z",
+  "kind": "ingest",
+  "title": "Data update: openrouter +23, eia +45",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": false,
+    "added": 0,
+    "revised": 0,
+    "error": "No EDGAR data: MSFT: HTTP 403 from https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json; GOOGL: HTTP 403 from https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json; AMZN: HTTP 403 from https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json; META: HTTP 403 from https://data.se"
+   },
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 23,
+    "revised": 0
+   },
+   {
+    "feed": "eia",
+    "ok": true,
+    "added": 45,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ }
+]

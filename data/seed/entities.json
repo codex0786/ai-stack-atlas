@@ -1,6 +1,7 @@
 [
   { "id": "global_data_centres", "name": "Global data centres", "kind": "aggregate", "layers": ["L0", "L2"] },
   { "id": "us_power_system", "name": "US power system", "kind": "aggregate", "layers": ["L0"], "country": "US" },
+  { "id": "us_lower48", "name": "US Lower 48 grid", "kind": "grid_region", "layers": ["L0"], "country": "US", "note": "All EIA-930 balancing areas in the contiguous US." },
   { "id": "ercot", "name": "ERCOT (Texas)", "kind": "grid_region", "layers": ["L0"], "country": "US" },
   { "id": "pjm", "name": "PJM Interconnection", "kind": "grid_region", "layers": ["L0"], "country": "US" },
 
