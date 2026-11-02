@@ -1,5 +1,33 @@
 [
  {
+  "at": "2026-11-02T19:47:30.300Z",
+  "kind": "ingest",
+  "title": "Data update: no new values",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": false,
+    "added": 0,
+    "revised": 0,
+    "error": "No EDGAR data: all 9 companies failed (first: MSFT: HTTP 403)"
+   },
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "eia",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-02T19:38:56.844Z",
   "kind": "ingest",
   "title": "Data update: openrouter +23, eia +45",
