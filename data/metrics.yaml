@@ -1,0 +1,269 @@
+# Metric dictionary — every observation's metric_id must be defined here, exactly once.
+# Values are stored in base units: whole currency (65e9, not "65B"), shares as 0–1, growth multiples as ×/yr.
+# `dims` lists the qualifiers an observation may carry; anything else is rejected by validation.
+
+# ── Capital & company finance ────────────────────────────────────────────────
+- id: capex
+  name: Capital expenditure
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: Cash spent on property and equipment over the period, as reported or guided by the company.
+  caveats: Some companies include finance leases, others don't; AI vs non-AI capex is rarely split. Guidance uses status=guidance.
+
+- id: capex_growth_yoy
+  name: Capex growth, year on year
+  layer: CAP
+  unit: ratio
+  kind: growth
+  definition: Period capex divided by the same period a year earlier, minus one (6.71 = +671%).
+
+- id: revenue
+  name: Revenue
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: Recognised revenue for the period (booked, not annualised).
+
+- id: revenue_run_rate
+  name: Revenue run-rate
+  layer: CAP
+  unit: per year
+  monetary: true
+  kind: flow
+  definition: Annualised revenue, usually the latest month × 12. Companies also call this ARR.
+  caveats: Not booked revenue. Definitions differ by company and are rarely disclosed. Don't add run-rates to revenue.
+
+- id: compute_spend
+  name: Compute spend
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: Spending on training and inference compute over the period, whether rented or owned (amortised).
+
+- id: revenue_per_compute_dollar
+  name: Revenue per compute dollar
+  layer: L4
+  unit: ratio
+  kind: ratio
+  definition: Revenue earned for each dollar spent on compute over the same period.
+  formula: revenue / compute_spend
+
+- id: contract_backlog
+  name: Contracted backlog
+  layer: L3
+  unit: ""
+  monetary: true
+  kind: level
+  definition: Remaining performance obligations — signed but unrecognised contract revenue.
+
+- id: total_debt
+  name: Total debt
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: level
+  definition: Short- plus long-term borrowings at period end, excluding operating leases unless noted.
+
+- id: long_term_debt
+  name: Long-term debt
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: level
+  definition: Borrowings due after twelve months, at period end.
+
+- id: valuation
+  name: Valuation
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: level
+  definition: Company valuation at a funding round, post-money unless dims.basis says otherwise.
+  dims: [basis]
+
+- id: funding_raised
+  name: Funding round size
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: New capital raised in a single round.
+
+# ── Models & training ────────────────────────────────────────────────────────
+- id: training_cost_growth
+  name: Frontier training cost growth
+  layer: L4
+  unit: x per year
+  kind: growth
+  definition: Annual multiple by which the amortised hardware and energy cost of frontier training runs grows.
+
+- id: training_compute_growth
+  name: Frontier training compute growth
+  layer: L4
+  unit: x per year
+  kind: growth
+  definition: Annual multiple by which the FLOPs used to train frontier models grow.
+
+- id: frontier_training_cost
+  name: Frontier training run cost
+  layer: L4
+  unit: per run
+  monetary: true
+  kind: level
+  definition: Amortised hardware and energy cost of the largest training run in the period.
+
+- id: training_cost_share
+  name: Share of model development cost
+  layer: L4
+  unit: share
+  kind: share
+  definition: Fraction of total model development cost going to one component.
+  dims: [component]
+
+# ── Inference & pricing ──────────────────────────────────────────────────────
+- id: llm_price_decline_rate
+  name: LLM price decline rate
+  layer: L5
+  unit: x per year
+  kind: growth
+  definition: Annual multiple by which the price of a given level of capability falls (10 = prices fall 10× per year).
+  caveats: Highly sensitive to the benchmark and time window; always read dims.basis.
+  dims: [basis]
+
+- id: llm_api_price_median
+  name: Median LLM API price
+  layer: L5
+  unit: per million tokens
+  monetary: true
+  kind: price
+  definition: Median list price across tracked models.
+  dims: [direction]
+
+- id: llm_price_change
+  name: Change in frontier token price
+  layer: L5
+  unit: ratio
+  kind: growth
+  definition: Proportional change in frontier-model token price since the baseline (-0.88 = 88% cheaper).
+  dims: [baseline]
+
+- id: token_share
+  name: Share of tokens
+  layer: L5
+  unit: share
+  kind: share
+  definition: Fraction of tokens processed by this segment on the measured platform.
+  caveats: Router platforms (OpenRouter, Vercel) are biased samples of real usage — compare like with like.
+  dims: [platform]
+
+- id: spend_share
+  name: Share of spend
+  layer: L5
+  unit: share
+  kind: share
+  definition: Fraction of model spend or revenue going to this segment.
+  dims: [platform]
+
+# ── Compute & chips ──────────────────────────────────────────────────────────
+- id: gpu_rental_price
+  name: GPU rental price
+  layer: L3
+  unit: per GPU-hour
+  monetary: true
+  kind: price
+  definition: Price to rent one accelerator for one hour.
+  caveats: Contract type (on-demand, reserved, capacity block, subsidised) changes the price several-fold.
+  dims: [provider, contract, basis]
+
+- id: gpus_available
+  name: GPUs available
+  layer: L3
+  unit: GPUs
+  kind: level
+  definition: Accelerators available to users on the platform at the period end.
+  dims: [basis]
+
+- id: compute_subsidy_rate
+  name: Compute subsidy rate
+  layer: L3
+  unit: share
+  kind: share
+  definition: Fraction of the compute price paid by a public subsidy for eligible users.
+
+- id: chip_tdp
+  name: Chip max power (TDP)
+  layer: L1
+  unit: W
+  kind: spec
+  definition: Maximum thermal design power of the accelerator module.
+
+- id: chip_peak_flops
+  name: Chip peak throughput
+  layer: L1
+  unit: FLOP/s
+  kind: spec
+  definition: Vendor-stated peak tensor throughput.
+  dims: [precision, sparsity]
+
+- id: chip_memory
+  name: Chip memory capacity
+  layer: L1
+  unit: GB
+  kind: spec
+  definition: On-package high-bandwidth memory capacity.
+
+- id: chip_memory_bandwidth
+  name: Chip memory bandwidth
+  layer: L1
+  unit: TB/s
+  kind: spec
+  definition: Peak memory bandwidth.
+
+- id: packaging_capacity
+  name: Advanced packaging capacity
+  layer: L1
+  unit: wafers per month
+  kind: level
+  definition: Installed or announced monthly wafer capacity for advanced packaging (e.g. CoWoS), not utilised output.
+
+- id: packaging_capacity_growth
+  name: Advanced packaging capacity growth
+  layer: L1
+  unit: ratio
+  kind: growth
+  definition: Year-on-year change in packaging capacity (1.06 = +106%).
+
+- id: market_size
+  name: Market size
+  layer: L1
+  unit: per year
+  monetary: true
+  kind: flow
+  definition: Annual revenue of all suppliers in the market.
+
+# ── Energy ───────────────────────────────────────────────────────────────────
+- id: dc_electricity_consumption
+  name: Data-centre electricity consumption
+  layer: L0
+  unit: TWh per year
+  kind: flow
+  definition: Electricity consumed by data centres in a year (all workloads, not only AI).
+  dims: [scenario]
+
+- id: dc_electricity_share
+  name: Data-centre share of electricity
+  layer: L0
+  unit: share
+  kind: share
+  definition: Data-centre electricity use as a fraction of total electricity consumption in the region.
+
+- id: electricity_load_growth
+  name: Electricity demand growth
+  layer: L0
+  unit: ratio
+  kind: growth
+  definition: Year-on-year change in total electricity demand (0.019 = +1.9%).

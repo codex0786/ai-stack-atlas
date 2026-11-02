@@ -1,0 +1,7 @@
+node_modules
+*.tsbuildinfo
+.env*
+.vercel
+data/raw/
+data/cache/
+data/*.db*
