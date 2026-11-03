@@ -280,3 +280,4 @@ button.sort:hover { color: var(--ink); }
 .presets button.on, .price-mode button.on { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
 .price-mode { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
 @media (max-width: 1180px) { .nav a.hide-md { display: none; } }
+.binding { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }

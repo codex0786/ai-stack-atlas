@@ -48,6 +48,9 @@ jobs:
             npm run ingest
           fi
 
+      - name: Score and log forecasts
+        run: npm run forecast
+
       - name: Validate, test and build
         run: |
           npm run validate > /dev/null

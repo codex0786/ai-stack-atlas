@@ -122,6 +122,14 @@ export default async function MethodologyPage() {
             (tested). It describes today&apos;s operating spend, not capex bought ahead of demand.
           </p>
 
+          <h3 id="forecasts">Forecasts</h3>
+          <ul>
+            <li><b>Trend forecasts</b> fit log-linear least squares (growth is multiplicative) and report a 90% prediction interval using Student-t critical values; the interval widens with noise and with distance from the data. Each is backtested by refitting without its latest points.</li>
+            <li><b>Daily market series</b> (₹/$, OpenRouter prices, Vast.ai GPU prices) use a random walk 30 days ahead, with volatility from past daily changes — or a default 2% a day, said explicitly, when history is short.</li>
+            <li><b>The ledger</b> (data/forecasts.json) logs each forecast once; daily-market forecasts at most weekly. The daily job scores a forecast when its target period ends and an actual exists: a hit is an outcome inside the 90% interval. Logged forecasts are never edited; the repository&apos;s git history shows it.</li>
+            <li><b>Scenarios</b> are a supply-constrained chain — capex ÷ cost per accelerator is the demand, packaging capacity × accelerators per wafer is the supply, the fleet installed is the lesser, retired after its life, and fleet × kW × load gives TWh. They show what different assumptions imply; they are not forecasts and are not scored.</li>
+          </ul>
+
           <h2>6. The anomaly gate</h2>
           <p>Before anything publishes, each new value is compared with the previous period in its series. The run opens a pull request for human review instead of publishing when:</p>
           <ul>

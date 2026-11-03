@@ -1,0 +1,102 @@
+[
+ {
+  "made": "2026-11-03",
+  "status": "pending",
+  "unit": "",
+  "kind": "flow",
+  "id": "capex_big4_2026_q4",
+  "label": "Big-four hyperscaler capex, 2026-Q4",
+  "target": {
+   "entity_id": "hyperscalers",
+   "metric_id": "capex",
+   "dims": {},
+   "currency": "USD",
+   "period": "2026-Q4"
+  },
+  "method": "Log-linear trend on 12 quarters",
+  "mean": 209238702208.2625,
+  "lo": 182418144658.5808,
+  "hi": 240002630131.6652
+ },
+ {
+  "made": "2026-11-03",
+  "status": "pending",
+  "unit": "FLOP",
+  "kind": "level",
+  "id": "largest_run_2027",
+  "label": "Largest training run released in 2027",
+  "target": {
+   "entity_id": "frontier_models",
+   "metric_id": "training_compute",
+   "dims": {
+    "scope": "largest_released_in_year"
+   },
+   "period": "2027"
+  },
+  "method": "Log-linear trend on 6 complete years (Epoch AI)",
+  "mean": 5.822819743877627e+27,
+  "lo": 5.767396800129224e+26,
+  "hi": 5.878775285399373e+28
+ },
+ {
+  "made": "2026-11-03",
+  "status": "pending",
+  "unit": "INR per USD",
+  "kind": "price",
+  "id": "fx_usdinr_20261203",
+  "label": "Rupees per US dollar, 2026-12-03",
+  "target": {
+   "entity_id": "india",
+   "metric_id": "fx_rate",
+   "dims": {},
+   "period": "2026-12-03"
+  },
+  "method": "Random walk, volatility from 279 daily changes",
+  "mean": 94.91,
+  "lo": 92.14018014170169,
+  "hi": 97.76308322977884
+ },
+ {
+  "made": "2026-11-03",
+  "status": "pending",
+  "unit": "per million tokens",
+  "kind": "price",
+  "id": "or_median_output_20261203",
+  "label": "OpenRouter median output price, 2026-12-03",
+  "target": {
+   "entity_id": "openrouter",
+   "metric_id": "llm_api_price_median",
+   "dims": {
+    "direction": "output"
+   },
+   "currency": "USD",
+   "period": "2026-12-03"
+  },
+  "method": "Random walk, volatility from a default 2%/day (too little history)",
+  "mean": 2,
+  "lo": 1.6702051432280685,
+  "hi": 2.394915388818076
+ },
+ {
+  "made": "2026-11-03",
+  "status": "pending",
+  "unit": "per GPU-hour",
+  "kind": "price",
+  "id": "vast_h100_20261203",
+  "label": "H100 on Vast.ai, median, 2026-12-03",
+  "target": {
+   "entity_id": "h100",
+   "metric_id": "gpu_rental_price",
+   "dims": {
+    "provider": "vast_ai",
+    "contract": "marketplace"
+   },
+   "currency": "USD",
+   "period": "2026-12-03"
+  },
+  "method": "Random walk, volatility from a default 2%/day (too little history)",
+  "mean": 2.4,
+  "lo": 2.004246171873682,
+  "hi": 2.873898466581691
+ }
+]

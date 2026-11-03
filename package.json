@@ -13,7 +13,8 @@
     "test": "vitest run",
     "seed": "tsx scripts/seed.ts",
     "validate": "tsx scripts/validate.ts",
-    "ingest": "tsx scripts/ingest.ts"
+    "ingest": "tsx scripts/ingest.ts",
+    "forecast": "tsx scripts/forecast.ts"
   },
   "dependencies": {
     "@types/react": "^19.3.0",
