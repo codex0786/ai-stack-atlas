@@ -7,12 +7,13 @@ import { edgarFeed } from "./edgar";
 import { eiaFeed } from "./eia";
 import { modelsFeed } from "./models";
 import { epochFeed } from "./epoch";
+import { fxFeed } from "./fx";
 import { redact } from "./http";
 import { openrouterFeed } from "./openrouter";
 import { vastFeed } from "./vast";
 import type { Anomaly, ChangelogEntry, Feed, FeedFile, FeedOutput, FeedStatus, Revision } from "./types";
 
-export const FEEDS: Feed[] = [edgarFeed, openrouterFeed, eiaFeed, epochFeed, vastFeed, modelsFeed];
+export const FEEDS: Feed[] = [edgarFeed, openrouterFeed, eiaFeed, epochFeed, vastFeed, modelsFeed, fxFeed];
 
 const MAX_CHANGELOG = 300;
 

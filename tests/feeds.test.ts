@@ -214,3 +214,24 @@ describe("Vast.ai", () => {
     expect(parseOffers({ name: "B200", entity: "b200" }, offers, "2026-11-03")).toBeUndefined();
   });
 });
+
+import { parseFx } from "../src/feeds/fx";
+
+describe("FX", () => {
+  it("records one USD→INR observation per published day", () => {
+    const o = parseFx({ "2026-10-30": { INR: 94.8 }, "2026-11-02": { INR: 94.9134 } }, "2026-11-03");
+    expect(o.map((x) => [x.period, x.value, x.entity_id, x.metric_id])).toEqual([["2026-10-30", 94.8, "india", "fx_rate"], ["2026-11-02", 94.9134, "india", "fx_rate"]]);
+  });
+});
+
+describe("EDGAR IFRS filers", () => {
+  it("reads annual 20-F revenue in the unit with the most facts", () => {
+    const f = (start: string, end: string, val: number) => ({ start, end, val, accn: `a-${end}`, form: "20-F", filed: end });
+    const facts = { cik: 1, entityName: "WIPRO LTD", facts: { "ifrs-full": { Revenue: { units: {
+      INR: [f("2023-04-01", "2024-03-31", 897.6e9), f("2024-04-01", "2025-03-31", 890.9e9)],
+      USD: [f("2024-04-01", "2025-03-31", 10.5e9)],
+    } } } } };
+    const out = parseCompanyFacts({ ticker: "WIT", entity: "wipro" }, facts as never, "2026-11-03").observations;
+    expect(out.map((o) => [o.period, o.value, o.currency, o.period_type])).toEqual([["2024-03", 897.6e9, "INR", "annual"], ["2025-03", 890.9e9, "INR", "annual"]]);
+  });
+});

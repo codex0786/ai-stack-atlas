@@ -297,6 +297,40 @@
   caveats: dims.window marks short-window measured growth (e.g. trailing 30 days vs the same days a year earlier); without it the value is an annual figure.
   dims: [window]
 
+- id: dc_capacity
+  name: Data-centre capacity
+  layer: L2
+  unit: MW
+  kind: level
+  definition: IT power capacity of data centres in the market (operational unless dims.basis says otherwise).
+  caveats: Brokers (CBRE, JLL, Cushman) define capacity and pipeline differently; compare like with like.
+  dims: [basis]
+
+- id: investment_commitment
+  name: Investment commitment
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: Announced investment plan, as stated by the company or market tracker; not spent capital.
+  caveats: Announcements bundle different scopes and periods; read each observation's note.
+  dims: [country, basis]
+
+- id: public_budget
+  name: Public programme budget
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: Approved government outlay for a programme over its life.
+
+- id: fx_rate
+  name: Exchange rate
+  layer: CAP
+  unit: INR per USD
+  kind: price
+  definition: Rupees per US dollar (ECB reference rate).
+
 - id: grid_demand
   name: Grid electricity demand
   layer: L0

@@ -103,6 +103,7 @@ export default async function Home() {
                 <Link className="btn primary" href="/dashboard">Open the dashboard →</Link>
                 <Link className="btn" href="/value-flow">Where $1 goes</Link>
                 <Link className="btn" href="/calculators">Cost calculators</Link>
+                <Link className="btn" href="/india">India lens</Link>
               </span>
             </div>
           </Reveal>

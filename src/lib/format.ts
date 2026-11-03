@@ -62,6 +62,8 @@ export function parts(x: Formattable, value = x.value): Parts {
       const sup = String(e).replace(/[0-9-]/g, (d) => "⁰¹²³⁴⁵⁶⁷⁸⁹"["0123456789".indexOf(d)] ?? "⁻");
       return { prefix: "", num: value / 10 ** e, decimals: 1, suffix: `×10${sup} FLOP` };
     }
+    case "INR per USD":
+      return { prefix: "₹", num: value, decimals: 2, suffix: "/$" };
     case "TWh per year":
       return { prefix: "", num: value, decimals: 0, suffix: " TWh" };
     case "wafers per month":

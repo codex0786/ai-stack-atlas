@@ -16,6 +16,9 @@ export const COMPANIES = [
   { ticker: "AMD", entity: "amd", cik: 2488 },
   { ticker: "AVGO", entity: "broadcom", cik: 1730168 },
   { ticker: "CRWV", entity: "coreweave" },
+  // Indian IT services: foreign private issuers filing annual 20-F reports in IFRS.
+  { ticker: "INFY", entity: "infosys", cik: 1067491 },
+  { ticker: "WIT", entity: "wipro", cik: 1123799 },
 ] as const;
 
 /** Companies whose quarters end on calendar quarter-ends, so their capex can be summed. */
@@ -24,17 +27,18 @@ export const HYPERSCALER_SUM = ["microsoft", "alphabet", "amazon", "meta"] as co
 /** Metric → us-gaap concepts in preference order (companies tag the same item differently). */
 const CONCEPTS: Record<string, { concepts: string[]; instant: boolean }> = {
   capex: { concepts: ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"], instant: false },
-  revenue: { concepts: ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "RevenueFromContractWithCustomerIncludingAssessedTax"], instant: false },
+  revenue: { concepts: ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "RevenueFromContractWithCustomerIncludingAssessedTax", "Revenue", "RevenueFromContractsWithCustomers"], instant: false },
   cost_of_revenue: { concepts: ["CostOfRevenue", "CostOfGoodsAndServicesSold"], instant: false },
   long_term_debt: { concepts: ["LongTermDebtNoncurrent", "LongTermDebt", "LongTermNotesPayable", "LongTermDebtAndCapitalLeaseObligations", "OtherLongTermDebtNoncurrent"], instant: true },
   contract_backlog: { concepts: ["RevenueRemainingPerformanceObligation"], instant: true },
 };
 
-const FORMS = new Set(["10-K", "10-Q", "10-K/A", "10-Q/A"]);
+const FORMS = new Set(["10-K", "10-Q", "10-K/A", "10-Q/A", "20-F", "20-F/A"]);
 const SINCE = "2022-01-01";
 
-export interface XbrlFact { start?: string; end: string; val: number; accn: string; fy?: number; fp?: string; form: string; filed: string; frame?: string }
-export interface CompanyFacts { cik: number; entityName: string; facts: { "us-gaap"?: Record<string, { units: Record<string, XbrlFact[]> }> } }
+export interface XbrlFact { start?: string; end: string; val: number; accn: string; fy?: number; fp?: string; form: string; filed: string; frame?: string; currency?: "USD" | "INR" }
+type Taxonomy = Record<string, { units: Record<string, XbrlFact[]> }>;
+export interface CompanyFacts { cik: number; entityName: string; facts: { "us-gaap"?: Taxonomy; "ifrs-full"?: Taxonomy } }
 
 const DAY = 86_400_000;
 const days = (a: string, b: string) => Math.round((Date.parse(b) - Date.parse(a)) / DAY) + 1;
@@ -82,7 +86,10 @@ function pick(facts: CompanyFacts, concepts: string[]): XbrlFact[] {
   const seen = new Set<string>();
   const out: XbrlFact[] = [];
   for (const c of concepts) {
-    const list = (facts.facts["us-gaap"]?.[c]?.units.USD ?? []).filter((f) => FORMS.has(f.form) && f.end >= SINCE);
+    // US filers tag us-gaap in USD; IFRS filers (20-F) may report in USD or INR — use the unit with most facts.
+    const units = facts.facts["us-gaap"]?.[c]?.units ?? facts.facts["ifrs-full"]?.[c]?.units ?? {};
+    const unit = (["USD", "INR"] as const).filter((u) => units[u]?.length).sort((a, b) => units[b]!.length - units[a]!.length)[0];
+    const list = (unit ? units[unit]! : []).filter((f) => FORMS.has(f.form) && f.end >= SINCE).map((f) => ({ ...f, currency: unit }));
     const keys = new Set(list.map((f) => `${f.start ?? ""}|${f.end}`));
     for (const f of list) if (!seen.has(`${f.start ?? ""}|${f.end}`)) out.push(f);
     keys.forEach((k) => seen.add(k));
@@ -113,15 +120,26 @@ export function parseCompanyFacts(company: { ticker: string; entity: string }, f
       // A zero balance is almost always a placeholder tag, not a real figure.
       for (const f of dedupe(facts_.filter((x) => !x.start && x.val > 0))) {
         observations.push({
-          id: `edgar_${t}_${metric}_${monthOf(f.end).replace("-", "_")}`, entity_id: company.entity, metric_id: metric, value: f.val, currency: "USD", dims: {},
+          id: `edgar_${t}_${metric}_${monthOf(f.end).replace("-", "_")}`, entity_id: company.entity, metric_id: metric, value: f.val, currency: f.currency ?? "USD", dims: {},
           period: monthOf(f.end), period_type: "point", status: "actual", method: "reported", source_id: cite(f), published: f.filed, confidence: 0.95,
           note: `Balance at ${f.end}${f.restated ? "; restated in a later filing" : ""}.`,
         });
       }
     } else {
-      for (const q of quarterly(facts_)) {
+      const quarters = quarterly(facts_);
+      // Annual-only filers (20-F): record each fiscal year instead of quarters.
+      if (!quarters.length) {
+        for (const f of dedupe(facts_.filter((x) => x.start && days(x.start, x.end) >= 350 && days(x.start, x.end) <= 380))) {
+          observations.push({
+            id: `edgar_${t}_${metric}_${monthOf(f.end).replace("-", "_")}`, entity_id: company.entity, metric_id: metric, value: f.val, currency: f.currency ?? "USD", dims: {},
+            period: monthOf(f.end), period_type: "annual", status: "actual", method: "reported", source_id: cite(f), published: f.filed, confidence: 0.95,
+            note: `Fiscal year ${f.start} to ${f.end}${f.restated ? "; restated" : ""}.`,
+          });
+        }
+      }
+      for (const q of quarters) {
         observations.push({
-          id: `edgar_${t}_${metric}_${monthOf(q.end).replace("-", "_")}`, entity_id: company.entity, metric_id: metric, value: q.val, currency: "USD", dims: {},
+          id: `edgar_${t}_${metric}_${monthOf(q.end).replace("-", "_")}`, entity_id: company.entity, metric_id: metric, value: q.val, currency: q.fact.currency ?? "USD", dims: {},
           period: monthOf(q.end), period_type: "quarterly", status: "actual", method: q.derived ? "derived" : "reported", source_id: cite(q.fact),
           published: q.fact.filed, confidence: q.derived ? 0.9 : 0.95,
           note: `Quarter ending ${q.end}${q.derived ? " (year-to-date minus prior year-to-date)" : ""}${q.restated ? "; restated" : ""}.`,

@@ -68,7 +68,8 @@ export default async function MethodologyPage() {
           </ul>
           <h3>SEC EDGAR</h3>
           <p>
-            Capital expenditure, revenue, long-term debt and remaining performance obligations (backlog) for Microsoft, Alphabet, Amazon, Meta, Oracle, NVIDIA, AMD, Broadcom and CoreWeave,
+            Capital expenditure, revenue, cost of revenue, long-term debt and remaining performance obligations (backlog) for Microsoft, Alphabet, Amazon, Meta, Oracle, NVIDIA, AMD, Broadcom and CoreWeave
+            — plus annual revenue for Infosys and Wipro from their IFRS 20-F filings (in the currency each reports most),
             from the XBRL facts in their 10-Q and 10-K filings. Cash-flow items are reported year-to-date, so quarters are derived by subtracting consecutive year-to-date totals.
             Periods are labelled by the month the fiscal quarter ends. The first-filed value is kept unless a later filing restates it. Each value cites its own filing.
             Capex is &ldquo;purchases of property and equipment&rdquo; and excludes assets acquired under finance leases, which some hyperscalers use heavily.
@@ -78,6 +79,8 @@ export default async function MethodologyPage() {
           <h3>EIA</h3>
           <p>Daily electricity demand (EIA-930) for the US Lower 48, ERCOT and PJM; only completed days are used. Growth compares average daily demand over the trailing 30 days with the same weekdays 364 days earlier.</p>
 
+          <h3>Exchange rate</h3>
+          <p>The USD→INR reference rate (European Central Bank, via the Frankfurter API) is read daily for the last 400 days. The India lens converts dollar prices to rupees at the latest rate and says so on each converted figure.</p>
           <h3>Epoch AI</h3>
           <p>
             Epoch AI&apos;s large-scale models dataset (models trained with more than 10²³ FLOP, CC BY). The atlas records the largest run released each year, each lab&apos;s

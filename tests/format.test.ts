@@ -27,6 +27,7 @@ describe("fmt", () => {
     expect(f(72500, "wafers per month", "level")).toBe("72.5k wafers/mo");
     expect(f(38000, "GPUs", "level")).toBe("38,000 GPUs");
     expect(f(700, "W", "spec")).toBe("700 W");
+    expect(f(94.9134, "INR per USD", "price")).toBe("₹94.91/$");
   });
 });
 

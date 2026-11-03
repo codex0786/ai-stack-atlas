@@ -1,5 +1,41 @@
 [
  {
+  "at": "2026-11-03T07:23:57.708Z",
+  "kind": "ingest",
+  "title": "Data update: edgar +4",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 4,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ },
+ {
+  "at": "2026-11-03T07:23:25.927Z",
+  "kind": "ingest",
+  "title": "Data update: edgar +4, fx +280",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 4,
+    "revised": 0
+   },
+   {
+    "feed": "fx",
+    "ok": true,
+    "added": 280,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-03T07:12:48.768Z",
   "kind": "ingest",
   "title": "Data update: edgar +141",
