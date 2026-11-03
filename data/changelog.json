@@ -2,7 +2,7 @@
  {
   "at": "2026-11-03T05:50:53.792Z",
   "kind": "ingest",
-  "title": "Data update: eia +6, gpu +0 (3 revised)",
+  "title": "Data update: eia +6, gpu +0 (3 revised) — reviewed",
   "feeds": [
    {
     "feed": "edgar",
@@ -86,6 +86,9 @@
     "change": -0.17647058823529407,
     "reason": "[gpu] revised by -17.6%"
    }
+  ],
+  "notes": [
+   "Reviewed by hand (issue #1): the 3 flagged GPU prices were same-day re-quotes in a live marketplace (H200 −18%, B200 −14%, A100 +10%), not errors. The gate now lets the current day’s live values update; only revisions to earlier days are held."
   ]
  },
  {

@@ -116,6 +116,13 @@ describe("anomaly gate", () => {
     expect(compareRuns(prev, [o("g2", "2026-11-01", 0.2, "electricity_load_growth")], metrics).anomalies).toHaveLength(1);
   });
 
+  it("lets today's still-forming value update without review, but not earlier days", () => {
+    const prev = [o("t", "2026-11-03", 5), o("y", "2026-11-02", 5)];
+    const r = compareRuns(prev, [o("t", "2026-11-03", 4), o("y", "2026-11-02", 4)], metrics, "2026-11-03");
+    expect(r.revisions).toHaveLength(2);
+    expect(r.anomalies.map((a) => a.id)).toEqual(["y"]);
+  });
+
   it("raises nothing on a first run with no history", () => {
     expect(compareRuns([], [o("x", "2026-11-01", 999)], metrics).anomalies).toHaveLength(0);
   });

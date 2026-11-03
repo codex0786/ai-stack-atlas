@@ -72,7 +72,7 @@ export async function runFeeds(opts: { dataDir: string; only?: string[]; today?:
       const check = checkReferences({ ...before.catalog, sources: [...otherSources, ...merged.sources], observations: [...others, ...merged.observations] });
       if (check.errors.length) throw new Error(`validation: ${check.errors.slice(0, 5).join("; ")}`);
 
-      const diff = compareRuns(prev?.observations ?? [], merged.observations, metrics);
+      const diff = compareRuns(prev?.observations ?? [], merged.observations, metrics, today);
       const mergedIds = new Set(merged.observations.map((o) => o.id));
       const removed = [...prevIds].filter((id) => !mergedIds.has(id)).length;
       revisions.push(...diff.revisions);

@@ -93,7 +93,7 @@ export default async function MethodologyPage() {
             {Object.entries(THRESHOLDS).filter(([k]) => k !== "spec").map(([kind, t]) => (
               <li key={kind}><b>{kind}</b> metrics move by more than {kind === "growth" ? `${t * 100} percentage points` : `±${t * 100}%`};</li>
             ))}
-            <li>any already-published value is revised by more than {REVISION_THRESHOLD * 100}%.</li>
+            <li>any already-published value for an earlier day or period is revised by more than {REVISION_THRESHOLD * 100}%. Today&apos;s value for a live market (prices, demand) is still forming, so a later run the same day may update it without review.</li>
           </ul>
           <p>Every run must also pass schema validation, the test suite and a full site build. If a feed fails, the others still publish and the failure shows on that feed&apos;s freshness badge.</p>
 

@@ -19,7 +19,11 @@ export const THRESHOLDS: Record<Metric["kind"], number> = {
 /** A revision of an already-published value larger than this is always reviewed. */
 export const REVISION_THRESHOLD = 0.02;
 
-export function compareRuns(previous: Observation[], next: Observation[], metrics: Map<string, Metric>): { added: Observation[]; revisions: Revision[]; anomalies: Anomaly[] } {
+/**
+ * `today`: values for the current day are still forming (live markets re-quote all day), so
+ * re-running the same day updates them without counting as a revision to review.
+ */
+export function compareRuns(previous: Observation[], next: Observation[], metrics: Map<string, Metric>, today?: string): { added: Observation[]; revisions: Revision[]; anomalies: Anomaly[] } {
   const prevById = new Map(previous.map((o) => [o.id, o]));
   const prevBySeries = new Map<string, Observation[]>();
   for (const o of previous) {
@@ -38,7 +42,7 @@ export function compareRuns(previous: Observation[], next: Observation[], metric
       if (old.value === o.value) continue;
       revisions.push({ id: o.id, series, period: o.period, from: old.value, to: o.value });
       const change = rel(old.value, o.value);
-      if (Math.abs(change) > REVISION_THRESHOLD) {
+      if (Math.abs(change) > REVISION_THRESHOLD && o.period !== today) {
         anomalies.push({ id: o.id, series, period: o.period, previous: old.value, next: o.value, change, reason: `revised by ${pct(change)}` });
       }
       continue;
