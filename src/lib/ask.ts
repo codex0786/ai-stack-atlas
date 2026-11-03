@@ -1,19 +1,26 @@
 import { fmt, fmtPeriod } from "./format";
 import type { Cited } from "./site";
+import { USE_CASE_WORDS } from "./usecases";
 
-// "Ask the atlas": retrieval over the fact base. Every answer is built from these documents,
-// whether the words come from a template (free, always on) or from Claude (when enabled).
-// Pure functions, shared by the browser (instant search) and the /api/ask route.
+// "Ask the atlas": rule-based answers over the fact base. A question is matched to documents
+// (BM25 search), then a fixed set of rules decides the kind of answer — comparison, trend,
+// forecast, recommendation, insight or plain figure — and fills a fixed template from the
+// sourced facts. No language model: the same question always gets the same answer.
 
 export interface AskDoc {
   id: string;
-  kind: "series" | "page" | "usecase";
+  kind: "series" | "page" | "usecase" | "forecast" | "insight";
   title: string;
   /** Searchable text (entity, metric, qualifiers, layer, definition, aliases). */
   text: string;
   href: string;
   /** The series' current value with full provenance (series docs only). */
   cited?: Cited;
+  /** The previous period's value, for trend answers (series docs only). */
+  prev?: Cited;
+  /** Atlas entity behind a series, for comparisons. */
+  entity?: string;
+  metric?: string;
   /** Short context shown with the result (pages, use cases). */
   summary?: string;
 }
@@ -117,4 +124,85 @@ export function templateAnswer(query: string, hits: Hit[]): string {
     if (related.length) parts.push(`Related: ${related.map((h) => `${h.doc.title} ${fmt(h.doc.cited!)} (${fmtPeriod(h.doc.cited!.period)})`).join("; ")}.`);
   }
   return parts.join(" ");
+}
+
+/* ── Rules ──────────────────────────────────────────────────────────────── */
+
+export type AnswerKind = "comparison" | "trend" | "forecast" | "recommendation" | "insight" | "figure" | "page" | "none";
+export interface Answer { kind: AnswerKind; text: string; hits: Hit[] }
+
+const RULES = {
+  compare: /\b(vs\.?|versus|compare|compared|comparison|than|difference between)\b/,
+  trend: /\b(grow|grew|growth|growing|trend|change|changed|increase|increased|rise|rising|fall|falling|decline|how fast|over time|year on year|yoy)\b/,
+  model: /\b(which|what|best|recommend\w*|should (we|i) use|choose|pick)\b.*\b(model|llm|ai)\b/,
+  forecast: /\b(forecast|predict|prediction|projection|project(ed)?|will|expect(ed)?|next (quarter|year|month)|outlook|20(2[7-9]|3\d))\b/,
+};
+
+const pct = (x: number) => `${x >= 0 ? "+" : "−"}${Math.abs(x * 100).toFixed(Math.abs(x) < 0.1 ? 1 : 0)}%`;
+
+function comparison(hits: Hit[]): { text: string; pair: Hit[] } | undefined {
+  const lead = hits.find((h) => h.doc.cited);
+  if (!lead) return undefined;
+  // The best-matching other entity measured on the same metric (and in the same currency).
+  const other = hits.find((h) => h.doc.cited && h.doc.metric === lead.doc.metric && h.doc.entity !== lead.doc.entity && h.doc.cited.currency === lead.doc.cited!.currency);
+  if (!other) return undefined;
+  const a = lead.doc.cited!, b = other.doc.cited!;
+  const name = (d: AskDoc) => d.title.split(" — ")[0]!;
+  // Lead with the larger value: "Amazon is 2.0× Microsoft".
+  const [big, small] = a.value >= b.value ? [lead.doc, other.doc] : [other.doc, lead.doc];
+  const ratio = big.cited!.value / small.cited!.value;
+  const samePeriod = a.period === b.period ? "" : ` Note the periods differ (${fmtPeriod(a.period)} vs ${fmtPeriod(b.period)}).`;
+  return { pair: [lead, other], text: `${lead.doc.title}: ${fmt(a)} (${fmtPeriod(a.period)}) vs ${other.doc.title}: ${fmt(b)} (${fmtPeriod(b.period)}). ${name(big)} is ${ratio.toFixed(ratio >= 10 ? 0 : 1)}× ${name(small)}.${samePeriod} Sources: ${a.source.publisher}${b.source.publisher !== a.source.publisher ? `, ${b.source.publisher}` : ""}.` };
+}
+
+function trend(hits: Hit[]): { text: string; hit: Hit } | undefined {
+  const h = hits.find((x) => x.doc.cited && x.doc.prev);
+  if (!h) return undefined;
+  const now = h.doc.cited!, before = h.doc.prev!;
+  const change = now.kind === "growth" || now.unit === "share" ? undefined : now.value / before.value - 1;
+  return { hit: h, text: `${h.doc.title} moved from ${fmt(before)} (${fmtPeriod(before.period)}) to ${fmt(now)} (${fmtPeriod(now.period)})${change !== undefined ? `, a change of ${pct(change)}` : ""}, per ${now.source.publisher}. The full history is on the ${h.doc.title.split(" — ")[0]} page.` };
+}
+
+/** The facts to show with an answer: its own documents first, then same-entity figures. */
+function related(primary: Hit[], hits: Hit[], max = 6): Hit[] {
+  const hrefs = new Set(primary.map((h) => h.doc.href));
+  const rest = strong(hits).filter((h) => !primary.includes(h) && h.doc.cited && hrefs.has(h.doc.href));
+  return [...primary, ...rest].slice(0, max);
+}
+
+/** Answer a question with fixed rules. Deterministic: same index and question, same answer. */
+export function answerQuestion(docs: AskDoc[], query: string): Answer {
+  const q = query.toLowerCase();
+  const hits = search(docs, query, 12);
+  if (!hits.length) return { kind: "none", text: templateAnswer(query, hits), hits };
+  const best = hits[0]!;
+
+  if (RULES.forecast.test(q)) {
+    const f = hits.find((h) => h.doc.kind === "forecast") ?? search(docs.filter((d) => d.kind === "forecast"), query, 1)[0];
+    if (f) return { kind: "forecast", text: f.doc.summary ?? f.doc.title, hits: [f] };
+  }
+  if (RULES.model.test(q)) {
+    // "Which model for X": a business-problem match first, else the general insights.
+    // Only when the question names a problem (its own words), so "cheapest model" stays general.
+    const words = new Set(tokenize(query));
+    const named = docs.filter((d) => d.kind === "usecase" && tokenize(USE_CASE_WORDS[d.id.slice(2)] ?? "").some((w) => words.has(w)));
+    const uc = search(named, query, 1)[0];
+    if (uc) return { kind: "recommendation", text: uc.doc.summary!, hits: [uc] };
+    const ins = search(docs.filter((d) => d.kind === "insight"), query, 1)[0];
+    if (ins) return { kind: "insight", text: ins.doc.summary!, hits: [ins] };
+  }
+  if (RULES.compare.test(q)) {
+    const c = comparison(hits);
+    if (c) return { kind: "comparison", text: c.text, hits: related(c.pair, hits, 4) };
+  }
+  if (RULES.trend.test(q)) {
+    const t = trend(hits);
+    if (t) return { kind: "trend", text: t.text, hits: related([t.hit], hits, 4) };
+  }
+  if (best.doc.kind === "usecase") return { kind: "recommendation", text: best.doc.summary!, hits: [best] };
+  if (best.doc.kind === "insight") return { kind: "insight", text: best.doc.summary!, hits: [best] };
+  if (best.doc.kind === "forecast") return { kind: "forecast", text: best.doc.summary!, hits: [best] };
+  if (best.doc.kind === "page" && !hits.some((h) => h.doc.cited && h.score >= best.score * 0.85)) return { kind: "page", text: best.doc.summary!, hits: [best] };
+  const lead = hits.find((h) => h.doc.cited);
+  return { kind: "figure", text: templateAnswer(query, hits), hits: lead ? related([lead], hits) : hits.slice(0, 1) };
 }

@@ -16,8 +16,8 @@ export default function AskPage() {
           <div className="eyebrow">Ask</div>
           <h1 className="sec-title" style={{ fontSize: "clamp(30px, 4.5vw, 46px)" }}>Ask the atlas</h1>
           <p className="sec-lede">
-            Questions are answered only from the atlas&apos;s facts — every figure links to its source, period and how it was checked. If the atlas doesn&apos;t cover something,
-            it says so rather than guessing. <Link href="/methodology">How the data works</Link>.
+            Ask about companies, chips, prices, models, power or India. Answers come from fixed rules over the atlas&apos;s sourced facts — comparisons, trends, forecasts,
+            model recommendations or the latest figure — with every number linked to its source. If the atlas doesn&apos;t cover something, it says so rather than guessing. <Link href="/methodology">How the data works</Link>.
           </p>
         </Reveal>
         <div style={{ marginTop: 24 }}><AskBox /></div>

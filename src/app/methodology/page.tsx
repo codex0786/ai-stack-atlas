@@ -132,10 +132,11 @@ export default async function MethodologyPage() {
 
           <h3 id="ask">Ask</h3>
           <p>
-            Questions are matched against an index of every series&apos; current value, the dashboard&apos;s recommendations and the site&apos;s pages (BM25 ranking with synonyms, so
-            &ldquo;spending&rdquo; finds capex). The search answer is assembled from the top matches with no model involved. When enabled, Claude (Claude Opus 5.5) writes an answer from
-            the same numbered facts only, cites each figure as [n], and says when the atlas doesn&apos;t cover a question; if a safety classifier declines, the request falls back
-            server-side to Anthropic&apos;s recommended model. AI answers are rate-limited per visitor and per day.
+            Ask uses fixed rules, not an AI model. A question is matched against an index of every series&apos; current and previous value, the dashboard&apos;s
+            recommendations, the forecast ledger, precomputed insights and the site&apos;s pages (BM25 ranking with synonyms, so &ldquo;spending&rdquo; finds capex). The
+            wording then picks a rule — comparison (&ldquo;vs&rdquo;, &ldquo;compare&rdquo;), trend (&ldquo;growth&rdquo;, &ldquo;how fast&rdquo;), forecast (&ldquo;next
+            quarter&rdquo;, &ldquo;will&rdquo;), model recommendation (&ldquo;which model for…&rdquo;), insight (&ldquo;cheapest&rdquo;, &ldquo;most capable&rdquo;) or the
+            latest figure — and fills a fixed template from the sourced facts. The same question always gets the same answer, and every figure is listed with its source.
           </p>
 
           <h2>6. The anomaly gate</h2>

@@ -101,3 +101,16 @@ export const USE_CASES: UseCase[] = [
     caveat: "Self-hosting cost is GPUs, not tokens: the price shown is what third-party hosts charge, a proxy for running it yourself.",
   },
 ];
+
+/** Everyday words that name each business problem — Ask routes "best model for coding" with these. */
+export const USE_CASE_WORDS: Record<string, string> = {
+  support: "customer support service chatbot chat bot help desk helpdesk call centre contact center",
+  coding: "coding code programming programmer developer developers software engineering engineer devops",
+  research: "research report reports analysis analyst market competitive intelligence briefing",
+  documents: "contract contracts legal lawyer document documents pdf long review compliance",
+  extraction: "invoice invoices ocr form forms extraction extract data entry structured json receipts",
+  agents: "agent agents agentic automation automate workflow workflows rpa back office operations",
+  finance: "finance financial quant quantitative modelling modeling dcf accounting excel spreadsheet",
+  knowledge: "memo memos writing knowledge work office productivity strategy consulting",
+  private: "private on-premise premise prem self-host self-hosted hosting residency sensitive regulated confidential",
+};

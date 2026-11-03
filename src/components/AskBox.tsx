@@ -2,38 +2,28 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
-import { search, strong, templateAnswer, type AskDoc, type Hit } from "@/lib/ask";
-import type { AskRef } from "@/lib/askPrompt";
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
+import { answerQuestion, type Answer, type AskDoc } from "@/lib/ask";
 import { fmt, fmtPeriod } from "@/lib/format";
 import { Cite } from "./Cite";
 
 const EXAMPLES = [
-  "How much did Microsoft spend on capex last quarter?",
+  "Compare Microsoft and Amazon capex",
   "Which model is best for customer support?",
   "What does an H100 cost per hour?",
-  "How fast is frontier training compute growing?",
-  "What is India's data-centre capacity?",
+  "How fast is Alphabet capex growing?",
+  "What is the forecast for hyperscaler capex next quarter?",
   "Where does a dollar of AI spending go?",
 ];
 
-type Ai = { state: "idle" } | { state: "loading" } | { state: "done"; answer: string; refs: AskRef[] } | { state: "error"; message: string };
-
-/** Render "[n]" markers as links to the numbered facts below. */
-function withCitations(text: string, refs: AskRef[]): ReactNode[] {
-  return text.split(/(\[\d+\])/g).map((part, i) => {
-    const m = part.match(/^\[(\d+)\]$/);
-    const ref = m && refs.find((r) => r.n === Number(m[1]));
-    return ref ? <a key={i} href={`#ai-ref-${ref.n}`} className="cite-ref" title={ref.title}>[{ref.n}]</a> : <span key={i}>{part}</span>;
-  });
-}
+const KIND_LABEL: Record<Answer["kind"], string> = {
+  comparison: "Comparison", trend: "Trend", forecast: "Forecast", recommendation: "Recommendation", insight: "Insight", figure: "Latest figure", page: "Where to look", none: "No match",
+};
 
 export function AskBox() {
   const [q, setQ] = useState("");
   const [asked, setAsked] = useState("");
-  const [hits, setHits] = useState<Hit[]>([]);
-  const [aiEnabled, setAiEnabled] = useState(false);
-  const [ai, setAi] = useState<Ai>({ state: "idle" });
+  const [answer, setAnswer] = useState<Answer | null>(null);
   const index = useRef<Promise<AskDoc[]> | null>(null);
   const loadIndex = () => (index.current ??= fetch("/ask-index.json").then((r) => r.json() as Promise<AskDoc[]>));
 
@@ -41,35 +31,20 @@ export function AskBox() {
     const text = question.trim();
     if (!text) return;
     setAsked(text);
-    setAi({ state: "idle" });
-    setHits(search(await loadIndex(), text, 8));
+    setAnswer(answerQuestion(await loadIndex(), text));
     history.replaceState(null, "", `?q=${encodeURIComponent(text)}`);
   }, []);
 
   useEffect(() => {
-    fetch("/api/ask").then((r) => r.json()).then((j: { enabled?: boolean }) => setAiEnabled(Boolean(j.enabled))).catch(() => setAiEnabled(false));
     const initial = new URLSearchParams(location.search).get("q");
     if (initial) { setQ(initial); void run(initial); }
   }, [run]);
 
   const submit = (e: FormEvent) => { e.preventDefault(); void run(q); };
 
-  const askClaude = async () => {
-    setAi({ state: "loading" });
-    try {
-      const r = await fetch("/api/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question: asked }) });
-      const j = (await r.json()) as { answer?: string | null; refs?: AskRef[]; error?: string };
-      if (!r.ok || !j.answer) setAi({ state: "error", message: j.error ?? "No answer came back." });
-      else setAi({ state: "done", answer: j.answer, refs: j.refs ?? [] });
-    } catch {
-      setAi({ state: "error", message: "Couldn't reach the server." });
-    }
-  };
-
-  // Claude's answer cites facts by its own numbering; show the facts it was given in that order.
-  // The lead fact's company or chip first, then the rest by relevance.
-  const leadHref = hits.find((h) => h.doc.cited)?.doc.href;
-  const factList: Hit[] = strong(hits).sort((a, b) => Number(b.doc.href === leadHref) - Number(a.doc.href === leadHref));
+  // The rule engine already chose and ordered the facts for this kind of answer.
+  const facts = answer?.hits ?? [];
+  const first = facts[0]?.doc;
 
   return (
     <>
@@ -77,56 +52,28 @@ export function AskBox() {
         <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Ask about capex, prices, models, power, India…" aria-label="Your question" maxLength={400} autoFocus />
         <button type="submit" className="btn primary">Ask</button>
       </form>
-      {!asked && (
-        <div className="presets" style={{ marginTop: 14 }}>
-          {EXAMPLES.map((e) => <button key={e} type="button" onClick={() => { setQ(e); void run(e); }}>{e}</button>)}
-        </div>
-      )}
+      <div className="presets" style={{ marginTop: 14 }}>
+        {EXAMPLES.map((e) => <button key={e} type="button" onClick={() => { setQ(e); void run(e); }}>{e}</button>)}
+      </div>
 
-      {asked && (
+      {answer && (
         <motion.div key={asked} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
           <div className="card ask-answer">
-            <span className="small muted">Answer from the atlas&apos;s facts (search, no AI)</span>
-            <p>{templateAnswer(asked, hits)}</p>
-            {hits[0] && (hits[0].doc.kind !== "series") && <Link className="btn" href={hits[0].doc.href} style={{ alignSelf: "flex-start" }}>Open {hits[0].doc.title} →</Link>}
+            <span className="badge" style={{ alignSelf: "flex-start" }}>{KIND_LABEL[answer.kind]}</span>
+            <p>{answer.text}</p>
+            {first && answer.kind !== "none" && (
+              <Link className="btn" href={first.href} style={{ alignSelf: "flex-start" }}>
+                {first.kind === "series" ? `More on ${first.title.split(" — ")[0]}` : first.kind === "forecast" ? "Open Forecasts" : first.kind === "usecase" ? "Open the dashboard" : `Open ${first.title}`} →
+              </Link>
+            )}
           </div>
 
-          {aiEnabled ? (
-            <div className="card ask-answer">
-              <span className="small muted">Written by Claude, using only the atlas&apos;s facts</span>
-              {ai.state === "idle" && hits.length > 0 && <button type="button" className="btn" onClick={askClaude} style={{ alignSelf: "flex-start" }}>Write an answer with Claude</button>}
-              {ai.state === "loading" && <p className="muted">Reading the facts…</p>}
-              {ai.state === "done" && (
-                <>
-                  <p>{withCitations(ai.answer, ai.refs)}</p>
-                  {/* The exact facts Claude was given, in its numbering, so every [n] lands on the right one. */}
-                  <ol className="ask-facts">
-                    {ai.refs.filter((r) => ai.answer.includes(`[${r.n}]`)).map((r) => (
-                      <li key={r.id} id={`ai-ref-${r.n}`} className="card">
-                        <span className="badge">{r.n}</span>
-                        <div style={{ minWidth: 0 }}>
-                          <Link href={r.href}><b>{r.title}</b></Link>
-                          {r.cited ? (
-                            <div className="ask-fact-val"><b>{fmt(r.cited)}</b> <span className="small muted">{fmtPeriod(r.cited.period)} · {r.cited.status}</span> <Cite c={r.cited} /></div>
-                          ) : <div className="small muted">{r.summary}</div>}
-                        </div>
-                      </li>
-                    ))}
-                  </ol>
-                </>
-              )}
-              {ai.state === "error" && <p className="muted">{ai.message}</p>}
-            </div>
-          ) : (
-            <p className="small muted" style={{ marginTop: 10 }}>AI-written answers switch on when the site owner adds an Anthropic API key; search answers always work.</p>
-          )}
-
-          {factList.length > 0 && (
+          {facts.length > 0 && answer.kind !== "none" && (
             <>
               <h3 style={{ margin: "24px 0 10px", fontSize: 16 }}>The facts behind this answer</h3>
               <ol className="ask-facts">
-                {factList.map((h, i) => (
-                  <li key={h.doc.id} id={`fact-${i + 1}`} className="card">
+                {facts.map((h, i) => (
+                  <li key={h.doc.id} className="card">
                     <span className="badge">{i + 1}</span>
                     <div style={{ minWidth: 0 }}>
                       <Link href={h.doc.href}><b>{h.doc.title}</b></Link>
@@ -141,6 +88,7 @@ export function AskBox() {
               </ol>
             </>
           )}
+          <p className="small muted" style={{ marginTop: 14 }}>Answers are generated by fixed rules from the atlas&apos;s sourced facts — no AI model — so the same question always gets the same answer.</p>
         </motion.div>
       )}
     </>
