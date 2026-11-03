@@ -36,6 +36,7 @@ jobs:
           npm run validate > /dev/null
           npm test
           npm run build
+          npm run export-data
 
       - name: Publish release
         env:
@@ -48,7 +49,7 @@ jobs:
           fi
           PREV=$(git tag --list 'data-*' --sort=-creatordate | head -1)
           node -e '
-            const m = require("./out/data/manifest.json");
+            const m = require("./dist-data/manifest.json");
             const log = require("./data/changelog.json");
             const since = process.argv[1] ? log.filter((e) => e.at > process.argv[2]) : log.slice(0, 20);
             const lines = [
@@ -66,5 +67,5 @@ jobs:
             ];
             require("fs").writeFileSync("release-notes.md", lines.join("\n"));
           ' "$PREV" "$(git log -1 --format=%cI "$PREV" 2>/dev/null || echo)"
-          (cd out/data && zip -q ../../ai-stack-atlas-data.zip *)
-          gh release create "$TAG" out/data/* ai-stack-atlas-data.zip --title "Dataset $TAG" --notes-file release-notes.md
+          (cd dist-data && zip -q ../ai-stack-atlas-data.zip *)
+          gh release create "$TAG" dist-data/* ai-stack-atlas-data.zip --title "Dataset $TAG" --notes-file release-notes.md

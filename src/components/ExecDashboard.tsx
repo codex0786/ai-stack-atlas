@@ -50,6 +50,13 @@ export function ExecDashboard({ catalog, useCases }: { catalog: ModelCatalog; us
   const [ucId, setUcId] = useState(useCases[0]!.id);
   const uc = useCases.find((u) => u.id === ucId)!;
   const [volume, setVolume] = useState(uc.monthlyTasks);
+  // Deep links such as /dashboard#support open that business problem.
+  useEffect(() => {
+    const sync = () => { const h = location.hash.slice(1); if (useCases.some((u) => u.id === h)) setUcId(h); };
+    sync();
+    addEventListener("hashchange", sync);
+    return () => removeEventListener("hashchange", sync);
+  }, [useCases]);
   useEffect(() => setVolume(uc.monthlyTasks), [uc]);
 
   const pct = useMemo(() => benchmarkPercentiles(catalog.models), [catalog]);

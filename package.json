@@ -14,9 +14,11 @@
     "seed": "tsx scripts/seed.ts",
     "validate": "tsx scripts/validate.ts",
     "ingest": "tsx scripts/ingest.ts",
-    "forecast": "tsx scripts/forecast.ts"
+    "forecast": "tsx scripts/forecast.ts",
+    "export-data": "tsx scripts/export-data.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.4.0",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "motion": "^12.43.0",

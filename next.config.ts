@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
-// Static export: every page is pre-rendered from the seed files at build time, so the
-// deployed site is plain HTML/JS with no server or database.
+// Every page and data file is prerendered at build time from the seed and feed files; the only
+// code that runs per request is /api/ask (Claude-written answers, off until a key is set).
 const nextConfig: NextConfig = {
-  output: "export",
   reactStrictMode: true,
   poweredByHeader: false,
+  // /api/ask builds its search index from data/ at runtime; bundle those files with the function.
+  outputFileTracingIncludes: { "/api/ask": ["./data/**/*"] },
 };
 
 export default nextConfig;

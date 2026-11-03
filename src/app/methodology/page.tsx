@@ -130,6 +130,14 @@ export default async function MethodologyPage() {
             <li><b>Scenarios</b> are a supply-constrained chain — capex ÷ cost per accelerator is the demand, packaging capacity × accelerators per wafer is the supply, the fleet installed is the lesser, retired after its life, and fleet × kW × load gives TWh. They show what different assumptions imply; they are not forecasts and are not scored.</li>
           </ul>
 
+          <h3 id="ask">Ask</h3>
+          <p>
+            Questions are matched against an index of every series&apos; current value, the dashboard&apos;s recommendations and the site&apos;s pages (BM25 ranking with synonyms, so
+            &ldquo;spending&rdquo; finds capex). The search answer is assembled from the top matches with no model involved. When enabled, Claude (Claude Opus 5.5) writes an answer from
+            the same numbered facts only, cites each figure as [n], and says when the atlas doesn&apos;t cover a question; if a safety classifier declines, the request falls back
+            server-side to Anthropic&apos;s recommended model. AI answers are rate-limited per visitor and per day.
+          </p>
+
           <h2>6. The anomaly gate</h2>
           <p>Before anything publishes, each new value is compared with the previous period in its series. The run opens a pull request for human review instead of publishing when:</p>
           <ul>

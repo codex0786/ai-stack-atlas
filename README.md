@@ -26,7 +26,8 @@ npm run validate      # schema + reference checks, conflicts, evidence quality, 
 npm run seed          # rebuild data/atlas.db (refuses on any validation error)
 npm test
 npm run dev         # website on http://localhost:3000
-npm run build       # static export to out/ (also writes /data/*.csv and *.json downloads)
+npm run build       # prerenders every page and /data/* download (only /api/ask runs per request)
+npm run export-data # write the download files to dist-data/
 npm run ingest      # pull live feeds (add -- --only openrouter,eia to limit)
 ```
 

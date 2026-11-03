@@ -37,10 +37,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="wrap">
               <Link href="/" className="brand"><Logo />AI Stack Atlas</Link>
               <nav className="nav" aria-label="Main">
+                <Link href="/ask"><b>Ask</b></Link>
                 <Link href="/dashboard"><b>Dashboard</b></Link>
                 <Link href="/calculators">Calculators</Link>
-                <Link href="/value-flow">Value flow</Link>
-                <Link href="/india">India</Link>
+                <Link href="/value-flow" className="hide-md">Value flow</Link>
+                <Link href="/india" className="hide-md">India</Link>
                 <Link href="/forecasts">Forecasts</Link>
                 <Link href="/#live" className="hide-md">Live</Link>
                 <Link href="/explore" className="hide-md">Explore</Link>
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="wrap">
               <span>Every number links to its source. Tier 1 = primary, 2 = relay/analyst, 3 = secondary. Hollow dots = not yet verified; ⚙ = pulled automatically.</span>
               <span>
+                <Link href="/ask">Ask</Link> · <Link href="/dashboard">Dashboard</Link> · <Link href="/calculators">Calculators</Link> · <Link href="/value-flow">Value flow</Link> · <Link href="/india">India</Link> · <Link href="/forecasts">Forecasts</Link> · <Link href="/explore">Explore</Link> ·{" "}
                 <Link href="/methodology">Methodology</Link> · <Link href="/sources">Sources</Link> · <Link href="/downloads">Downloads</Link> · <Link href="/changelog">Changelog</Link> ·{" "}
                 <a href={REPO} target="_blank" rel="noopener noreferrer">GitHub</a> · Data CC BY 4.0 · Research, not investment advice.
               </span>

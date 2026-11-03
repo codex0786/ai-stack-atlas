@@ -8,3 +8,4 @@ data/*.db*
 next-env.d.ts
 .next
 out
+dist-data/

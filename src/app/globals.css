@@ -281,3 +281,15 @@ button.sort:hover { color: var(--ink); }
 .price-mode { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
 @media (max-width: 1180px) { .nav a.hide-md { display: none; } }
 .binding { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+
+/* Ask */
+.ask-form { display: flex; gap: 10px; }
+.ask-form input { flex: 1; min-width: 0; font: inherit; font-size: 17px; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.ask-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ask-answer { padding: 18px 20px; margin-top: 16px; display: flex; flex-direction: column; gap: 10px; }
+.ask-answer p { font-size: 16px; line-height: 1.6; }
+.ask-facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.ask-facts li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; scroll-margin-top: 80px; }
+.ask-facts li:target { border-color: var(--accent); }
+.ask-fact-val { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.cite-ref { font: 600 12px var(--mono); vertical-align: super; padding: 0 1px; }
