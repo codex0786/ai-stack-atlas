@@ -1,6 +1,6 @@
 {
  "feed": "eia",
- "updated": "2026-11-03T04:41:23.698Z",
+ "updated": "2026-11-03T05:50:53.792Z",
  "sources": [
   {
    "id": "eia_930_daily",
@@ -216,6 +216,20 @@
    "source_id": "eia_930_daily",
    "status": "actual",
    "confidence": 0.9,
+   "dims": {},
+   "id": "eia_ercot_demand_20261102",
+   "entity_id": "ercot",
+   "metric_id": "grid_demand",
+   "value": 1367.3,
+   "period": "2026-11-02",
+   "period_type": "point",
+   "method": "reported",
+   "published": "2026-11-03"
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
    "dims": {
     "window": "trailing_30d"
    },
@@ -228,6 +242,23 @@
    "method": "derived",
    "published": "2026-11-03",
    "note": "Average daily demand over the 30 days to 2026-11-01 vs the same weekdays a year earlier."
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {
+    "window": "trailing_30d"
+   },
+   "id": "eia_ercot_yoy30_20261102",
+   "entity_id": "ercot",
+   "metric_id": "electricity_load_growth",
+   "value": 0.0367,
+   "period": "2026-11-02",
+   "period_type": "point",
+   "method": "derived",
+   "published": "2026-11-03",
+   "note": "Average daily demand over the 30 days to 2026-11-02 vs the same weekdays a year earlier."
   },
   {
    "source_id": "eia_930_daily",
@@ -429,6 +460,20 @@
    "source_id": "eia_930_daily",
    "status": "actual",
    "confidence": 0.9,
+   "dims": {},
+   "id": "eia_pjm_demand_20261102",
+   "entity_id": "pjm",
+   "metric_id": "grid_demand",
+   "value": 2097,
+   "period": "2026-11-02",
+   "period_type": "point",
+   "method": "reported",
+   "published": "2026-11-03"
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
    "dims": {
     "window": "trailing_30d"
    },
@@ -441,6 +486,23 @@
    "method": "derived",
    "published": "2026-11-03",
    "note": "Average daily demand over the 30 days to 2026-11-01 vs the same weekdays a year earlier."
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {
+    "window": "trailing_30d"
+   },
+   "id": "eia_pjm_yoy30_20261102",
+   "entity_id": "pjm",
+   "metric_id": "electricity_load_growth",
+   "value": 0.0314,
+   "period": "2026-11-02",
+   "period_type": "point",
+   "method": "derived",
+   "published": "2026-11-03",
+   "note": "Average daily demand over the 30 days to 2026-11-02 vs the same weekdays a year earlier."
   },
   {
    "source_id": "eia_930_daily",
@@ -642,6 +704,20 @@
    "source_id": "eia_930_daily",
    "status": "actual",
    "confidence": 0.9,
+   "dims": {},
+   "id": "eia_us_lower48_demand_20261102",
+   "entity_id": "us_lower48",
+   "metric_id": "grid_demand",
+   "value": 10872.1,
+   "period": "2026-11-02",
+   "period_type": "point",
+   "method": "reported",
+   "published": "2026-11-03"
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
    "dims": {
     "window": "trailing_30d"
    },
@@ -654,6 +730,23 @@
    "method": "derived",
    "published": "2026-11-03",
    "note": "Average daily demand over the 30 days to 2026-11-01 vs the same weekdays a year earlier."
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {
+    "window": "trailing_30d"
+   },
+   "id": "eia_us_lower48_yoy30_20261102",
+   "entity_id": "us_lower48",
+   "metric_id": "electricity_load_growth",
+   "value": 0.0341,
+   "period": "2026-11-02",
+   "period_type": "point",
+   "method": "derived",
+   "published": "2026-11-03",
+   "note": "Average daily demand over the 30 days to 2026-11-02 vs the same weekdays a year earlier."
   }
  ]
 }

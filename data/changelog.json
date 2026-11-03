@@ -1,5 +1,94 @@
 [
  {
+  "at": "2026-11-03T05:50:53.792Z",
+  "kind": "ingest",
+  "title": "Data update: eia +6, gpu +0 (3 revised)",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "eia",
+    "ok": true,
+    "added": 6,
+    "revised": 0
+   },
+   {
+    "feed": "epoch",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "gpu",
+    "ok": true,
+    "added": 0,
+    "revised": 3
+   }
+  ],
+  "revisions": [
+   {
+    "id": "vast_a100_20261103",
+    "series": "a100|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-03",
+    "from": 0.73,
+    "to": 0.8
+   },
+   {
+    "id": "vast_b200_20261103",
+    "series": "b200|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-03",
+    "from": 8.75,
+    "to": 7.5
+   },
+   {
+    "id": "vast_h200_20261103",
+    "series": "h200|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-03",
+    "from": 5.27,
+    "to": 4.34
+   }
+  ],
+  "anomalies": [
+   {
+    "id": "vast_a100_20261103",
+    "series": "a100|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-03",
+    "previous": 0.73,
+    "next": 0.8,
+    "change": 0.0958904109589042,
+    "reason": "[gpu] revised by +9.6%"
+   },
+   {
+    "id": "vast_b200_20261103",
+    "series": "b200|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-03",
+    "previous": 8.75,
+    "next": 7.5,
+    "change": -0.14285714285714285,
+    "reason": "[gpu] revised by -14.3%"
+   },
+   {
+    "id": "vast_h200_20261103",
+    "series": "h200|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-03",
+    "previous": 5.27,
+    "next": 4.34,
+    "change": -0.17647058823529407,
+    "reason": "[gpu] revised by -17.6%"
+   }
+  ]
+ },
+ {
   "at": "2026-11-03T04:41:23.698Z",
   "kind": "ingest",
   "title": "Data update: openrouter +23, eia +0 (7 revised)",

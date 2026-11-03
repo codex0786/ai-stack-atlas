@@ -1,6 +1,6 @@
 {
  "feed": "gpu",
- "updated": "2026-11-03T04:37:00.524Z",
+ "updated": "2026-11-03T05:50:53.792Z",
  "sources": [
   {
    "id": "vast_ai_marketplace",
@@ -20,7 +20,7 @@
    "id": "vast_a100_20261103",
    "entity_id": "a100",
    "metric_id": "gpu_rental_price",
-   "value": 0.73,
+   "value": 0.8,
    "low": 0.4,
    "high": 1.21,
    "currency": "USD",
@@ -35,14 +35,14 @@
    "source_id": "vast_ai_marketplace",
    "published": "2026-11-03",
    "confidence": 0.75,
-   "note": "Median of 42 live offers; range is 10th–90th percentile."
+   "note": "Median of 40 live offers; range is 10th–90th percentile."
   },
   {
    "id": "vast_b200_20261103",
    "entity_id": "b200",
    "metric_id": "gpu_rental_price",
-   "value": 8.75,
-   "low": 7.5,
+   "value": 7.5,
+   "low": 6.86,
    "high": 8.75,
    "currency": "USD",
    "dims": {
@@ -56,15 +56,15 @@
    "source_id": "vast_ai_marketplace",
    "published": "2026-11-03",
    "confidence": 0.75,
-   "note": "Median of 6 live offers; range is 10th–90th percentile."
+   "note": "Median of 8 live offers; range is 10th–90th percentile."
   },
   {
    "id": "vast_h100_20261103",
    "entity_id": "h100",
    "metric_id": "gpu_rental_price",
    "value": 2.4,
-   "low": 2.4,
-   "high": 2.4,
+   "low": 2.16,
+   "high": 3.41,
    "currency": "USD",
    "dims": {
     "provider": "vast_ai",
@@ -77,15 +77,15 @@
    "source_id": "vast_ai_marketplace",
    "published": "2026-11-03",
    "confidence": 0.75,
-   "note": "Median of 10 live offers; range is 10th–90th percentile."
+   "note": "Median of 15 live offers; range is 10th–90th percentile."
   },
   {
    "id": "vast_h200_20261103",
    "entity_id": "h200",
    "metric_id": "gpu_rental_price",
-   "value": 5.27,
+   "value": 4.34,
    "low": 3.76,
-   "high": 6.83,
+   "high": 6.28,
    "currency": "USD",
    "dims": {
     "provider": "vast_ai",
@@ -98,7 +98,7 @@
    "source_id": "vast_ai_marketplace",
    "published": "2026-11-03",
    "confidence": 0.75,
-   "note": "Median of 10 live offers; range is 10th–90th percentile."
+   "note": "Median of 14 live offers; range is 10th–90th percentile."
   }
  ]
 }
