@@ -101,6 +101,15 @@ export default async function MethodologyPage() {
           </ul>
           <p>Prices are list prices and exclude enterprise discounts; benchmarks narrow the shortlist but do not replace a pilot on your own tasks. The use-case definitions live in <a href={`${REPO}/blob/main/src/lib/usecases.ts`} target="_blank" rel="noopener noreferrer">usecases.ts</a>.</p>
 
+          <h3 id="calculators">Cost calculators</h3>
+          <ul>
+            <li><b>GPU-hour cost</b> = capex × capital-recovery factor (WACC, life) ÷ used hours + grid power (W × PUE) × electricity price × 8,760 h ÷ used hours + annual opex ÷ used hours. Power is charged for every hour, used or not.</li>
+            <li><b>Training run</b>: GPU-hours = FLOP ÷ (peak FLOP/s × MFU × 3,600); compute ≈ 6 × parameters × tokens. Excludes staff, experiments and failed runs.</li>
+            <li><b>Inference</b>: tokens per second ≈ peak FLOP/s × serving utilisation ÷ (2 × active parameters) — a compute-bound estimate that ignores memory-bandwidth limits and prompt processing.</li>
+            <li><b>Data-centre power</b>: MW = GPUs × W × PUE; TWh per year = MW × load × 8,760 h.</li>
+          </ul>
+          <p>Sourced defaults (H100 power and throughput, rental prices, training runs, IEA consumption) carry source chips; everything else is a labelled assumption. Formulas are in <a href={`${REPO}/blob/main/src/lib/calculators.ts`} target="_blank" rel="noopener noreferrer">calculators.ts</a> with tests.</p>
+
           <h2>6. The anomaly gate</h2>
           <p>Before anything publishes, each new value is compared with the previous period in its series. The run opens a pull request for human review instead of publishing when:</p>
           <ul>

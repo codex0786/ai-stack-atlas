@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CatalogModel, ModelCatalog } from "@/lib/models";
 import { benchmarkPercentiles, recommend, type Scored } from "@/lib/recommend";
@@ -90,8 +90,8 @@ export function ExecDashboard({ catalog, useCases }: { catalog: ModelCatalog; us
       <section style={{ paddingTop: 8 }}>
         <div className="wrap">
           <div className="eyebrow">Step 2 · Recommendation</div>
-          <AnimatePresence mode="wait">
-            <motion.div key={uc.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.3 }}>
+          {/* Fade in only (no exit wait), so quick clicks between problems never blank the panel. */}
+          <motion.div key={uc.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
               {pick ? (
                 <div className="pick-grid">
                   <div className="card pick">
@@ -126,8 +126,7 @@ export function ExecDashboard({ catalog, useCases }: { catalog: ModelCatalog; us
                   </div>
                 </div>
               ) : <div className="card pick"><p>No model meets this workload&apos;s requirements.</p></div>}
-            </motion.div>
-          </AnimatePresence>
+          </motion.div>
 
           <h3 style={{ margin: "28px 0 4px", fontSize: 18 }}>Shortlist for {uc.name.toLowerCase()} <span className="small muted">({rec.eligible.length} models qualify, {rec.excluded} excluded by requirements)</span></h3>
           <p className="small muted" style={{ marginBottom: 10 }}>Ranked by the balance of quality and cost for this problem. Models below {Math.round((uc.qualityFloor ?? 0.85) * 100)}% of the best quality are listed after the rest and never recommended.</p>

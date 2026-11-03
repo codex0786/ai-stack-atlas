@@ -38,7 +38,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <Link href="/" className="brand"><Logo />AI Stack Atlas</Link>
               <nav className="nav" aria-label="Main">
                 <Link href="/dashboard"><b>Dashboard</b></Link>
-                <Link href="/#live">Live</Link>
+                <Link href="/calculators">Calculators</Link>
+                <Link href="/#live" className="hide-sm">Live</Link>
                 <Link href="/explore">Explore</Link>
                 <Link href="/sources" className="hide-sm">Sources</Link>
                 <Link href="/downloads">Data</Link>
