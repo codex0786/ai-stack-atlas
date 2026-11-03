@@ -25,6 +25,7 @@ export const HYPERSCALER_SUM = ["microsoft", "alphabet", "amazon", "meta"] as co
 const CONCEPTS: Record<string, { concepts: string[]; instant: boolean }> = {
   capex: { concepts: ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"], instant: false },
   revenue: { concepts: ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "RevenueFromContractWithCustomerIncludingAssessedTax"], instant: false },
+  cost_of_revenue: { concepts: ["CostOfRevenue", "CostOfGoodsAndServicesSold"], instant: false },
   long_term_debt: { concepts: ["LongTermDebtNoncurrent", "LongTermDebt", "LongTermNotesPayable", "LongTermDebtAndCapitalLeaseObligations", "OtherLongTermDebtNoncurrent"], instant: true },
   contract_backlog: { concepts: ["RevenueRemainingPerformanceObligation"], instant: true },
 };

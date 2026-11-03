@@ -1,5 +1,20 @@
 [
  {
+  "at": "2026-11-03T07:12:48.768Z",
+  "kind": "ingest",
+  "title": "Data update: edgar +141",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 141,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-03T06:29:08.355Z",
   "kind": "ingest",
   "title": "Data update: no new values",

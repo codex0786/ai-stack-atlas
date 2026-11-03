@@ -110,6 +110,15 @@ export default async function MethodologyPage() {
           </ul>
           <p>Sourced defaults (H100 power and throughput, rental prices, training runs, IEA consumption) carry source chips; everything else is a labelled assumption. Formulas are in <a href={`${REPO}/blob/main/src/lib/calculators.ts`} target="_blank" rel="noopener noreferrer">calculators.ts</a> with tests.</p>
 
+          <h3 id="value-flow">Where $1 of AI spend goes</h3>
+          <p>
+            One dollar is followed down the stack: an AI app keeps 1 − (share paid to model APIs); a lab keeps 1 − (share spent on compute, from Anthropic&apos;s reported revenue per
+            compute dollar); a cloud keeps its margin (H100 market median price vs the GPU-hour calculator&apos;s cost); the operator&apos;s cost splits into hardware, energy and facilities
+            (calculator defaults); hardware splits between the GPU vendor and other equipment; the vendor keeps its gross margin (NVIDIA, last four quarters of 10-Q/10-K filings) and pays
+            memory, foundry and other suppliers. Sourced splits carry source chips; the app share, vendor share of capex and supplier split are assumptions. The flow conserves every cent
+            (tested). It describes today&apos;s operating spend, not capex bought ahead of demand.
+          </p>
+
           <h2>6. The anomaly gate</h2>
           <p>Before anything publishes, each new value is compared with the previous period in its series. The run opens a pull request for human review instead of publishing when:</p>
           <ul>

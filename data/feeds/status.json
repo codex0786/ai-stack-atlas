@@ -3,10 +3,10 @@
   "name": "SEC EDGAR filings",
   "cadenceHours": 24,
   "homepage": "https://www.sec.gov/edgar/search/",
-  "lastRun": "2026-11-03T05:50:53.792Z",
-  "lastSuccess": "2026-11-03T05:50:53.792Z",
+  "lastRun": "2026-11-03T07:12:48.768Z",
+  "lastSuccess": "2026-11-03T07:12:48.768Z",
   "ok": true,
-  "observations": 594
+  "observations": 735
  },
  "openrouter": {
   "name": "OpenRouter list prices",

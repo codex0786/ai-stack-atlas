@@ -279,3 +279,4 @@ button.sort:hover { color: var(--ink); }
 .presets button, .price-mode button { font: inherit; font-size: 12.5px; padding: 5px 10px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-2); color: var(--ink-2); cursor: pointer; }
 .presets button.on, .price-mode button.on { border-color: var(--accent); color: var(--ink); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
 .price-mode { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+@media (max-width: 1180px) { .nav a.hide-md { display: none; } }

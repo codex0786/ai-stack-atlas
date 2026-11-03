@@ -99,7 +99,11 @@ export default async function Home() {
                 <h2 style={{ fontSize: 22 }}>Which AI model should your business use?</h2>
                 <p className="muted" style={{ marginTop: 4 }}>Every priced model compared on capability, cost and fit — with a recommendation for nine business problems.</p>
               </div>
-              <Link className="btn primary" href="/dashboard">Open the dashboard →</Link>
+              <span style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+                <Link className="btn primary" href="/dashboard">Open the dashboard →</Link>
+                <Link className="btn" href="/value-flow">Where $1 goes</Link>
+                <Link className="btn" href="/calculators">Cost calculators</Link>
+              </span>
             </div>
           </Reveal>
         </div>

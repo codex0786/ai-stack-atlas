@@ -27,6 +27,15 @@
   kind: flow
   definition: Recognised revenue for the period (booked, not annualised).
 
+- id: cost_of_revenue
+  name: Cost of revenue
+  layer: CAP
+  unit: ""
+  monetary: true
+  kind: flow
+  definition: Direct cost of the goods and services sold in the period, as reported (gross margin = 1 − cost of revenue ÷ revenue).
+  caveats: What counts as cost of revenue differs by company — e.g. whether data-centre depreciation sits in it.
+
 - id: revenue_run_rate
   name: Revenue run-rate
   layer: CAP

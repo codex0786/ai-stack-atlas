@@ -39,12 +39,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <nav className="nav" aria-label="Main">
                 <Link href="/dashboard"><b>Dashboard</b></Link>
                 <Link href="/calculators">Calculators</Link>
+                <Link href="/value-flow">Value flow</Link>
                 <Link href="/#live" className="hide-sm">Live</Link>
                 <Link href="/explore">Explore</Link>
-                <Link href="/sources" className="hide-sm">Sources</Link>
+                <Link href="/sources" className="hide-md">Sources</Link>
                 <Link href="/downloads">Data</Link>
-                <Link href="/methodology" className="hide-sm">Method</Link>
-                <Link href="/changelog" className="hide-sm">Changelog</Link>
+                <Link href="/methodology" className="hide-md">Method</Link>
+                <Link href="/changelog" className="hide-md">Changelog</Link>
               </nav>
               <ThemeToggle />
             </div>
