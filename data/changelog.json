@@ -1,5 +1,49 @@
 [
  {
+  "at": "2026-11-03T07:38:16.074Z",
+  "kind": "ingest",
+  "title": "Data update: openrouter +0 (4 revised)",
+  "feeds": [
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 0,
+    "revised": 4
+   }
+  ],
+  "revisions": [
+   {
+    "id": "or_deepseek_input_20261103",
+    "series": "deepseek|llm_api_price_median|USD|direction=input,platform=openrouter",
+    "period": "2026-11-03",
+    "from": 0.25,
+    "to": 0.2574
+   },
+   {
+    "id": "or_deepseek_output_20261103",
+    "series": "deepseek|llm_api_price_median|USD|direction=output,platform=openrouter",
+    "period": "2026-11-03",
+    "from": 0.6468,
+    "to": 0.95
+   },
+   {
+    "id": "or_meta_input_20261103",
+    "series": "meta|llm_api_price_median|USD|direction=input,platform=openrouter",
+    "period": "2026-11-03",
+    "from": 0.1,
+    "to": 0.14
+   },
+   {
+    "id": "or_meta_output_20261103",
+    "series": "meta|llm_api_price_median|USD|direction=output,platform=openrouter",
+    "period": "2026-11-03",
+    "from": 0.31,
+    "to": 0.3175
+   }
+  ],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-03T07:23:57.708Z",
   "kind": "ingest",
   "title": "Data update: edgar +4",
