@@ -43,5 +43,15 @@
   "lastSuccess": "2026-11-03T05:50:53.792Z",
   "ok": true,
   "observations": 4
+ },
+ "models": {
+  "name": "Model catalog (prices × benchmarks)",
+  "cadenceHours": 24,
+  "homepage": "https://epoch.ai/benchmarks",
+  "lastRun": "2026-11-03T06:29:08.355Z",
+  "lastSuccess": "2026-11-03T06:29:08.355Z",
+  "ok": true,
+  "observations": 119,
+  "unit": "models"
  }
 }

@@ -1,8 +1,10 @@
 import { execSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { ChangelogEntry, FeedStatus } from "../feeds/types";
 import { DATA_DIR, loadCatalog, type Catalog } from "./catalog";
+import type { ModelCatalog } from "./models";
 import { LAYERS } from "./ontology";
 import { dimsKey, latest, periodEnd, resolve, type Fact } from "./resolver";
 import type { Entity, Metric, Observation, Source } from "./schema";
@@ -186,4 +188,12 @@ export function datasetVersion(): { date: string; commit: string } {
   let commit = process.env.VERCEL_GIT_COMMIT_SHA ?? "";
   if (!commit) { try { commit = execSync("git rev-parse HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim(); } catch {} }
   return { date, commit: commit.slice(0, 7) || "local" };
+}
+
+/* ── Model catalog (executive dashboard) ──────────────────────────────────── */
+
+
+/** data/models.json, written by the models feed; undefined until it has run. */
+export function modelCatalog(): ModelCatalog | undefined {
+  try { return JSON.parse(readFileSync(path.join(DATA_DIR, "models.json"), "utf8")) as ModelCatalog; } catch { return undefined; }
 }

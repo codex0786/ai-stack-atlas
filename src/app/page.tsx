@@ -90,6 +90,21 @@ export default async function Home() {
       </section>
 
 
+      <section style={{ padding: "8px 0 0" }}>
+        <div className="wrap">
+          <Reveal>
+            <div className="card cta-band">
+              <div>
+                <div className="eyebrow" style={{ marginBottom: 6 }}>New · Executive dashboard</div>
+                <h2 style={{ fontSize: 22 }}>Which AI model should your business use?</h2>
+                <p className="muted" style={{ marginTop: 4 }}>Every priced model compared on capability, cost and fit — with a recommendation for nine business problems.</p>
+              </div>
+              <Link className="btn primary" href="/dashboard">Open the dashboard →</Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section id="live">
         <div className="wrap">
           <Reveal>
@@ -103,7 +118,7 @@ export default async function Home() {
                 <div className="card feed">
                   <h3>{s.name}</h3>
                   <Freshness at={s.lastSuccess} tried={s.lastRun} cadenceHours={s.cadenceHours} ok={s.ok} />
-                  <span className="small muted">{s.observations.toLocaleString("en-US")} numbers · every {s.cadenceHours} h · <a href={s.homepage} target="_blank" rel="noopener noreferrer">source ↗</a></span>
+                  <span className="small muted">{s.observations.toLocaleString("en-US")} {s.unit ?? "numbers"} · every {s.cadenceHours} h · <a href={s.homepage} target="_blank" rel="noopener noreferrer">source ↗</a></span>
                   {!s.ok && s.error && <span className="err">Last run: {s.error.length > 140 ? `${s.error.slice(0, 140)}…` : s.error}</span>}
                 </div>
               </Reveal>

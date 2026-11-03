@@ -1,5 +1,5 @@
 import { SITE_URL } from "./constants";
-import { datasetVersion, type SiteData } from "./site";
+import { datasetVersion, modelCatalog, type SiteData } from "./site";
 
 // Open downloads, generated at build time from the same catalog the pages use.
 
@@ -59,6 +59,17 @@ export function buildDownloads(site: SiteData): Download[] {
   add({ file: "entities.json", type: "application/json", title: "Entities", rows: catalog.entities.length, description: "Companies, chips, segments and grid regions with their layers and segments.", body: JSON.stringify(catalog.entities) });
   add({ file: "metrics.json", type: "application/json", title: "Metric dictionary", rows: catalog.metrics.length, description: "Definitions, units, allowed qualifiers and caveats for every metric.", body: JSON.stringify(catalog.metrics) });
   add({ file: "edges.json", type: "application/json", title: "Relationships", rows: catalog.edges.length, description: "Supply, investment, compute-rental and hosting links between entities.", body: JSON.stringify(catalog.edges) });
+
+  const models = modelCatalog();
+  if (models) {
+    const rows = models.models.map((m) => [m.id, m.name, m.lab, m.openWeights, m.released, m.eci, m.eciLow, m.eciHigh, m.price.input, m.price.output, m.price.cachedInput,
+      m.batchPrice?.input, m.batchPrice?.output, m.context, m.maxOutput, m.inputs.join(";"), m.tools, m.structured, m.reasoning,
+      Object.entries(m.bench).map(([k, v]) => `${k}=${v.toFixed(3)}`).join(";")]);
+    add({ file: "models.csv", type: "text/csv; charset=utf-8", title: "Model catalog (CSV)", rows: rows.length,
+      description: `Every priced model Epoch AI has benchmarked: list prices (USD per million tokens, OpenRouter, ${models.pricesAsOf}), capability index with 90% interval, context, capabilities and benchmark scores.`,
+      body: csv([["openrouter_id", "name", "lab", "open_weights", "released", "eci", "eci_low", "eci_high", "price_input", "price_output", "price_cached_input",
+        "batch_input", "batch_output", "context_tokens", "max_output_tokens", "inputs", "tools", "structured_outputs", "reasoning", "benchmarks"], ...rows]) });
+  }
 
   const manifest = {
     name: "AI Stack Atlas", version: version.date, commit: version.commit, generated: new Date().toISOString(), license: LICENSE, citation: citation(version), homepage: SITE_URL,

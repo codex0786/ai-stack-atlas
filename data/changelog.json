@@ -1,5 +1,20 @@
 [
  {
+  "at": "2026-11-03T06:29:08.355Z",
+  "kind": "ingest",
+  "title": "Data update: no new values",
+  "feeds": [
+   {
+    "feed": "models",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-03T05:50:53.792Z",
   "kind": "ingest",
   "title": "Data update: eia +6, gpu +0 (3 revised) — reviewed",

@@ -87,6 +87,20 @@ export default async function MethodologyPage() {
           <h3>GPU marketplace</h3>
           <p>Live on-demand offers on the Vast.ai marketplace for H100 SXM, H200, B200 and A100 SXM4: the median price per GPU-hour (total hourly price ÷ GPUs in the offer) with the 10th–90th percentile spread. Marketplace offers from independent hosts usually sit well below hyperscaler list prices.</p>
 
+          <h3 id="dashboard">Model catalog and the executive dashboard</h3>
+          <p>
+            Daily, every model on OpenRouter is joined by name to Epoch AI&apos;s Capabilities Index (ECI) and per-benchmark results (CC BY); models without a list price or an ECI score are left out.
+            For each business problem the dashboard fixes a workload (tokens per task, cacheable share, batch eligibility, monthly volume) and hard requirements (context length, vision, tools,
+            structured output, open weights). Then:
+          </p>
+          <ul>
+            <li><b>Quality</b> = 0.6 × capability index (scaled 0–1 across the catalog) + 0.4 × the model&apos;s average percentile on the problem&apos;s benchmarks, when it has any; otherwise the index alone. A model that has never been measured on a problem&apos;s benchmarks (when other models have) keeps 95% of its index score — a small uncertainty discount, labelled &ldquo;untested on this task&rdquo;.</li>
+            <li><b>Cost per task</b> = uncached input × input price + cached input × cache price + output × output price, using batch prices when the work can run overnight.</li>
+            <li><b>Score</b> = w × quality + (1 − w) × cheapness (cost on a log scale), where w is the problem&apos;s quality weight (0.3 for bulk extraction up to 0.8 for coding, research and agents).</li>
+            <li><b>Recommendation</b> = the highest score among models reaching 85% of the best eligible model&apos;s quality (80% for bulk extraction), so a far cheaper but clearly weaker model never wins on price alone. <b>Near-top quality, lowest cost</b> = the cheapest model within 0.08 of the top quality. <b>Best open-weight</b> applies the same quality bar within open-weight models.</li>
+          </ul>
+          <p>Prices are list prices and exclude enterprise discounts; benchmarks narrow the shortlist but do not replace a pilot on your own tasks. The use-case definitions live in <a href={`${REPO}/blob/main/src/lib/usecases.ts`} target="_blank" rel="noopener noreferrer">usecases.ts</a>.</p>
+
           <h2>6. The anomaly gate</h2>
           <p>Before anything publishes, each new value is compared with the previous period in its series. The run opens a pull request for human review instead of publishing when:</p>
           <ul>

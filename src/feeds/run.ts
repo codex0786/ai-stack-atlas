@@ -5,13 +5,14 @@ import type { Observation, Source } from "../lib/schema";
 import { compareRuns } from "./anomaly";
 import { edgarFeed } from "./edgar";
 import { eiaFeed } from "./eia";
+import { modelsFeed } from "./models";
 import { epochFeed } from "./epoch";
 import { redact } from "./http";
 import { openrouterFeed } from "./openrouter";
 import { vastFeed } from "./vast";
 import type { Anomaly, ChangelogEntry, Feed, FeedFile, FeedOutput, FeedStatus, Revision } from "./types";
 
-export const FEEDS: Feed[] = [edgarFeed, openrouterFeed, eiaFeed, epochFeed, vastFeed];
+export const FEEDS: Feed[] = [edgarFeed, openrouterFeed, eiaFeed, epochFeed, vastFeed, modelsFeed];
 
 const MAX_CHANGELOG = 300;
 
@@ -82,8 +83,17 @@ export async function runFeeds(opts: { dataDir: string; only?: string[]; today?:
         await write(file, merged);
         changed = true;
       }
+      // Side files: rewrite only when the content (ignoring generation time) changed.
+      let artifactItems = 0;
+      for (const [name, data] of Object.entries(out.artifacts ?? {})) {
+        const target = path.join(opts.dataDir, `${name}.json`);
+        const old = await readJson<object | undefined>(target, undefined);
+        const strip = (x: object | undefined) => JSON.stringify({ ...x, generated: undefined });
+        if (strip(old) !== strip(data)) { await write(target, data); changed = true; }
+        artifactItems += data.models?.length ?? 0;
+      }
       feedSummaries.push({ feed: feed.id, ok: true, added: diff.added.length, revised: diff.revisions.length });
-      Object.assign(status, { ok: true, lastSuccess: now, observations: merged.observations.length });
+      Object.assign(status, { ok: true, lastSuccess: now, observations: merged.observations.length || artifactItems, unit: artifactItems && !merged.observations.length ? "models" : undefined });
     } catch (err) {
       const msg = redact((err as Error).message).slice(0, 300);
       status.error = msg;

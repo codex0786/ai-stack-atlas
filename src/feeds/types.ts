@@ -6,6 +6,8 @@ import type { Observation, Source } from "../lib/schema";
 export interface FeedOutput {
   sources: Source[];
   observations: Observation[];
+  /** Side files written to data/<name>.json (e.g. the model catalog), replaced when their content changes. */
+  artifacts?: Record<string, { models?: unknown[]; generated?: string }>;
 }
 
 export interface Feed {
@@ -45,6 +47,8 @@ export interface FeedStatus {
   ok: boolean;
   error?: string;
   observations: number;
+  /** What `observations` counts, when it isn't sourced numbers (e.g. "models"). */
+  unit?: string;
 }
 
 export interface Revision { id: string; series: string; period: string; from: number; to: number }
