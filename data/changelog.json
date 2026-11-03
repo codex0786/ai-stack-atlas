@@ -1,5 +1,135 @@
 [
  {
+  "at": "2026-11-03T04:40:11.155Z",
+  "kind": "ingest",
+  "title": "Data update: edgar +25 — reviewed",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 25,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": [
+   {
+    "id": "edgar_avgo_long_term_debt_2024_02",
+    "series": "broadcom|long_term_debt|USD|",
+    "period": "2024-02",
+    "previous": 40958000000,
+    "next": 73468000000,
+    "change": 0.7937399287074565,
+    "reason": "[edgar] +79.4% vs 2022-07 (limit ±50%)"
+   },
+   {
+    "id": "edgar_avgo_long_term_debt_2024_05",
+    "series": "broadcom|long_term_debt|USD|",
+    "period": "2024-05",
+    "previous": 40958000000,
+    "next": 71590000000,
+    "change": 0.7478880804726793,
+    "reason": "[edgar] +74.8% vs 2022-07 (limit ±50%)"
+   },
+   {
+    "id": "edgar_avgo_long_term_debt_2024_08",
+    "series": "broadcom|long_term_debt|USD|",
+    "period": "2024-08",
+    "previous": 40958000000,
+    "next": 66798000000,
+    "change": 0.6308901801845793,
+    "reason": "[edgar] +63.1% vs 2022-07 (limit ±50%)"
+   },
+   {
+    "id": "edgar_avgo_long_term_debt_2024_11",
+    "series": "broadcom|long_term_debt|USD|",
+    "period": "2024-11",
+    "previous": 40958000000,
+    "next": 66295000000,
+    "change": 0.618609307095073,
+    "reason": "[edgar] +61.9% vs 2022-07 (limit ±50%)"
+   },
+   {
+    "id": "edgar_avgo_long_term_debt_2025_05",
+    "series": "broadcom|long_term_debt|USD|",
+    "period": "2025-05",
+    "previous": 40958000000,
+    "next": 61751000000,
+    "change": 0.5076663899604473,
+    "reason": "[edgar] +50.8% vs 2022-07 (limit ±50%)"
+   },
+   {
+    "id": "edgar_avgo_long_term_debt_2025_08",
+    "series": "broadcom|long_term_debt|USD|",
+    "period": "2025-08",
+    "previous": 40958000000,
+    "next": 62830000000,
+    "change": 0.5340104497289907,
+    "reason": "[edgar] +53.4% vs 2022-07 (limit ±50%)"
+   },
+   {
+    "id": "edgar_orcl_long_term_debt_2023_05",
+    "series": "oracle|long_term_debt|USD|",
+    "period": "2023-05",
+    "previous": 0,
+    "next": 86420000000,
+    "change": null,
+    "reason": "[edgar] from zero vs 2022-05 (limit ±50%)"
+   },
+   {
+    "id": "edgar_orcl_long_term_debt_2024_05",
+    "series": "oracle|long_term_debt|USD|",
+    "period": "2024-05",
+    "previous": 0,
+    "next": 76264000000,
+    "change": null,
+    "reason": "[edgar] from zero vs 2022-05 (limit ±50%)"
+   },
+   {
+    "id": "edgar_orcl_long_term_debt_2025_05",
+    "series": "oracle|long_term_debt|USD|",
+    "period": "2025-05",
+    "previous": 0,
+    "next": 85297000000,
+    "change": null,
+    "reason": "[edgar] from zero vs 2022-05 (limit ±50%)"
+   },
+   {
+    "id": "edgar_orcl_long_term_debt_2026_05",
+    "series": "oracle|long_term_debt|USD|",
+    "period": "2026-05",
+    "previous": 0,
+    "next": 122342000000,
+    "change": null,
+    "reason": "[edgar] from zero vs 2022-05 (limit ±50%)"
+   }
+  ],
+  "notes": [
+   "Reviewed by hand: the 10 flagged values (Oracle and Broadcom long-term debt) come from adding XBRL debt concepts that fill earlier gaps, not from data errors; levels checked against the companies’ filings."
+  ]
+ },
+ {
+  "at": "2026-11-03T04:37:00.524Z",
+  "kind": "ingest",
+  "title": "Data update: epoch +82, gpu +4",
+  "feeds": [
+   {
+    "feed": "epoch",
+    "ok": true,
+    "added": 82,
+    "revised": 0
+   },
+   {
+    "feed": "gpu",
+    "ok": true,
+    "added": 4,
+    "revised": 0
+   }
+  ],
+  "revisions": [],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-02T20:39:05.842Z",
   "kind": "ingest",
   "title": "Data update: edgar +570",

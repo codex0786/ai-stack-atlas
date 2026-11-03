@@ -107,6 +107,24 @@
   unit: x per year
   kind: growth
   definition: Annual multiple by which the FLOPs used to train frontier models grow.
+  dims: [basis]
+
+- id: training_compute
+  name: Training compute
+  layer: L4
+  unit: FLOP
+  kind: level
+  definition: Total floating-point operations used to train a model (Epoch AI estimate).
+  caveats: dims.scope says which model — the largest released in a year, or a lab's record-setting run.
+  dims: [scope]
+
+- id: large_models_released
+  name: Large models released
+  layer: L4
+  unit: models
+  kind: flow
+  definition: Models trained with more than 10^23 FLOP released in the period.
+  dims: [access]
 
 - id: frontier_training_cost
   name: Frontier training run cost

@@ -24,7 +24,19 @@ export function ChartFrame({ title, sub, cited, legend, table, children, bare }:
       {sub && <p className="sub">{sub}</p>}
       {children}
       {legend}
-      <div className="chart-sources"><span className="small muted">Sources</span>{uniqueSources(cited).map((c) => <Cite key={c.source.id} c={c} />)}</div>
+      <div className="chart-sources">
+        <span className="small muted">Sources</span>
+        {/* One chip per publisher (the latest), so 70 filings don't become 70 chips; the table lists each. */}
+        {[...uniqueSources(cited).reduce((m, c) => m.set(c.source.publisher, [...(m.get(c.source.publisher) ?? []), c]), new Map<string, Cited[]>()).values()].map((group) => {
+          const latest = [...group].sort((a, b) => (b.source.published ?? b.period).localeCompare(a.source.published ?? a.period))[0]!;
+          return (
+            <span key={latest.source.id} style={{ display: "inline-flex", alignItems: "center", gap: 6 }}>
+              <Cite c={latest} />
+              {group.length > 1 && <span className="small muted">+{group.length - 1} more {latest.source.kind === "filing" ? "filings" : "sources"} in the table</span>}
+            </span>
+          );
+        })}
+      </div>
       <details className="table"><summary>Data table</summary><div className="table-scroll">{table}</div></details>
     </div>
   );
@@ -37,7 +49,8 @@ function TipBody({ title, c }: { title: string; c: Cited }) {
       <b>{fmt(c)}</b>
       {c.low !== undefined && c.high !== undefined && <div className="muted">range {fmt(c, c.low)} – {fmt(c, c.high)}</div>}
       <div>{fmtPeriod(c.period)} · {STATUS_LABEL[c.status]}</div>
-      <div className="muted">T{c.source.tier} · {c.source.publisher} {c.source.verified ? "· ✓ verified" : "· not verified"}</div>
+      {c.note && <div className="muted" style={{ marginTop: 2 }}>{c.note.length > 90 ? `${c.note.slice(0, 89)}…` : c.note}</div>}
+      <div className="muted">T{c.source.tier} · {c.source.publisher} {c.source.automated ? "· ⚙ automated" : c.source.verified ? "· ✓ verified" : "· not verified"}</div>
     </>
   );
 }
@@ -62,14 +75,16 @@ function CitedTable({ rows }: { rows: { label: string; c: Cited }[] }) {
 
 /* ── Horizontal bars ─────────────────────────────────────────────────────── */
 
-export function BarList({ title, sub, rows, note }: { title: string; sub?: string; rows: { label: string; c: Cited; emphasis?: boolean }[]; note?: string }) {
+export function BarList({ title, sub, rows, note, log = false }: { title: string; sub?: string; rows: { label: string; c: Cited; emphasis?: boolean }[]; note?: string; log?: boolean }) {
   // Scale to the values; a whisker reaching past the edge is clipped and drawn open-ended,
   // so one extreme outlier can't flatten every bar.
   const maxValue = Math.max(...rows.map((r) => r.c.value));
   const maxHigh = Math.max(...rows.map((r) => r.c.high ?? r.c.value));
   const max = Math.min(maxHigh, maxValue * 1.6);
   const [tip, setTip] = useState<number | null>(null);
-  const pct = (v: number) => `${(v / max) * 100}%`;
+  // Log scale (for values spanning orders of magnitude): bars start half a decade below the smallest value.
+  const lo = Math.log10(Math.min(...rows.map((r) => r.c.value))) - 0.5;
+  const pct = (v: number) => (log ? `${Math.max(0, (Math.log10(v) - lo) / (Math.log10(max) - lo)) * 100}%` : `${(v / max) * 100}%`);
   return (
     <ChartFrame title={title} sub={sub} cited={rows.map((r) => r.c)} table={<CitedTable rows={rows} />}
       legend={note ? <p className="small muted" style={{ marginTop: 10 }}>{note}</p> : undefined}>
@@ -125,7 +140,7 @@ function niceMax(v: number): number {
   return [1, 2, 2.5, 5, 10].map((m) => m * p).find((x) => x >= v)!;
 }
 
-export function TimeChart({ title, sub, series, yMax, legendExtra, bare }: { title: string; sub?: string; series: TimeSeries[]; yMax?: number; legendExtra?: ReactNode; bare?: boolean }) {
+export function TimeChart({ title, sub, series, yMax, legendExtra, bare, log = false }: { title: string; sub?: string; series: TimeSeries[]; yMax?: number; legendExtra?: ReactNode; bare?: boolean; log?: boolean }) {
   const box = useRef<HTMLDivElement>(null);
   // Render at the real pixel width so text stays 11px on phones instead of scaling down.
   const [W, setW] = useState(560);
@@ -148,8 +163,13 @@ export function TimeChart({ title, sub, series, yMax, legendExtra, bare }: { tit
   const x0 = Math.min(...all.map((p) => t(p.c))), x1 = Math.max(...all.map((p) => t(p.c)));
   const top = yMax ?? niceMax(Math.max(...all.map((p) => p.c.high ?? p.c.value)));
   const sx = (c: Cited) => M.l + ((t(c) - x0) / (x1 - x0 || 1)) * (W - M.l - M.r);
-  const sy = (v: number) => H - M.b - (v / top) * (H - M.t - M.b);
-  const ticks = [0, 0.25, 0.5, 0.75, 1].map((f) => f * top);
+  // Log axis: whole decades from below the smallest value to above the largest.
+  const vals = all.flatMap((p) => [p.c.value, p.c.low ?? p.c.value, p.c.high ?? p.c.value]).filter((v) => v > 0);
+  const d0 = Math.floor(Math.log10(Math.min(...vals))), d1 = Math.ceil(Math.log10(Math.max(...vals)));
+  const sy = (v: number) => log
+    ? H - M.b - ((Math.log10(Math.max(v, 10 ** d0)) - d0) / (d1 - d0 || 1)) * (H - M.t - M.b)
+    : H - M.b - (v / top) * (H - M.t - M.b);
+  const ticks = log ? Array.from({ length: d1 - d0 + 1 }, (_, i) => 10 ** (d0 + i)).filter((_, i, a) => a.length <= 6 || i % 2 === 0) : [0, 0.25, 0.5, 0.75, 1].map((f) => f * top);
   const years: number[] = [];
   for (let y = new Date(x0).getUTCFullYear(); y <= new Date(x1).getUTCFullYear() + 1; y++) {
     const ms = Date.UTC(y, 0, 1);

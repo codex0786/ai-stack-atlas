@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "AI Stack Atlas"
+abstract: "An open, sourced dataset on the economics of the AI stack — energy, chips, data centres, compute operators, models and distribution — where every number carries its source, tier and verification status, updated daily from SEC EDGAR, OpenRouter, EIA, Epoch AI and GPU marketplaces."
+authors:
+  - family-names: "Jafri"
+    given-names: "Hasnain Abbas"
+url: "https://ai-stack-atlas-bay.vercel.app"
+repository-code: "https://github.com/codex0786/ai-stack-atlas"
+license: CC-BY-4.0
+keywords: ["artificial intelligence", "economics", "compute", "data centres", "energy", "semiconductors", "open data"]

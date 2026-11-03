@@ -1,0 +1,70 @@
+name: Weekly dataset release
+
+# Every Monday, publish a citable snapshot: a GitHub Release tagged data-YYYY.MM.DD with
+# every download file attached, so any version can be cited and fetched exactly.
+
+on:
+  schedule:
+    - cron: "30 4 * * 1" # Mondays 04:30 UTC, after the daily ingest
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build site and data files
+        run: |
+          npm run validate > /dev/null
+          npm test
+          npm run build
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="data-$(date -u +%Y.%m.%d)"
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "Release $TAG already exists."
+            exit 0
+          fi
+          PREV=$(git tag --list 'data-*' --sort=-creatordate | head -1)
+          node -e '
+            const m = require("./out/data/manifest.json");
+            const log = require("./data/changelog.json");
+            const since = process.argv[1] ? log.filter((e) => e.at > process.argv[2]) : log.slice(0, 20);
+            const lines = [
+              `Dataset snapshot **${m.version}** (commit \`${m.commit}\`).`,
+              "",
+              "| File | Rows |", "|---|---|",
+              ...m.files.map((f) => `| ${f.file} | ${f.rows} |`),
+              "",
+              "**Cite as:** " + m.citation,
+              "",
+              `### Data updates in this release (${since.length})`,
+              ...since.slice(0, 40).map((e) => `- ${e.at.slice(0, 10)}: ${e.title}`),
+              "",
+              "Licensed CC BY 4.0. Each row links to its original source.",
+            ];
+            require("fs").writeFileSync("release-notes.md", lines.join("\n"));
+          ' "$PREV" "$(git log -1 --format=%cI "$PREV" 2>/dev/null || echo)"
+          (cd out/data && zip -q ../../ai-stack-atlas-data.zip *)
+          gh release create "$TAG" out/data/* ai-stack-atlas-data.zip --title "Dataset $TAG" --notes-file release-notes.md

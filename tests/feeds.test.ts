@@ -163,3 +163,47 @@ describe("redact", () => {
   it("hides API keys", () => expect(redact("https://x?a=1&api_key=abc&b=2")).toBe("https://x?a=1&api_key=***&b=2"));
 });
 
+
+import { parseCsv } from "../src/feeds/csv";
+import { parseEpoch } from "../src/feeds/epoch";
+import { parseOffers } from "../src/feeds/vast";
+
+describe("CSV", () => {
+  it("handles quotes, commas and newlines inside fields", () => {
+    expect(parseCsv('a,b\n"x, ""y""","line1\nline2"\n1,2\n')).toEqual([{ a: 'x, "y"', b: "line1\nline2" }, { a: "1", b: "2" }]);
+  });
+});
+
+describe("Epoch", () => {
+  const row = (Model: string, Organization: string, date: string, flop: number, access = "API access") =>
+    ({ Model, Organization, "Publication date": date, "Training compute (FLOP)": String(flop), "Model accessibility": access });
+  const rows = [
+    ...Array.from({ length: 12 }, (_, i) => row(`M${i}`, "Lab X", `${2020 + Math.floor(i / 2)}-0${1 + (i % 2) * 5}-15`, 1e23 * 3 ** i, i % 3 ? "API access" : "Open weights (unrestricted)")),
+    row("Big", "OpenAI", "2025-08-07", 5e26),
+    row("Bigger", "OpenAI, Microsoft", "2026-09-03", 9.4e26),
+    row("Small", "OpenAI", "2026-10-01", 1e24),
+  ];
+  const out = parseEpoch(rows, "2026-11-03").observations;
+
+  it("records the largest run per year", () => {
+    expect(out.find((o) => o.id === "epoch_largest_2026")).toMatchObject({ value: 9.4e26, dims: { scope: "largest_released_in_year" } });
+  });
+  it("records a lab's record runs only when it beats itself", () => {
+    const records = out.filter((o) => o.entity_id === "openai").map((o) => o.period);
+    expect(records).toEqual(["2025-08", "2026-09"]);
+    expect(out.some((o) => o.entity_id === "microsoft" && o.value === 9.4e26)).toBe(true);
+  });
+  it("fits a growth rate and counts open vs closed releases", () => {
+    const g = out.find((o) => o.metric_id === "training_compute_growth")!;
+    expect(g.value).toBeGreaterThan(2);
+    expect(out.find((o) => o.id === "epoch_releases_open_weights_2020")!.value).toBe(1);
+  });
+});
+
+describe("Vast.ai", () => {
+  it("takes the median per-GPU price and skips thin markets", () => {
+    const offers = [1, 2, 3, 4, 100].map((p, i) => ({ gpu_name: "H100 SXM", num_gpus: i === 4 ? 1 : 2, dph_total: p * (i === 4 ? 1 : 2) }));
+    expect(parseOffers({ name: "H100 SXM", entity: "h100" }, offers, "2026-11-03")).toMatchObject({ value: 3, low: 1, high: 4, dims: { provider: "vast_ai" } });
+    expect(parseOffers({ name: "B200", entity: "b200" }, offers, "2026-11-03")).toBeUndefined();
+  });
+});

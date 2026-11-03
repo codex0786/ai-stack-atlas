@@ -78,6 +78,15 @@ export default async function MethodologyPage() {
           <h3>EIA</h3>
           <p>Daily electricity demand (EIA-930) for the US Lower 48, ERCOT and PJM; only completed days are used. Growth compares average daily demand over the trailing 30 days with the same weekdays 364 days earlier.</p>
 
+          <h3>Epoch AI</h3>
+          <p>
+            Epoch AI&apos;s large-scale models dataset (models trained with more than 10²³ FLOP, CC BY). The atlas records the largest run released each year, each lab&apos;s
+            record-setting runs, open- versus closed-weight releases per year (any open-weights licence counts as open), and its own log-linear fit of frontier training compute
+            since 2020, using models that were in the top 10 by compute when released. Compute figures are Epoch&apos;s estimates.
+          </p>
+          <h3>GPU marketplace</h3>
+          <p>Live on-demand offers on the Vast.ai marketplace for H100 SXM, H200, B200 and A100 SXM4: the median price per GPU-hour (total hourly price ÷ GPUs in the offer) with the 10th–90th percentile spread. Marketplace offers from independent hosts usually sit well below hyperscaler list prices.</p>
+
           <h2>6. The anomaly gate</h2>
           <p>Before anything publishes, each new value is compared with the previous period in its series. The run opens a pull request for human review instead of publishing when:</p>
           <ul>

@@ -24,6 +24,13 @@ export async function fetchJson<T>(url: string, opts: { headers?: Record<string,
   throw lastErr instanceof Error ? lastErr : new Error(String(lastErr));
 }
 
+/** Plain-text fetch (CSV) with the same timeout and User-Agent. */
+export async function fetchText(url: string, timeoutMs = 120_000): Promise<string> {
+  const res = await fetch(url, { headers: { "User-Agent": USER_AGENT }, signal: AbortSignal.timeout(timeoutMs) });
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${redact(url)}`);
+  return res.text();
+}
+
 /** Strip API keys from URLs before they reach logs, errors or committed status files. */
 export function redact(url: string): string {
   return url.replace(/(api_key=)[^&]+/gi, "$1***");

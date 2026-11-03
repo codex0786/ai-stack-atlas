@@ -39,3 +39,10 @@ describe("fmtPeriod", () => {
     expect(fmtPeriod("2026-07-23")).toBe("23 Jul 2026");
   });
 });
+
+describe("fmt FLOP", () => {
+  it("uses scientific notation", () => {
+    expect(fmt({ value: 9.4e26, unit: "FLOP", kind: "level" })).toBe("9.4×10²⁶ FLOP");
+    expect(fmt({ value: 1e23, unit: "FLOP", kind: "level" })).toBe("1.0×10²³ FLOP");
+  });
+});

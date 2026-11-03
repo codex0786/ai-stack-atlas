@@ -7,6 +7,7 @@ import { CountUp, Reveal } from "@/components/motion";
 import { StackHero } from "@/components/StackHero";
 import { fmt, fmtPeriod, parts, STATUS_LABEL } from "@/lib/format";
 import { HYPERSCALER_SUM } from "@/feeds/edgar";
+import { LAB_ORGS } from "@/feeds/epoch";
 import { evidenceStats, feedStatuses, getSite, latestOf, layerSummaries, series, type Cited } from "@/lib/site";
 import { REPO } from "@/lib/constants";
 
@@ -49,6 +50,18 @@ export default async function Home() {
   const capex = HYPERSCALER_SUM.map((e, i) => ({ name: site.entity(e).name.replace(/ \(.*\)$/, ""), color: capexColors[i]!, points: series(site, e, "capex").filter((c) => c.source.automated && c.period >= "2023").map((c) => ({ c })) }))
     .filter((s) => s.points.length > 1);
   const orHistory = series(site, "openrouter", "llm_api_price_median", { direction: "output" });
+  const thisYear = new Date().toISOString().slice(0, 4);
+  const largest = series(site, "frontier_models", "training_compute", { scope: "largest_released_in_year" });
+  const growthFit = latestOf(site, "frontier_models", "training_compute_growth", { basis: "atlas_fit_top10_since_2020" });
+  const releases = (access: string) => series(site, "frontier_models", "large_models_released", { access }).filter((c) => c.period < thisYear);
+  const labRecords = Object.keys(LAB_ORGS)
+    .map((e) => ({ label: site.entity(e).name.replace(/ \(.*\)$/, ""), c: series(site, e, "training_compute", { scope: "lab_record" }).at(-1) }))
+    .filter((r): r is { label: string; c: Cited } => !!r.c)
+    .sort((a, b) => b.c.value - a.c.value);
+  const gpuMarket = (["h100", "h200", "b200", "a100"] as const)
+    .map((e) => ({ label: site.entity(e).name.replace("NVIDIA ", ""), c: latestOf(site, e, "gpu_rental_price", { provider: "vast_ai", contract: "marketplace" }) }))
+    .filter((r): r is { label: string; c: Cited } => !!r.c);
+  const big4 = latestOf(site, "hyperscalers", "capex");
 
   return (
     <>
@@ -100,6 +113,10 @@ export default async function Home() {
             {[
               orOut && <Tile key="o" label="Median output price, OpenRouter" c={orOut} ctx={<>Across {models ? fmt(models) : "all paid models"} listed · {fmtPeriod(orOut.period)}</>} />,
               orIn && <Tile key="i" label="Median input price, OpenRouter" c={orIn} ctx={<>Cheapest {fmt(orIn, orIn.low ?? orIn.value)}, dearest {fmt(orIn, orIn.high ?? orIn.value)}</>} />,
+              big4?.source.automated && <Tile key="b" label="Big-four hyperscaler capex, latest quarter" c={big4} ctx={<>Microsoft + Alphabet + Amazon + Meta, from filings · {fmtPeriod(big4.period)}</>} />,
+              largest.at(-1) && <Tile key="l" label="Largest training run released this year" c={largest.at(-1)!} ctx={<>{largest.at(-1)!.note?.split(",")[0]}</>} />,
+              growthFit && <Tile key="g" label="Frontier training compute growth" c={growthFit} ctx={<>Fitted to Epoch AI&apos;s data since 2020</>} />,
+              gpuMarket.find((g) => g.label.startsWith("H100")) && <Tile key="h" label="H100 on the open marketplace" c={gpuMarket.find((g) => g.label.startsWith("H100"))!.c} ctx={<>Median live Vast.ai offer, per GPU-hour</>} />,
               ...yoy.filter((y) => y.c).map((y) => (
                 <Tile key={y.e} label={`${site.entity(y.e).name} demand, trailing 30 days`} c={y.c!} ctx={<>vs the same weekdays a year earlier · to {fmtPeriod(y.c!.period)}</>} />
               )),
@@ -121,6 +138,30 @@ export default async function Home() {
               <Reveal delay={0.05}>
                 <BarList title="What a million output tokens costs, by lab" sub={`Median list price across each lab's paid models on OpenRouter, ${fmtPeriod(labPrices[0]!.c.period)}`}
                   rows={labPrices} note="Whiskers span each lab's cheapest to dearest model (▸ = runs off the scale; hover for the full range). Open-weight models are also served by third-party hosts at lower prices." />
+              </Reveal>
+            )}
+            {largest.length > 1 && (
+              <Reveal>
+                <TimeChart log title="Largest training run released each year" sub="Training compute, FLOP (log scale) — Epoch AI" series={[{ name: "Largest run", color: "var(--s1)", points: largest.map((c) => ({ c })) }]}
+                  legendExtra={<span>Each step on the axis is 10× more compute; {thisYear} is year to date</span>} />
+              </Reveal>
+            )}
+            {releases("closed").length > 1 && (
+              <Reveal delay={0.05}>
+                <TimeChart title="Large models released per year: open vs closed weights" sub={`Models trained with more than 10²³ FLOP, full years to ${Number(thisYear) - 1} — Epoch AI`}
+                  series={[{ name: "Open weights", color: "var(--s3)", points: releases("open_weights").map((c) => ({ c })) }, { name: "Closed", color: "var(--s1)", points: releases("closed").map((c) => ({ c })) }]} />
+              </Reveal>
+            )}
+            {labRecords.length > 0 && (
+              <Reveal>
+                <BarList log title="Each lab's largest training run" sub="Training compute of the lab's biggest model to date, FLOP (log scale) — Epoch AI" rows={labRecords}
+                  note={`Log scale: equal steps in length are equal multiples of compute. ${labRecords[0]!.label}'s run is about ${Math.round(labRecords[0]!.c.value / labRecords.at(-1)!.c.value)}× ${labRecords.at(-1)!.label}'s. Hover a bar for the model.`} />
+              </Reveal>
+            )}
+            {gpuMarket.length > 0 && (
+              <Reveal delay={0.05}>
+                <BarList title="GPU-hour on the open marketplace" sub={`Median live on-demand offer on Vast.ai, ${fmtPeriod(gpuMarket[0]!.c.period)}`} rows={gpuMarket}
+                  note="Whiskers span the 10th–90th percentile of offers. Compare the hyperscaler list prices further down." />
               </Reveal>
             )}
             {orHistory.length > 1 && (

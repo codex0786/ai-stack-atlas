@@ -24,7 +24,7 @@ export interface Cited {
   method: Observation["method"];
   confidence: number;
   note?: string;
-  source: Pick<Source, "id" | "title" | "publisher" | "url" | "tier" | "verified" | "automated"> & { published?: string };
+  source: Pick<Source, "id" | "title" | "publisher" | "url" | "tier" | "kind" | "verified" | "automated"> & { published?: string };
 }
 
 export interface SiteData {
@@ -59,7 +59,7 @@ async function build(): Promise<SiteData> {
     return {
       id: o.id, value: o.value, low: o.low, high: o.high, currency: o.currency, unit: m.unit, kind: m.kind, period: o.period,
       status: o.status, method: o.method, confidence: o.confidence, note: o.note,
-      source: { id: s.id, title: s.title, publisher: s.publisher, url: s.url, tier: s.tier, verified: s.verified, automated: s.automated, published: s.published },
+      source: { id: s.id, title: s.title, publisher: s.publisher, url: s.url, tier: s.tier, kind: s.kind, verified: s.verified, automated: s.automated, published: s.published },
     };
   };
   return {
@@ -154,7 +154,7 @@ export async function feedStatuses(): Promise<Record<string, FeedStatus>> {
 /** Release notes written by hand, merged with the ingest log. */
 const RELEASES: ChangelogEntry[] = [
   { at: "2026-11-02T20:00:00.000Z", kind: "release", title: "Live data feeds, downloads and methodology", notes: [
-    "Daily pipeline (GitHub Actions) pulls SEC EDGAR filings, OpenRouter list prices and EIA grid demand.",
+    "Daily pipeline (GitHub Actions) pulls SEC EDGAR filings, OpenRouter list prices, EIA grid demand, Epoch AI's model compute data and Vast.ai GPU marketplace prices.",
     "Anomaly gate: unusual moves or revisions open a pull request for review instead of publishing.",
     "Freshness badges, open downloads (CSV/JSON), methodology page and this changelog.",
   ] },

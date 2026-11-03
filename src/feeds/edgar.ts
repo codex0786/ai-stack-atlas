@@ -25,7 +25,7 @@ export const HYPERSCALER_SUM = ["microsoft", "alphabet", "amazon", "meta"] as co
 const CONCEPTS: Record<string, { concepts: string[]; instant: boolean }> = {
   capex: { concepts: ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"], instant: false },
   revenue: { concepts: ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax", "RevenueFromContractWithCustomerIncludingAssessedTax"], instant: false },
-  long_term_debt: { concepts: ["LongTermDebtNoncurrent", "LongTermDebt"], instant: true },
+  long_term_debt: { concepts: ["LongTermDebtNoncurrent", "LongTermDebt", "LongTermNotesPayable", "LongTermDebtAndCapitalLeaseObligations", "OtherLongTermDebtNoncurrent"], instant: true },
   contract_backlog: { concepts: ["RevenueRemainingPerformanceObligation"], instant: true },
 };
 
@@ -109,7 +109,8 @@ export function parseCompanyFacts(company: { ticker: string; entity: string }, f
   for (const [metric, spec] of Object.entries(CONCEPTS)) {
     const facts_ = pick(facts, spec.concepts);
     if (spec.instant) {
-      for (const f of dedupe(facts_.filter((x) => !x.start))) {
+      // A zero balance is almost always a placeholder tag, not a real figure.
+      for (const f of dedupe(facts_.filter((x) => !x.start && x.val > 0))) {
         observations.push({
           id: `edgar_${t}_${metric}_${monthOf(f.end).replace("-", "_")}`, entity_id: company.entity, metric_id: metric, value: f.val, currency: "USD", dims: {},
           period: monthOf(f.end), period_type: "point", status: "actual", method: "reported", source_id: cite(f), published: f.filed, confidence: 0.95,

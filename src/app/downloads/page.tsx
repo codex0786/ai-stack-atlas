@@ -47,6 +47,12 @@ export default async function DownloadsPage() {
           <h2>Version</h2>
           <p>Dataset <code>{v.date}</code>, commit <code>{v.commit}</code>. Every change to the data is a commit; see the <Link href="/changelog">changelog</Link> for what changed and when.</p>
 
+          <p>
+            Every Monday a frozen snapshot is published as a{" "}
+            <a href={`${REPO}/releases`} target="_blank" rel="noopener noreferrer">GitHub Release</a> (tagged <code>data-YYYY.MM.DD</code>) with all files attached — cite a release when you need a version that never changes.
+            The repository also carries a <a href={`${REPO}/blob/main/CITATION.cff`} target="_blank" rel="noopener noreferrer">CITATION.cff</a>, so GitHub shows a &ldquo;Cite this repository&rdquo; button.
+          </p>
+
           <h2>How to cite</h2>
           <pre className="code">{citation(v)}</pre>
 

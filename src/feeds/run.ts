@@ -5,11 +5,13 @@ import type { Observation, Source } from "../lib/schema";
 import { compareRuns } from "./anomaly";
 import { edgarFeed } from "./edgar";
 import { eiaFeed } from "./eia";
+import { epochFeed } from "./epoch";
 import { redact } from "./http";
 import { openrouterFeed } from "./openrouter";
+import { vastFeed } from "./vast";
 import type { Anomaly, ChangelogEntry, Feed, FeedFile, FeedOutput, FeedStatus, Revision } from "./types";
 
-export const FEEDS: Feed[] = [edgarFeed, openrouterFeed, eiaFeed];
+export const FEEDS: Feed[] = [edgarFeed, openrouterFeed, eiaFeed, epochFeed, vastFeed];
 
 const MAX_CHANGELOG = 300;
 

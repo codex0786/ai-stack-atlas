@@ -57,6 +57,11 @@ export function parts(x: Formattable, value = x.value): Parts {
       return { prefix: "", num: value, decimals: decimalsFor(value), suffix: "×/yr" };
     case "FLOP/s":
       return { prefix: "", num: value / 1e12, decimals: decimalsFor(value / 1e12), suffix: " TFLOPS" };
+    case "FLOP": {
+      const e = Math.floor(Math.log10(Math.abs(value) || 1));
+      const sup = String(e).replace(/[0-9-]/g, (d) => "⁰¹²³⁴⁵⁶⁷⁸⁹"["0123456789".indexOf(d)] ?? "⁻");
+      return { prefix: "", num: value / 10 ** e, decimals: 1, suffix: `×10${sup} FLOP` };
+    }
     case "TWh per year":
       return { prefix: "", num: value, decimals: 0, suffix: " TWh" };
     case "wafers per month":
