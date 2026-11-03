@@ -3,8 +3,8 @@
   "name": "SEC EDGAR filings",
   "cadenceHours": 24,
   "homepage": "https://www.sec.gov/edgar/search/",
-  "lastRun": "2026-11-03T04:40:11.155Z",
-  "lastSuccess": "2026-11-03T04:40:11.155Z",
+  "lastRun": "2026-11-03T04:41:23.698Z",
+  "lastSuccess": "2026-11-03T04:41:23.698Z",
   "ok": true,
   "observations": 594
  },
@@ -12,17 +12,17 @@
   "name": "OpenRouter list prices",
   "cadenceHours": 24,
   "homepage": "https://openrouter.ai/models",
-  "lastRun": "2026-11-02T19:47:30.300Z",
-  "lastSuccess": "2026-11-02T19:47:30.300Z",
+  "lastRun": "2026-11-03T04:41:23.698Z",
+  "lastSuccess": "2026-11-03T04:41:23.698Z",
   "ok": true,
-  "observations": 23
+  "observations": 46
  },
  "eia": {
   "name": "EIA grid demand",
   "cadenceHours": 24,
   "homepage": "https://www.eia.gov/electricity/gridmonitor/",
-  "lastRun": "2026-11-02T19:47:30.300Z",
-  "lastSuccess": "2026-11-02T19:47:30.300Z",
+  "lastRun": "2026-11-03T04:41:23.698Z",
+  "lastSuccess": "2026-11-03T04:41:23.698Z",
   "ok": true,
   "observations": 45
  },
@@ -30,8 +30,8 @@
   "name": "Epoch AI model compute",
   "cadenceHours": 168,
   "homepage": "https://epoch.ai/data",
-  "lastRun": "2026-11-03T04:37:00.524Z",
-  "lastSuccess": "2026-11-03T04:37:00.524Z",
+  "lastRun": "2026-11-03T04:41:23.698Z",
+  "lastSuccess": "2026-11-03T04:41:23.698Z",
   "ok": true,
   "observations": 82
  },
@@ -39,8 +39,8 @@
   "name": "GPU marketplace prices",
   "cadenceHours": 24,
   "homepage": "https://vast.ai/pricing",
-  "lastRun": "2026-11-03T04:37:00.524Z",
-  "lastSuccess": "2026-11-03T04:37:00.524Z",
+  "lastRun": "2026-11-03T04:41:23.698Z",
+  "lastSuccess": "2026-11-03T04:41:23.698Z",
   "ok": true,
   "observations": 4
  }

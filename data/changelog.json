@@ -1,5 +1,94 @@
 [
  {
+  "at": "2026-11-03T04:41:23.698Z",
+  "kind": "ingest",
+  "title": "Data update: openrouter +23, eia +0 (7 revised)",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 23,
+    "revised": 0
+   },
+   {
+    "feed": "eia",
+    "ok": true,
+    "added": 0,
+    "revised": 7
+   },
+   {
+    "feed": "epoch",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "gpu",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   }
+  ],
+  "revisions": [
+   {
+    "id": "eia_us_lower48_demand_20261025",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-25",
+    "from": 10085,
+    "to": 10088.3
+   },
+   {
+    "id": "eia_us_lower48_demand_20261026",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-26",
+    "from": 10670.6,
+    "to": 10670.7
+   },
+   {
+    "id": "eia_us_lower48_demand_20261028",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-28",
+    "from": 10863.2,
+    "to": 10863.3
+   },
+   {
+    "id": "eia_us_lower48_demand_20261029",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-29",
+    "from": 10883.6,
+    "to": 10883.8
+   },
+   {
+    "id": "eia_us_lower48_demand_20261030",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-30",
+    "from": 10700.3,
+    "to": 10700.5
+   },
+   {
+    "id": "eia_us_lower48_demand_20261031",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-31",
+    "from": 10176.5,
+    "to": 10176.8
+   },
+   {
+    "id": "eia_us_lower48_demand_20261101",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-11-01",
+    "from": 10476.1,
+    "to": 10475.9
+   }
+  ],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-03T04:40:11.155Z",
   "kind": "ingest",
   "title": "Data update: edgar +25 — reviewed",
