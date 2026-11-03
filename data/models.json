@@ -944,9 +944,9 @@
    "eciLow": 156.71,
    "eciHigh": 162.2,
    "price": {
-    "input": 0.3,
-    "output": 1.2,
-    "cachedInput": 0.006
+    "input": 0.15,
+    "output": 0.6,
+    "cachedInput": 0.003
    },
    "context": 1048576,
    "maxOutput": 393216,
@@ -2264,9 +2264,9 @@
    "eciLow": 150.85,
    "eciHigh": 155.41,
    "price": {
-    "input": 0.0285,
-    "output": 0.0923,
-    "cachedInput": 0.0285
+    "input": 0.0313,
+    "output": 0.0846,
+    "cachedInput": 0.03
    },
    "batchPrice": {
     "input": 0.05,
@@ -4361,9 +4361,9 @@
    "eciLow": 138.97,
    "eciHigh": 143.72,
    "price": {
-    "input": 0.062,
-    "output": 0.187,
-    "cachedInput": 0.031
+    "input": 0.1,
+    "output": 0.3,
+    "cachedInput": 0.05
    },
    "context": 262144,
    "maxOutput": 32768,
@@ -4462,9 +4462,9 @@
    "eciLow": 135.6,
    "eciHigh": 142.19,
    "price": {
-    "input": 0.025,
-    "output": 0.093,
-    "cachedInput": 0.023
+    "input": 0.022,
+    "output": 0.081,
+    "cachedInput": 0.02
    },
    "batchPrice": {
     "input": 0.0296,

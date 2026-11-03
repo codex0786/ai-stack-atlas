@@ -1,6 +1,6 @@
 {
  "feed": "openrouter",
- "updated": "2026-11-03T07:38:16.074Z",
+ "updated": "2026-11-03T10:54:43.361Z",
  "sources": [
   {
    "id": "openrouter_models_api",
@@ -301,7 +301,7 @@
    "id": "or_deepseek_input_20261103",
    "entity_id": "deepseek",
    "metric_id": "llm_api_price_median",
-   "value": 0.2574,
+   "value": 0.25,
    "low": 0.045,
    "high": 1.6,
    "dims": {
@@ -343,7 +343,7 @@
    "id": "or_deepseek_output_20261103",
    "entity_id": "deepseek",
    "metric_id": "llm_api_price_median",
-   "value": 0.95,
+   "value": 0.6468,
    "low": 0.15,
    "high": 4,
    "dims": {
@@ -387,7 +387,7 @@
    "metric_id": "llm_api_price_median",
    "value": 0.14,
    "low": 0.027,
-   "high": 0.4,
+   "high": 0.72,
    "dims": {
     "direction": "input",
     "platform": "openrouter"
@@ -429,7 +429,7 @@
    "metric_id": "llm_api_price_median",
    "value": 0.3175,
    "low": 0.08,
-   "high": 0.6525,
+   "high": 0.72,
    "dims": {
     "direction": "output",
     "platform": "openrouter"
@@ -750,7 +750,7 @@
    "entity_id": "openai",
    "metric_id": "llm_api_price_median",
    "value": 1.25,
-   "low": 0.024,
+   "low": 0.022,
    "high": 30,
    "dims": {
     "direction": "input",
@@ -792,7 +792,7 @@
    "entity_id": "openai",
    "metric_id": "llm_api_price_median",
    "value": 6,
-   "low": 0.112,
+   "low": 0.081,
    "high": 180,
    "dims": {
     "direction": "output",

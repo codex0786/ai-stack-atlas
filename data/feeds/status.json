@@ -3,8 +3,8 @@
   "name": "SEC EDGAR filings",
   "cadenceHours": 24,
   "homepage": "https://www.sec.gov/edgar/search/",
-  "lastRun": "2026-11-03T07:23:57.708Z",
-  "lastSuccess": "2026-11-03T07:23:57.708Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 743
  },
@@ -12,8 +12,8 @@
   "name": "OpenRouter list prices",
   "cadenceHours": 24,
   "homepage": "https://openrouter.ai/models",
-  "lastRun": "2026-11-03T07:38:16.074Z",
-  "lastSuccess": "2026-11-03T07:38:16.074Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 46
  },
@@ -21,8 +21,8 @@
   "name": "EIA grid demand",
   "cadenceHours": 24,
   "homepage": "https://www.eia.gov/electricity/gridmonitor/",
-  "lastRun": "2026-11-03T05:50:53.792Z",
-  "lastSuccess": "2026-11-03T05:50:53.792Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 51
  },
@@ -30,8 +30,8 @@
   "name": "Epoch AI model compute",
   "cadenceHours": 168,
   "homepage": "https://epoch.ai/data",
-  "lastRun": "2026-11-03T05:50:53.792Z",
-  "lastSuccess": "2026-11-03T05:50:53.792Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 82
  },
@@ -39,8 +39,8 @@
   "name": "GPU marketplace prices",
   "cadenceHours": 24,
   "homepage": "https://vast.ai/pricing",
-  "lastRun": "2026-11-03T05:50:53.792Z",
-  "lastSuccess": "2026-11-03T05:50:53.792Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 4
  },
@@ -48,8 +48,8 @@
   "name": "Model catalog (prices × benchmarks)",
   "cadenceHours": 24,
   "homepage": "https://epoch.ai/benchmarks",
-  "lastRun": "2026-11-03T06:29:08.355Z",
-  "lastSuccess": "2026-11-03T06:29:08.355Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 119,
   "unit": "models"
@@ -58,8 +58,8 @@
   "name": "USD→INR exchange rate",
   "cadenceHours": 24,
   "homepage": "https://frankfurter.dev",
-  "lastRun": "2026-11-03T07:23:25.927Z",
-  "lastSuccess": "2026-11-03T07:23:25.927Z",
+  "lastRun": "2026-11-03T10:54:43.361Z",
+  "lastSuccess": "2026-11-03T10:54:43.361Z",
   "ok": true,
   "observations": 280
  }
