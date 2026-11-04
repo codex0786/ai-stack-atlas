@@ -1,6 +1,6 @@
 {
  "feed": "eia",
- "updated": "2026-11-03T10:54:43.361Z",
+ "updated": "2026-11-04T10:57:23.463Z",
  "sources": [
   {
    "id": "eia_930_daily",
@@ -9,7 +9,7 @@
    "url": "https://www.eia.gov/electricity/gridmonitor/",
    "tier": 1,
    "kind": "government",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-04",
    "verified": true,
    "automated": true,
    "note": "Read via the EIA Open Data API (electricity/rto/daily-region-data)."
@@ -56,7 +56,7 @@
    "period": "2026-10-21",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -70,7 +70,7 @@
    "period": "2026-10-22",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -84,7 +84,7 @@
    "period": "2026-10-23",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -98,7 +98,7 @@
    "period": "2026-10-24",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -112,7 +112,7 @@
    "period": "2026-10-25",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -126,7 +126,7 @@
    "period": "2026-10-26",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -140,7 +140,7 @@
    "period": "2026-10-27",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -154,7 +154,7 @@
    "period": "2026-10-28",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -168,7 +168,7 @@
    "period": "2026-10-29",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -182,7 +182,7 @@
    "period": "2026-10-30",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -196,7 +196,7 @@
    "period": "2026-10-31",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -210,7 +210,7 @@
    "period": "2026-11-01",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -224,7 +224,21 @@
    "period": "2026-11-02",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {},
+   "id": "eia_ercot_demand_20261103",
+   "entity_id": "ercot",
+   "metric_id": "grid_demand",
+   "value": 1290.2,
+   "period": "2026-11-03",
+   "period_type": "point",
+   "method": "reported",
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -259,6 +273,23 @@
    "method": "derived",
    "published": "2026-11-03",
    "note": "Average daily demand over the 30 days to 2026-11-02 vs the same weekdays a year earlier."
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {
+    "window": "trailing_30d"
+   },
+   "id": "eia_ercot_yoy30_20261103",
+   "entity_id": "ercot",
+   "metric_id": "electricity_load_growth",
+   "value": 0.0427,
+   "period": "2026-11-03",
+   "period_type": "point",
+   "method": "derived",
+   "published": "2026-11-04",
+   "note": "Average daily demand over the 30 days to 2026-11-03 vs the same weekdays a year earlier."
   },
   {
    "source_id": "eia_930_daily",
@@ -300,7 +331,7 @@
    "period": "2026-10-21",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -314,7 +345,7 @@
    "period": "2026-10-22",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -328,7 +359,7 @@
    "period": "2026-10-23",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -342,7 +373,7 @@
    "period": "2026-10-24",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -356,7 +387,7 @@
    "period": "2026-10-25",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -370,7 +401,7 @@
    "period": "2026-10-26",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -384,7 +415,7 @@
    "period": "2026-10-27",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -398,7 +429,7 @@
    "period": "2026-10-28",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -412,7 +443,7 @@
    "period": "2026-10-29",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -426,7 +457,7 @@
    "period": "2026-10-30",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -440,7 +471,7 @@
    "period": "2026-10-31",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -454,7 +485,7 @@
    "period": "2026-11-01",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -468,7 +499,21 @@
    "period": "2026-11-02",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {},
+   "id": "eia_pjm_demand_20261103",
+   "entity_id": "pjm",
+   "metric_id": "grid_demand",
+   "value": 2123.1,
+   "period": "2026-11-03",
+   "period_type": "point",
+   "method": "reported",
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -503,6 +548,23 @@
    "method": "derived",
    "published": "2026-11-03",
    "note": "Average daily demand over the 30 days to 2026-11-02 vs the same weekdays a year earlier."
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {
+    "window": "trailing_30d"
+   },
+   "id": "eia_pjm_yoy30_20261103",
+   "entity_id": "pjm",
+   "metric_id": "electricity_load_growth",
+   "value": 0.0337,
+   "period": "2026-11-03",
+   "period_type": "point",
+   "method": "derived",
+   "published": "2026-11-04",
+   "note": "Average daily demand over the 30 days to 2026-11-03 vs the same weekdays a year earlier."
   },
   {
    "source_id": "eia_930_daily",
@@ -544,7 +606,7 @@
    "period": "2026-10-21",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -558,7 +620,7 @@
    "period": "2026-10-22",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -572,7 +634,7 @@
    "period": "2026-10-23",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -582,11 +644,11 @@
    "id": "eia_us_lower48_demand_20261024",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10147.6,
+   "value": 10148,
    "period": "2026-10-24",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -596,11 +658,11 @@
    "id": "eia_us_lower48_demand_20261025",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10088.3,
+   "value": 10088.4,
    "period": "2026-10-25",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -610,11 +672,11 @@
    "id": "eia_us_lower48_demand_20261026",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10670.7,
+   "value": 10703.9,
    "period": "2026-10-26",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -624,11 +686,11 @@
    "id": "eia_us_lower48_demand_20261027",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10708.2,
+   "value": 10708.6,
    "period": "2026-10-27",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -642,7 +704,7 @@
    "period": "2026-10-28",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -656,7 +718,7 @@
    "period": "2026-10-29",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -666,11 +728,11 @@
    "id": "eia_us_lower48_demand_20261030",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10700.4,
+   "value": 10700.8,
    "period": "2026-10-30",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -680,11 +742,11 @@
    "id": "eia_us_lower48_demand_20261031",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10176.7,
+   "value": 10177.2,
    "period": "2026-10-31",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -694,11 +756,11 @@
    "id": "eia_us_lower48_demand_20261101",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10479.7,
+   "value": 10480.5,
    "period": "2026-11-01",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -708,11 +770,25 @@
    "id": "eia_us_lower48_demand_20261102",
    "entity_id": "us_lower48",
    "metric_id": "grid_demand",
-   "value": 10918.8,
+   "value": 10810.6,
    "period": "2026-11-02",
    "period_type": "point",
    "method": "reported",
-   "published": "2026-11-03"
+   "published": "2026-11-04"
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {},
+   "id": "eia_us_lower48_demand_20261103",
+   "entity_id": "us_lower48",
+   "metric_id": "grid_demand",
+   "value": 10976.3,
+   "period": "2026-11-03",
+   "period_type": "point",
+   "method": "reported",
+   "published": "2026-11-04"
   },
   {
    "source_id": "eia_930_daily",
@@ -747,6 +823,23 @@
    "method": "derived",
    "published": "2026-11-03",
    "note": "Average daily demand over the 30 days to 2026-11-02 vs the same weekdays a year earlier."
+  },
+  {
+   "source_id": "eia_930_daily",
+   "status": "actual",
+   "confidence": 0.9,
+   "dims": {
+    "window": "trailing_30d"
+   },
+   "id": "eia_us_lower48_yoy30_20261103",
+   "entity_id": "us_lower48",
+   "metric_id": "electricity_load_growth",
+   "value": 0.0351,
+   "period": "2026-11-03",
+   "period_type": "point",
+   "method": "derived",
+   "published": "2026-11-04",
+   "note": "Average daily demand over the 30 days to 2026-11-03 vs the same weekdays a year earlier."
   }
  ]
 }

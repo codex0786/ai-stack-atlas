@@ -1,6 +1,6 @@
 {
  "feed": "epoch",
- "updated": "2026-11-03T04:37:00.524Z",
+ "updated": "2026-11-04T10:57:23.463Z",
  "sources": [
   {
    "id": "epoch_large_scale_models",
@@ -9,7 +9,7 @@
    "url": "https://epoch.ai/data/large_scale_ai_models.csv",
    "tier": 1,
    "kind": "research",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-04",
    "verified": true,
    "automated": true,
    "note": "CC BY 4.0, Epoch AI. Compute figures are Epoch's estimates."
@@ -19,7 +19,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alibaba_record_2023_09",
    "entity_id": "alibaba",
    "metric_id": "training_compute",
@@ -36,7 +36,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alibaba_record_2023_11",
    "entity_id": "alibaba",
    "metric_id": "training_compute",
@@ -53,7 +53,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alibaba_record_2024_06",
    "entity_id": "alibaba",
    "metric_id": "training_compute",
@@ -70,7 +70,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alibaba_record_2024_09",
    "entity_id": "alibaba",
    "metric_id": "training_compute",
@@ -87,7 +87,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alibaba_record_2025_02",
    "entity_id": "alibaba",
    "metric_id": "training_compute",
@@ -104,7 +104,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alibaba_record_2025_09",
    "entity_id": "alibaba",
    "metric_id": "training_compute",
@@ -121,7 +121,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2019_10",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -138,7 +138,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2020_01",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -155,7 +155,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2021_12",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -172,7 +172,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2022_04",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -189,7 +189,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2022_06",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -206,7 +206,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2023_05",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -223,7 +223,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_alphabet_record_2023_12",
    "entity_id": "alphabet",
    "metric_id": "training_compute",
@@ -240,7 +240,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_amazon_record_2022_08",
    "entity_id": "amazon",
    "metric_id": "training_compute",
@@ -257,7 +257,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_amazon_record_2023_09",
    "entity_id": "amazon",
    "metric_id": "training_compute",
@@ -274,7 +274,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_amazon_record_2024_12",
    "entity_id": "amazon",
    "metric_id": "training_compute",
@@ -291,7 +291,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_anthropic_record_2023_07",
    "entity_id": "anthropic",
    "metric_id": "training_compute",
@@ -308,7 +308,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_anthropic_record_2024_06",
    "entity_id": "anthropic",
    "metric_id": "training_compute",
@@ -325,7 +325,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_anthropic_record_2025_02",
    "entity_id": "anthropic",
    "metric_id": "training_compute",
@@ -342,7 +342,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2023_11",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -359,7 +359,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2024_01",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -376,7 +376,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2024_05",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -393,7 +393,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2024_09",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -410,7 +410,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2024_12",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -427,41 +427,24 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
-   "id": "epoch_deepseek_record_2025_01",
+   "published": "2026-11-04",
+   "id": "epoch_deepseek_record_2025_08",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
-   "value": 3.5e+24,
+   "value": 3.594058e+24,
    "dims": {
     "scope": "lab_record"
    },
-   "period": "2025-01",
+   "period": "2025-08",
    "period_type": "point",
    "method": "estimated",
    "confidence": 0.8,
-   "note": "DeepSeek-R1, released 2025-01-20."
+   "note": "DeepSeek-V3.1, released 2025-08-21."
   },
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
-   "id": "epoch_deepseek_record_2025_05",
-   "entity_id": "deepseek",
-   "metric_id": "training_compute",
-   "value": 4.020010000000001e+24,
-   "dims": {
-    "scope": "lab_record"
-   },
-   "period": "2025-05",
-   "period_type": "point",
-   "method": "estimated",
-   "confidence": 0.8,
-   "note": "DeepSeek-R1 (May 2025), released 2025-05-28."
-  },
-  {
-   "source_id": "epoch_large_scale_models",
-   "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2025_09",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -478,7 +461,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2025_12",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -495,7 +478,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_deepseek_record_2026_04",
    "entity_id": "deepseek",
    "metric_id": "training_compute",
@@ -512,7 +495,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_growth_fit_2026",
    "entity_id": "frontier_models",
    "metric_id": "training_compute_growth",
@@ -524,12 +507,12 @@
    "period_type": "trend",
    "method": "derived",
    "confidence": 0.7,
-   "note": "Log-linear fit over 52 models that were in the top 10 by training compute when released (2020 to 2026-11-03)."
+   "note": "Log-linear fit over 52 models that were in the top 10 by training compute when released (2020 to 2026-11-04)."
   },
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2020",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -546,7 +529,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2021",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -563,7 +546,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2022",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -580,7 +563,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2023",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -597,7 +580,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2024",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -614,7 +597,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2025",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -631,7 +614,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_largest_2026",
    "entity_id": "frontier_models",
    "metric_id": "training_compute",
@@ -648,7 +631,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2022_05",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -665,7 +648,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2023_02",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -682,7 +665,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2023_07",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -699,7 +682,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2024_01",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -716,7 +699,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2024_04",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -733,7 +716,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2024_07",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -750,7 +733,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_meta_record_2025_04",
    "entity_id": "meta",
    "metric_id": "training_compute",
@@ -767,7 +750,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_microsoft_record_2021_10",
    "entity_id": "microsoft",
    "metric_id": "training_compute",
@@ -784,7 +767,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_microsoft_record_2026_06",
    "entity_id": "microsoft",
    "metric_id": "training_compute",
@@ -801,7 +784,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_microsoft_record_2026_10",
    "entity_id": "microsoft",
    "metric_id": "training_compute",
@@ -818,7 +801,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_minimax_record_2025_01",
    "entity_id": "minimax",
    "metric_id": "training_compute",
@@ -835,7 +818,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_minimax_record_2025_06",
    "entity_id": "minimax",
    "metric_id": "training_compute",
@@ -852,7 +835,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_mistral_record_2023_12",
    "entity_id": "mistral",
    "metric_id": "training_compute",
@@ -869,7 +852,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_mistral_record_2024_04",
    "entity_id": "mistral",
    "metric_id": "training_compute",
@@ -886,7 +869,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_mistral_record_2026_10",
    "entity_id": "mistral",
    "metric_id": "training_compute",
@@ -903,7 +886,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_moonshot_record_2025_07",
    "entity_id": "moonshot",
    "metric_id": "training_compute",
@@ -920,7 +903,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_moonshot_record_2026_02",
    "entity_id": "moonshot",
    "metric_id": "training_compute",
@@ -937,7 +920,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_moonshot_record_2026_07",
    "entity_id": "moonshot",
    "metric_id": "training_compute",
@@ -954,7 +937,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_nvidia_record_2021_10",
    "entity_id": "nvidia",
    "metric_id": "training_compute",
@@ -971,7 +954,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_nvidia_record_2024_06",
    "entity_id": "nvidia",
    "metric_id": "training_compute",
@@ -988,7 +971,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_nvidia_record_2025_03",
    "entity_id": "nvidia",
    "metric_id": "training_compute",
@@ -1005,7 +988,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_openai_record_2020_05",
    "entity_id": "openai",
    "metric_id": "training_compute",
@@ -1022,7 +1005,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_openai_record_2022_03",
    "entity_id": "openai",
    "metric_id": "training_compute",
@@ -1039,7 +1022,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_openai_record_2023_03",
    "entity_id": "openai",
    "metric_id": "training_compute",
@@ -1056,7 +1039,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_openai_record_2025_02",
    "entity_id": "openai",
    "metric_id": "training_compute",
@@ -1073,7 +1056,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_openai_record_2026_09",
    "entity_id": "openai",
    "metric_id": "training_compute",
@@ -1090,7 +1073,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2020",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1107,7 +1090,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2021",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1124,7 +1107,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2022",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1141,7 +1124,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2023",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1158,7 +1141,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2024",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1175,7 +1158,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2025",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1192,7 +1175,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_closed_2026",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1209,7 +1192,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2020",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1226,7 +1209,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2021",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1243,7 +1226,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2022",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1260,7 +1243,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2023",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1277,7 +1260,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2024",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1294,7 +1277,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2025",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1311,7 +1294,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_releases_open_weights_2026",
    "entity_id": "frontier_models",
    "metric_id": "large_models_released",
@@ -1328,7 +1311,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_xai_record_2023_11",
    "entity_id": "xai",
    "metric_id": "training_compute",
@@ -1345,7 +1328,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_xai_record_2024_03",
    "entity_id": "xai",
    "metric_id": "training_compute",
@@ -1362,7 +1345,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_xai_record_2024_08",
    "entity_id": "xai",
    "metric_id": "training_compute",
@@ -1379,7 +1362,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_xai_record_2025_02",
    "entity_id": "xai",
    "metric_id": "training_compute",
@@ -1396,7 +1379,7 @@
   {
    "source_id": "epoch_large_scale_models",
    "status": "actual",
-   "published": "2026-11-03",
+   "published": "2026-11-04",
    "id": "epoch_xai_record_2025_07",
    "entity_id": "xai",
    "metric_id": "training_compute",

@@ -1,5 +1,114 @@
 [
  {
+  "at": "2026-11-04T10:57:23.463Z",
+  "kind": "ingest",
+  "title": "Data update: openrouter +23, eia +6 (8 revised), epoch +1, gpu +4",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 23,
+    "revised": 0
+   },
+   {
+    "feed": "eia",
+    "ok": true,
+    "added": 6,
+    "revised": 8
+   },
+   {
+    "feed": "epoch",
+    "ok": true,
+    "added": 1,
+    "revised": 0
+   },
+   {
+    "feed": "gpu",
+    "ok": true,
+    "added": 4,
+    "revised": 0
+   },
+   {
+    "feed": "models",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "fx",
+    "ok": false,
+    "added": 0,
+    "revised": 0,
+    "error": "HTTP 522 from https://api.frankfurter.dev/v1/2025-09-30..2026-11-04?base=USD&symbols=INR"
+   }
+  ],
+  "revisions": [
+   {
+    "id": "eia_us_lower48_demand_20261024",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-24",
+    "from": 10147.6,
+    "to": 10148
+   },
+   {
+    "id": "eia_us_lower48_demand_20261025",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-25",
+    "from": 10088.3,
+    "to": 10088.4
+   },
+   {
+    "id": "eia_us_lower48_demand_20261026",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-26",
+    "from": 10670.7,
+    "to": 10703.9
+   },
+   {
+    "id": "eia_us_lower48_demand_20261027",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-27",
+    "from": 10708.2,
+    "to": 10708.6
+   },
+   {
+    "id": "eia_us_lower48_demand_20261030",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-30",
+    "from": 10700.4,
+    "to": 10700.8
+   },
+   {
+    "id": "eia_us_lower48_demand_20261031",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-31",
+    "from": 10176.7,
+    "to": 10177.2
+   },
+   {
+    "id": "eia_us_lower48_demand_20261101",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-11-01",
+    "from": 10479.7,
+    "to": 10480.5
+   },
+   {
+    "id": "eia_us_lower48_demand_20261102",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-11-02",
+    "from": 10918.8,
+    "to": 10810.6
+   }
+  ],
+  "anomalies": []
+ },
+ {
   "at": "2026-11-03T10:54:43.361Z",
   "kind": "ingest",
   "title": "Data update: openrouter +0 (2 revised), eia +0 (8 revised), gpu +0 (3 revised)",
