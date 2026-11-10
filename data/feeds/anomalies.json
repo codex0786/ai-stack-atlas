@@ -1,1 +1,20 @@
-[]
+[
+ {
+  "id": "edgar_amd_long_term_debt_2026_09",
+  "series": "amd|long_term_debt|USD|",
+  "period": "2026-09",
+  "previous": 2351000000,
+  "next": 7079000000,
+  "change": 2.011059123777116,
+  "reason": "[edgar] +201.1% vs 2026-06 (limit ±50%)"
+ },
+ {
+  "id": "vast_h200_20261110",
+  "series": "h200|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+  "period": "2026-11-10",
+  "previous": 2.83,
+  "next": 4.49,
+  "change": 0.5865724381625442,
+  "reason": "[gpu] +58.7% vs 2026-11-04 (limit ±50%)"
+ }
+]

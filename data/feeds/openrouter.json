@@ -1,6 +1,6 @@
 {
  "feed": "openrouter",
- "updated": "2026-11-04T10:57:23.463Z",
+ "updated": "2026-11-10T11:14:05.954Z",
  "sources": [
   {
    "id": "openrouter_models_api",
@@ -9,7 +9,7 @@
    "url": "https://openrouter.ai/api/v1/models",
    "tier": 1,
    "kind": "company",
-   "accessed": "2026-11-04",
+   "accessed": "2026-11-10",
    "verified": true,
    "automated": true,
    "note": "First-party list prices, read daily."
@@ -81,6 +81,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_alibaba_input_20261110",
+   "entity_id": "alibaba",
+   "metric_id": "llm_api_price_median",
+   "value": 0.22,
+   "low": 0.03,
+   "high": 4,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 44 paid models from alibaba; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -141,6 +162,27 @@
     "platform": "openrouter"
    },
    "note": "Median of 42 paid models from alibaba; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_alibaba_output_20261110",
+   "entity_id": "alibaba",
+   "metric_id": "llm_api_price_median",
+   "value": 1,
+   "low": 0.13,
+   "high": 12,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 44 paid models from alibaba; range is cheapest–dearest."
   },
   {
    "currency": "USD",
@@ -207,6 +249,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_alphabet_input_20261110",
+   "entity_id": "alphabet",
+   "metric_id": "llm_api_price_median",
+   "value": 0.5,
+   "low": 0.05,
+   "high": 2,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 39 paid models from alphabet; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -267,6 +330,27 @@
     "platform": "openrouter"
    },
    "note": "Median of 37 paid models from alphabet; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_alphabet_output_20261110",
+   "entity_id": "alphabet",
+   "metric_id": "llm_api_price_median",
+   "value": 3,
+   "low": 0.1,
+   "high": 12,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 39 paid models from alphabet; range is cheapest–dearest."
   },
   {
    "currency": "USD",
@@ -333,6 +417,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_anthropic_input_20261110",
+   "entity_id": "anthropic",
+   "metric_id": "llm_api_price_median",
+   "value": 2.75,
+   "low": 0.05,
+   "high": 15,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 32 paid models from anthropic; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -393,6 +498,27 @@
     "platform": "openrouter"
    },
    "note": "Median of 30 paid models from anthropic; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_anthropic_output_20261110",
+   "entity_id": "anthropic",
+   "metric_id": "llm_api_price_median",
+   "value": 13.75,
+   "low": 0.25,
+   "high": 75,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 32 paid models from anthropic; range is cheapest–dearest."
   },
   {
    "currency": "USD",
@@ -459,6 +585,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_deepseek_input_20261110",
+   "entity_id": "deepseek",
+   "metric_id": "llm_api_price_median",
+   "value": 0.25,
+   "low": 0.006,
+   "high": 0.95526,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 17 paid models from deepseek; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -522,6 +669,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_deepseek_output_20261110",
+   "entity_id": "deepseek",
+   "metric_id": "llm_api_price_median",
+   "value": 0.5,
+   "low": 0.144,
+   "high": 4.44,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 17 paid models from deepseek; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -576,6 +744,27 @@
    "metric_id": "llm_api_price_median",
    "value": 0.1,
    "low": 0.027,
+   "high": 0.72,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 8 paid models from meta; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_meta_input_20261110",
+   "entity_id": "meta",
+   "metric_id": "llm_api_price_median",
+   "value": 0.14,
+   "low": 0.02,
    "high": 0.72,
    "dims": {
     "direction": "input",
@@ -648,6 +837,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_meta_output_20261110",
+   "entity_id": "meta",
+   "metric_id": "llm_api_price_median",
+   "value": 0.315,
+   "low": 0.04,
+   "high": 1,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 8 paid models from meta; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -708,6 +918,27 @@
     "platform": "openrouter"
    },
    "note": "Median of 9 paid models from minimax; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_minimax_input_20261110",
+   "entity_id": "minimax",
+   "metric_id": "llm_api_price_median",
+   "value": 0.224,
+   "low": 0.15,
+   "high": 0.3,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 5 paid models from minimax; range is cheapest–dearest."
   },
   {
    "currency": "USD",
@@ -774,6 +1005,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_minimax_output_20261110",
+   "entity_id": "minimax",
+   "metric_id": "llm_api_price_median",
+   "value": 0.88,
+   "low": 0.6,
+   "high": 1.2,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 5 paid models from minimax; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -824,6 +1076,27 @@
    "published": "2026-11-04",
    "confidence": 0.9,
    "id": "or_mistral_input_20261104",
+   "entity_id": "mistral",
+   "metric_id": "llm_api_price_median",
+   "value": 0.351,
+   "low": 0.029,
+   "high": 2,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 21 paid models from mistral; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_mistral_input_20261110",
    "entity_id": "mistral",
    "metric_id": "llm_api_price_median",
    "value": 0.351,
@@ -899,6 +1172,27 @@
    "note": "Median of 21 paid models from mistral; range is cheapest–dearest."
   },
   {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_mistral_output_20261110",
+   "entity_id": "mistral",
+   "metric_id": "llm_api_price_median",
+   "value": 0.9,
+   "low": 0.03,
+   "high": 7.5,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 21 paid models from mistral; range is cheapest–dearest."
+  },
+  {
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -938,6 +1232,20 @@
    "entity_id": "openrouter",
    "metric_id": "models_listed",
    "value": 455,
+   "dims": {}
+  },
+  {
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "reported",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.95,
+   "id": "or_models_listed_20261110",
+   "entity_id": "openrouter",
+   "metric_id": "models_listed",
+   "value": 465,
    "dims": {}
   },
   {
@@ -992,6 +1300,27 @@
    "published": "2026-11-04",
    "confidence": 0.9,
    "id": "or_moonshot_input_20261104",
+   "entity_id": "moonshot",
+   "metric_id": "llm_api_price_median",
+   "value": 0.6,
+   "low": 0.192,
+   "high": 2.28,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 9 paid models from moonshot; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_moonshot_input_20261110",
    "entity_id": "moonshot",
    "metric_id": "llm_api_price_median",
    "value": 0.6,
@@ -1068,6 +1397,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_moonshot_output_20261110",
+   "entity_id": "moonshot",
+   "metric_id": "llm_api_price_median",
+   "value": 3.41,
+   "low": 2.3,
+   "high": 16,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 9 paid models from moonshot; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -1118,6 +1468,27 @@
    "published": "2026-11-04",
    "confidence": 0.9,
    "id": "or_openai_input_20261104",
+   "entity_id": "openai",
+   "metric_id": "llm_api_price_median",
+   "value": 1.25,
+   "low": 0.024,
+   "high": 30,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 98 paid models from openai; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_openai_input_20261110",
    "entity_id": "openai",
    "metric_id": "llm_api_price_median",
    "value": 1.25,
@@ -1194,6 +1565,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_openai_output_20261110",
+   "entity_id": "openai",
+   "metric_id": "llm_api_price_median",
+   "value": 6,
+   "low": 0.112,
+   "high": 180,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 98 paid models from openai; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -1254,6 +1646,26 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_openrouter_input_20261110",
+   "entity_id": "openrouter",
+   "metric_id": "llm_api_price_median",
+   "value": 0.5,
+   "low": 0.006,
+   "high": 30,
+   "dims": {
+    "direction": "input"
+   },
+   "note": "Median of 441 paid models; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -1311,6 +1723,26 @@
     "direction": "output"
    },
    "note": "Median of 428 paid models; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_openrouter_output_20261110",
+   "entity_id": "openrouter",
+   "metric_id": "llm_api_price_median",
+   "value": 2,
+   "low": 0.03,
+   "high": 180,
+   "dims": {
+    "direction": "output"
+   },
+   "note": "Median of 439 paid models; range is cheapest–dearest."
   },
   {
    "currency": "USD",
@@ -1377,6 +1809,27 @@
   },
   {
    "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_xai_input_20261110",
+   "entity_id": "xai",
+   "metric_id": "llm_api_price_median",
+   "value": 1.425,
+   "low": 1,
+   "high": 2,
+   "dims": {
+    "direction": "input",
+    "platform": "openrouter"
+   },
+   "note": "Median of 10 paid models from xai; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
    "period": "2026-11-02",
    "period_type": "point",
    "status": "actual",
@@ -1427,6 +1880,27 @@
    "published": "2026-11-04",
    "confidence": 0.9,
    "id": "or_xai_output_20261104",
+   "entity_id": "xai",
+   "metric_id": "llm_api_price_median",
+   "value": 3.65,
+   "low": 2,
+   "high": 6,
+   "dims": {
+    "direction": "output",
+    "platform": "openrouter"
+   },
+   "note": "Median of 10 paid models from xai; range is cheapest–dearest."
+  },
+  {
+   "currency": "USD",
+   "period": "2026-11-10",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "openrouter_models_api",
+   "published": "2026-11-10",
+   "confidence": 0.9,
+   "id": "or_xai_output_20261110",
    "entity_id": "xai",
    "metric_id": "llm_api_price_median",
    "value": 3.65,
