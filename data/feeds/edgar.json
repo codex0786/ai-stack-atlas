@@ -1,6 +1,6 @@
 {
  "feed": "edgar",
- "updated": "2026-11-03T07:23:57.708Z",
+ "updated": "2026-11-12T11:12:55.329Z",
  "sources": [
   {
    "id": "atlas_edgar_sum",
@@ -9,223 +9,235 @@
    "url": "https://www.sec.gov/edgar/search/",
    "tier": 1,
    "kind": "filing",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248822000078",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2022-05-04)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2022-05-04)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000078/",
    "tier": 1,
    "kind": "filing",
    "published": "2022-05-04",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248822000123",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2022-08-03)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2022-08-03)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000123/",
    "tier": 1,
    "kind": "filing",
    "published": "2022-08-03",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248822000170",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2022-11-02)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2022-11-02)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248822000170/",
    "tier": 1,
    "kind": "filing",
    "published": "2022-11-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248823000047",
-   "title": "ADVANCED MICRO DEVICES INC 10-K (filed 2023-02-27)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-K (filed 2023-02-27)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000047/",
    "tier": 1,
    "kind": "filing",
    "published": "2023-02-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248823000076",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2023-05-03)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2023-05-03)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000076/",
    "tier": 1,
    "kind": "filing",
    "published": "2023-05-03",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248823000139",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2023-08-02)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2023-08-02)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000139/",
    "tier": 1,
    "kind": "filing",
    "published": "2023-08-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248823000195",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2023-11-01)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2023-11-01)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248823000195/",
    "tier": 1,
    "kind": "filing",
    "published": "2023-11-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248824000012",
-   "title": "ADVANCED MICRO DEVICES INC 10-K (filed 2024-01-31)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-K (filed 2024-01-31)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000012/",
    "tier": 1,
    "kind": "filing",
    "published": "2024-01-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248824000056",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2024-05-01)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2024-05-01)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000056/",
    "tier": 1,
    "kind": "filing",
    "published": "2024-05-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248824000123",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2024-07-31)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2024-07-31)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000123/",
    "tier": 1,
    "kind": "filing",
    "published": "2024-07-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248824000163",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2024-10-30)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2024-10-30)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248824000163/",
    "tier": 1,
    "kind": "filing",
    "published": "2024-10-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248825000012",
-   "title": "ADVANCED MICRO DEVICES INC 10-K (filed 2025-02-05)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-K (filed 2025-02-05)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000012/",
    "tier": 1,
    "kind": "filing",
    "published": "2025-02-05",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248825000047",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2025-05-07)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2025-05-07)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000047/",
    "tier": 1,
    "kind": "filing",
    "published": "2025-05-07",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248825000108",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2025-08-06)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2025-08-06)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000108/",
    "tier": 1,
    "kind": "filing",
    "published": "2025-08-06",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248825000166",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2025-11-05)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2025-11-05)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248825000166/",
    "tier": 1,
    "kind": "filing",
    "published": "2025-11-05",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248826000018",
-   "title": "ADVANCED MICRO DEVICES INC 10-K (filed 2026-02-04)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-K (filed 2026-02-04)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000018/",
    "tier": 1,
    "kind": "filing",
    "published": "2026-02-04",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248826000076",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2026-05-06)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2026-05-06)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000076/",
    "tier": 1,
    "kind": "filing",
    "published": "2026-05-06",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
   {
    "id": "edgar_amd_000000248826000123",
-   "title": "ADVANCED MICRO DEVICES INC 10-Q (filed 2026-08-05)",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2026-08-05)",
    "publisher": "SEC EDGAR",
    "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/",
    "tier": 1,
    "kind": "filing",
    "published": "2026-08-05",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
+   "verified": true,
+   "automated": true
+  },
+  {
+   "id": "edgar_amd_000000248826000191",
+   "title": "ADVANCED MICRO DEVICES, INC 10-Q (filed 2026-11-04)",
+   "publisher": "SEC EDGAR",
+   "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000191/",
+   "tier": 1,
+   "kind": "filing",
+   "published": "2026-11-04",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -237,7 +249,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-04-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -249,7 +261,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-07-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -261,7 +273,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-10-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -273,7 +285,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-02-03",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -285,7 +297,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-04-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -297,7 +309,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-08-04",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -309,7 +321,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-10-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -321,7 +333,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-02-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -333,7 +345,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-05-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -345,7 +357,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-08-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -357,7 +369,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-11-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -369,7 +381,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-02-07",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -381,7 +393,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-05-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -393,7 +405,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-08-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -405,7 +417,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-10-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -417,7 +429,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-02-06",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -429,7 +441,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-04-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -441,7 +453,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-07-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -453,7 +465,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-10-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -465,7 +477,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-03-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -477,7 +489,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-06-09",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -489,7 +501,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-09-08",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -501,7 +513,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-12-16",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -513,7 +525,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-03-08",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -525,7 +537,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-06-07",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -537,7 +549,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-09-06",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -549,7 +561,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-12-14",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -561,7 +573,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-03-14",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -573,7 +585,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-06-13",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -585,7 +597,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-09-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -597,7 +609,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-12-20",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -609,7 +621,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-03-12",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -621,7 +633,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-06-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -633,7 +645,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-09-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -645,7 +657,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-12-18",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -657,7 +669,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-03-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -669,7 +681,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-06-09",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -681,7 +693,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-09-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -693,7 +705,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-05-15",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -705,7 +717,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-08-13",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -717,7 +729,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-11-13",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -729,7 +741,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-03-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -741,7 +753,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-05-08",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -753,7 +765,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-08-12",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -765,7 +777,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-04-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -777,7 +789,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-07-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -789,7 +801,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-10-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -801,7 +813,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-02-03",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -813,7 +825,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-04-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -825,7 +837,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-07-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -837,7 +849,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-10-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -849,7 +861,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-01-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -861,7 +873,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-04-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -873,7 +885,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-07-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -885,7 +897,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-10-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -897,7 +909,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-02-05",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -909,7 +921,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-04-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -921,7 +933,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-07-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -933,7 +945,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-10-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -945,7 +957,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-02-05",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -957,7 +969,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-04-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -969,7 +981,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-07-23",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -981,7 +993,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-10-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -993,7 +1005,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-06-15",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1005,7 +1017,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-06-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1017,7 +1029,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-07-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1029,7 +1041,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-06-17",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1041,7 +1053,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-04-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1053,7 +1065,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-07-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1065,7 +1077,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-10-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1077,7 +1089,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-02-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1089,7 +1101,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-04-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1101,7 +1113,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-07-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1113,7 +1125,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-10-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1125,7 +1137,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-02-02",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1137,7 +1149,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-04-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1149,7 +1161,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-08-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1161,7 +1173,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-10-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1173,7 +1185,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-01-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1185,7 +1197,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-05-01",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1197,7 +1209,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-07-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1209,7 +1221,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-10-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1221,7 +1233,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-01-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1233,7 +1245,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-04-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1245,7 +1257,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-07-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1257,7 +1269,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-10-22",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1269,7 +1281,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-04-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1281,7 +1293,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-07-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1293,7 +1305,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-10-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1305,7 +1317,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-01-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1317,7 +1329,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-04-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1329,7 +1341,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-07-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1341,7 +1353,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-10-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1353,7 +1365,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-01-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1365,7 +1377,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-04-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1377,7 +1389,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-07-30",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1389,7 +1401,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-10-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1401,7 +1413,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-01-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1413,7 +1425,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-04-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1425,7 +1437,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-07-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1437,7 +1449,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-10-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1449,7 +1461,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-04-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1461,7 +1473,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-07-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1473,7 +1485,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-10-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1485,7 +1497,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-01-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1497,7 +1509,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-03-18",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1509,7 +1521,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-05-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1521,7 +1533,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-08-31",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1533,7 +1545,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-11-18",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1545,7 +1557,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-02-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1557,7 +1569,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-05-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1569,7 +1581,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-08-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1581,7 +1593,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-11-21",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1593,7 +1605,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-02-21",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1605,7 +1617,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-05-29",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1617,7 +1629,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-08-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1629,7 +1641,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-11-20",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1641,7 +1653,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-02-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1653,7 +1665,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-05-28",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1665,7 +1677,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-08-27",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1677,7 +1689,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-11-19",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1689,7 +1701,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-02-25",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1701,7 +1713,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-05-20",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1713,7 +1725,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-08-26",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1725,7 +1737,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-06-20",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1737,7 +1749,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-09-12",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1749,7 +1761,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-12-12",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1761,7 +1773,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-03-12",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1773,7 +1785,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-06-20",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1785,7 +1797,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-09-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1797,7 +1809,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-12-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1809,7 +1821,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-03-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1821,7 +1833,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-06-18",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1833,7 +1845,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-09-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1845,7 +1857,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-12-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1857,7 +1869,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-03-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1869,7 +1881,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-06-22",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1881,7 +1893,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2026-09-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1893,7 +1905,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-03-11",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1905,7 +1917,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-06-21",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1917,7 +1929,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-09-13",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1929,7 +1941,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-12-13",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1941,7 +1953,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-03-10",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1953,7 +1965,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2023-05-24",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1965,7 +1977,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2024-05-22",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1977,7 +1989,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2025-05-22",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   },
@@ -1989,7 +2001,7 @@
    "tier": 1,
    "kind": "filing",
    "published": "2022-06-09",
-   "accessed": "2026-11-03",
+   "accessed": "2026-11-12",
    "verified": true,
    "automated": true
   }
@@ -2284,6 +2296,22 @@
    "note": "Quarter ending 2026-06-27 (year-to-date minus prior year-to-date)."
   },
   {
+   "id": "edgar_amd_capex_2026_09",
+   "entity_id": "amd",
+   "metric_id": "capex",
+   "value": 648000000,
+   "currency": "USD",
+   "dims": {},
+   "period": "2026-09",
+   "period_type": "quarterly",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "edgar_amd_000000248826000191",
+   "published": "2026-11-04",
+   "confidence": 0.9,
+   "note": "Quarter ending 2026-09-26 (year-to-date minus prior year-to-date)."
+  },
+  {
    "id": "edgar_amd_contract_backlog_2022_03",
    "entity_id": "amd",
    "metric_id": "contract_backlog",
@@ -2570,6 +2598,22 @@
    "published": "2026-08-05",
    "confidence": 0.95,
    "note": "Balance at 2026-06-27."
+  },
+  {
+   "id": "edgar_amd_contract_backlog_2026_09",
+   "entity_id": "amd",
+   "metric_id": "contract_backlog",
+   "value": 246000000,
+   "currency": "USD",
+   "dims": {},
+   "period": "2026-09",
+   "period_type": "point",
+   "status": "actual",
+   "method": "reported",
+   "source_id": "edgar_amd_000000248826000191",
+   "published": "2026-11-04",
+   "confidence": 0.95,
+   "note": "Balance at 2026-09-26."
   },
   {
    "id": "edgar_amd_cost_of_revenue_2022_03",
@@ -2860,6 +2904,22 @@
    "note": "Quarter ending 2026-06-27."
   },
   {
+   "id": "edgar_amd_cost_of_revenue_2026_09",
+   "entity_id": "amd",
+   "metric_id": "cost_of_revenue",
+   "value": 6167000000,
+   "currency": "USD",
+   "dims": {},
+   "period": "2026-09",
+   "period_type": "quarterly",
+   "status": "actual",
+   "method": "reported",
+   "source_id": "edgar_amd_000000248826000191",
+   "published": "2026-11-04",
+   "confidence": 0.95,
+   "note": "Quarter ending 2026-09-26."
+  },
+  {
    "id": "edgar_amd_long_term_debt_2022_03",
    "entity_id": "amd",
    "metric_id": "long_term_debt",
@@ -3148,6 +3208,22 @@
    "note": "Balance at 2026-06-27."
   },
   {
+   "id": "edgar_amd_long_term_debt_2026_09",
+   "entity_id": "amd",
+   "metric_id": "long_term_debt",
+   "value": 7079000000,
+   "currency": "USD",
+   "dims": {},
+   "period": "2026-09",
+   "period_type": "point",
+   "status": "actual",
+   "method": "reported",
+   "source_id": "edgar_amd_000000248826000191",
+   "published": "2026-11-04",
+   "confidence": 0.95,
+   "note": "Balance at 2026-09-26."
+  },
+  {
    "id": "edgar_amd_revenue_2022_03",
    "entity_id": "amd",
    "metric_id": "revenue",
@@ -3434,6 +3510,22 @@
    "published": "2026-08-05",
    "confidence": 0.95,
    "note": "Quarter ending 2026-06-27."
+  },
+  {
+   "id": "edgar_amd_revenue_2026_09",
+   "entity_id": "amd",
+   "metric_id": "revenue",
+   "value": 13377000000,
+   "currency": "USD",
+   "dims": {},
+   "period": "2026-09",
+   "period_type": "quarterly",
+   "status": "actual",
+   "method": "reported",
+   "source_id": "edgar_amd_000000248826000191",
+   "published": "2026-11-04",
+   "confidence": 0.95,
+   "note": "Quarter ending 2026-09-26."
   },
   {
    "id": "edgar_amzn_capex_2022_03",

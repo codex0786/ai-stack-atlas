@@ -1,5 +1,118 @@
 [
  {
+  "at": "2026-11-12T11:12:55.329Z",
+  "kind": "ingest",
+  "title": "Data update: edgar +5, openrouter +23, eia +27 (6 revised), gpu +4, fx +7",
+  "feeds": [
+   {
+    "feed": "edgar",
+    "ok": true,
+    "added": 5,
+    "revised": 0
+   },
+   {
+    "feed": "openrouter",
+    "ok": true,
+    "added": 23,
+    "revised": 0
+   },
+   {
+    "feed": "eia",
+    "ok": true,
+    "added": 27,
+    "revised": 6
+   },
+   {
+    "feed": "epoch",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "gpu",
+    "ok": true,
+    "added": 4,
+    "revised": 0
+   },
+   {
+    "feed": "models",
+    "ok": true,
+    "added": 0,
+    "revised": 0
+   },
+   {
+    "feed": "fx",
+    "ok": true,
+    "added": 7,
+    "revised": 0
+   }
+  ],
+  "revisions": [
+   {
+    "id": "eia_us_lower48_demand_20261029",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-29",
+    "from": 10883.8,
+    "to": 10916.1
+   },
+   {
+    "id": "eia_us_lower48_demand_20261030",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-30",
+    "from": 10700.8,
+    "to": 10733.3
+   },
+   {
+    "id": "eia_us_lower48_demand_20261031",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-10-31",
+    "from": 10177.2,
+    "to": 10203.2
+   },
+   {
+    "id": "eia_us_lower48_demand_20261101",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-11-01",
+    "from": 10480.5,
+    "to": 10499.4
+   },
+   {
+    "id": "eia_us_lower48_demand_20261102",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-11-02",
+    "from": 10810.6,
+    "to": 10848.4
+   },
+   {
+    "id": "eia_us_lower48_demand_20261103",
+    "series": "us_lower48|grid_demand||",
+    "period": "2026-11-03",
+    "from": 10976.3,
+    "to": 10908.6
+   }
+  ],
+  "anomalies": [
+   {
+    "id": "edgar_amd_long_term_debt_2026_09",
+    "series": "amd|long_term_debt|USD|",
+    "period": "2026-09",
+    "previous": 2351000000,
+    "next": 7079000000,
+    "change": 2.011059123777116,
+    "reason": "[edgar] +201.1% vs 2026-06 (limit ±50%)"
+   },
+   {
+    "id": "vast_h200_20261112",
+    "series": "h200|gpu_rental_price|USD|contract=marketplace,provider=vast_ai",
+    "period": "2026-11-12",
+    "previous": 2.83,
+    "next": 5.26,
+    "change": 0.8586572438162543,
+    "reason": "[gpu] +85.9% vs 2026-11-04 (limit ±50%)"
+   }
+  ]
+ },
+ {
   "at": "2026-11-04T10:57:23.463Z",
   "kind": "ingest",
   "title": "Data update: openrouter +23, eia +6 (8 revised), epoch +1, gpu +4",
