@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-04T00:00:00.000Z",
- "pricesAsOf": "2026-11-04",
- "benchmarksAsOf": "2026-10-26",
+ "generated": "2026-11-13T00:00:00.000Z",
+ "pricesAsOf": "2026-11-13",
+ "benchmarksAsOf": "2026-11-09",
  "sources": {
   "pricing": "https://openrouter.ai/api/v1/models",
   "capabilities": "https://openrouter.ai/models",
@@ -9,15 +9,114 @@
  },
  "models": [
   {
+   "id": "anthropic/claude-fable-5.2",
+   "name": "Claude Fable 5.2",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-11-09",
+   "eci": 173.44,
+   "eciLow": 169.93,
+   "eciHigh": 177.49,
+   "price": {
+    "input": 8,
+    "output": 40,
+    "cachedInput": 0.2
+   },
+   "batchPrice": {
+    "input": 4,
+    "output": 20
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.9375,
+    "ProofBench": 1,
+    "GPQA diamond": 0.9566147586980923,
+    "OTIS Mock AIME 2024-2025": 0.9972194416638861,
+    "DTBench": 0.9866666666666667,
+    "LMCA": 0.8307058823529413,
+    "SimpleQA Verified": 0.94,
+    "Chess Puzzles": 0.7790404040404041,
+    "SimpleBench": 0.9388,
+    "FrontierMath-Tiers-1-3-v2-Private": 1,
+    "FrontierMath-Tier-4-v2-Private": 1,
+    "EBR-bench": 0.9047619047619048,
+    "Mystery Game Puzzles": 0.8898435778805905,
+    "Remote Labor Index": 0.413,
+    "Furniture Assembly": 0.8571428571428573,
+    "FrontierSWE": 0.6994018470588234,
+    "SpireClimb": 0.1961711711711711,
+    "ARC-AGI": 0.985,
+    "APEX-Agents": 0.8009999999999999
+   }
+  },
+  {
+   "id": "google/gemini-4-carbon",
+   "name": "Gemini 4 Carbon",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
+   "openWeights": false,
+   "released": "2026-10-28",
+   "eci": 169.76,
+   "eciLow": 166.48,
+   "eciHigh": 173.5,
+   "price": {
+    "input": 2,
+    "output": 10,
+    "cachedInput": 0.1
+   },
+   "batchPrice": {
+    "input": 1,
+    "output": 5
+   },
+   "context": 1048576,
+   "maxOutput": 943718,
+   "inputs": [
+    "audio",
+    "file",
+    "image",
+    "text",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.9416666666666668,
+    "GPQA diamond": 0.9934413580246914,
+    "OTIS Mock AIME 2024-2025": 1,
+    "SimpleQA Verified": 0.777,
+    "Chess Puzzles": 0.7685185185185186,
+    "SimpleBench": 0.9112,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.9529085872576177,
+    "FrontierMath-Tier-4-v2-Private": 0.951219512195122,
+    "EBR-bench": 0.8761904761904763,
+    "Mystery Game Puzzles": 0.7025776602775942,
+    "Furniture Assembly": 0.6785714285714287,
+    "FrontierSWE": 0.6119949235294118,
+    "ARC-AGI": 0.985,
+    "APEX-Agents": 0.8420000000000001
+   }
+  },
+  {
    "id": "openai/gpt-6-astra",
    "name": "GPT-6 Astra",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-09-03",
-   "eci": 169.06,
-   "eciLow": 165.88,
-   "eciHigh": 174.29,
+   "eci": 169,
+   "eciLow": 166.08,
+   "eciHigh": 172.26,
    "price": {
     "input": 10,
     "output": 50,
@@ -47,6 +146,7 @@
     "LMCA": 0.7572941176470589,
     "SimpleQA Verified": 0.756,
     "Chess Puzzles": 0.7474747474747475,
+    "SimpleBench": 0.838,
     "Balrog": 0.6829999999999999,
     "GSO-Bench": 0.7941,
     "FrontierMath-Tiers-1-3-v2-Private": 0.9861495844875349,
@@ -54,12 +154,13 @@
     "EBR-bench": 0.7619047619047619,
     "Mystery Game Puzzles": 0.8237497246089448,
     "MirrorCode": 0.6,
+    "PostTrainBench": 0.4188,
     "Remote Labor Index": 0.2082999999999999,
     "FrontierCode": 0.5326,
     "Furniture Assembly": 0.7142857142857143,
     "FrontierSWE": 0.6550757455882352,
     "WeirdML v3": 0.6005033569023569,
-    "SpireClimb": 0.2566666666666666,
+    "SpireClimb": 0.3399999999999999,
     "ARC-AGI": 0.985,
     "APEX-Agents": 0.647
    }
@@ -71,9 +172,9 @@
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2026-09-22",
-   "eci": 168.4,
-   "eciLow": 165.37,
-   "eciHigh": 173.03,
+   "eci": 168.54,
+   "eciLow": 165.63,
+   "eciHigh": 171.83,
    "price": {
     "input": 4,
     "output": 20,
@@ -102,61 +203,21 @@
     "LMCA": 0.8027058823529413,
     "SimpleQA Verified": 0.722,
     "Chess Puzzles": 0.6527777777777778,
+    "SimpleBench": 0.8608000000000001,
     "FrontierMath-Tiers-1-3-v2-Private": 0.9602954755309328,
     "FrontierMath-Tier-4-v2-Private": 0.95,
     "EBR-bench": 0.7142857142857142,
     "Mystery Game Puzzles": 0.6805463758537122,
-    "MirrorCode": 0.7889,
+    "MirrorCode": 0.9555555555555556,
+    "PostTrainBench": 0.438,
     "Remote Labor Index": 0.2125,
     "FrontierCode": 0.5464,
     "Furniture Assembly": 0.7619047619047621,
     "FrontierSWE": 0.623309882352941,
     "WeirdML v3": 0.5536774155844155,
-    "SpireClimb": 0.0333333333333333,
+    "SpireClimb": 0.0583333333333333,
     "ARC-AGI": 0.985,
     "APEX-Agents": 0.735
-   }
-  },
-  {
-   "id": "openai/gpt-6.1-terra",
-   "name": "GPT-6.1 Terra",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2026-10-26",
-   "eci": 168.11,
-   "eciLow": 164.94,
-   "eciHigh": 172.94,
-   "price": {
-    "input": 1,
-    "output": 5,
-    "cachedInput": 0.05
-   },
-   "batchPrice": {
-    "input": 0.5,
-    "output": 2.5
-   },
-   "context": 1050000,
-   "maxOutput": 128000,
-   "inputs": [
-    "file",
-    "image",
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.9627525252525253,
-    "OTIS Mock AIME 2024-2025": 1,
-    "SimpleQA Verified": 0.573,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.9566020313942754,
-    "FrontierMath-Tier-4-v2-Private": 0.926829268292683,
-    "EBR-bench": 0.780952380952381,
-    "Mystery Game Puzzles": 0.7135933024895351,
-    "Furniture Assembly": 0.7023809523809524,
-    "WeirdML v3": 0.4494241636822772,
-    "APEX-Agents": 0.6829999999999999
    }
   },
   {
@@ -166,9 +227,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-09-29",
-   "eci": 167.82,
-   "eciLow": 164.29,
-   "eciHigh": 172.51,
+   "eci": 168.48,
+   "eciLow": 165.49,
+   "eciHigh": 171.8,
    "price": {
     "input": 2,
     "output": 10,
@@ -197,68 +258,64 @@
     "LMCA": 0.7385882352941177,
     "SimpleQA Verified": 0.739,
     "Chess Puzzles": 0.6632996632996634,
+    "SimpleBench": 0.7948000000000001,
     "FrontierMath-Tiers-1-3-v2-Private": 0.9861495844875349,
     "FrontierMath-Tier-4-v2-Private": 1,
     "EBR-bench": 0.5428571428571429,
     "Mystery Game Puzzles": 0.7796871557611809,
     "MirrorCode": 0.6111111111111112,
+    "PostTrainBench": 0.3879,
     "FrontierCode": 0.5023,
     "Furniture Assembly": 0.7142857142857143,
     "WeirdML v3": 0.5622585252525252,
-    "SpireClimb": 0.2466666666666666,
+    "SpireClimb": 0.2383333333333333,
     "ARC-AGI": 0.985,
     "APEX-Agents": 0.6
    }
   },
   {
-   "id": "anthropic/claude-sonnet-5.5",
-   "name": "Claude Sonnet 5.5",
-   "lab": "Anthropic",
-   "labEntity": "anthropic",
+   "id": "openai/gpt-6.1-terra",
+   "name": "GPT-6.1 Terra",
+   "lab": "OpenAI",
+   "labEntity": "openai",
    "openWeights": false,
-   "released": "2026-09-28",
-   "eci": 166.74,
-   "eciLow": 163.58,
-   "eciHigh": 171.34,
+   "released": "2026-10-26",
+   "eci": 167.67,
+   "eciLow": 164.73,
+   "eciHigh": 170.98,
    "price": {
-    "input": 2,
-    "output": 10,
-    "cachedInput": 0.1
+    "input": 1,
+    "output": 5,
+    "cachedInput": 0.05
    },
    "batchPrice": {
-    "input": 1,
-    "output": 5
+    "input": 0.5,
+    "output": 2.5
    },
-   "context": 1000000,
+   "context": 1050000,
    "maxOutput": 128000,
    "inputs": [
-    "text",
+    "file",
     "image",
-    "file"
+    "text"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "ARC-AGI-2": 0.8388888888888889,
-    "ProofBench": 1,
-    "GPQA diamond": 0.9802890011223344,
+    "GPQA diamond": 0.9627525252525253,
     "OTIS Mock AIME 2024-2025": 1,
-    "DTBench": 0.9555000000000001,
-    "LMCA": 0.8030588235294119,
-    "SimpleQA Verified": 0.465,
-    "Chess Puzzles": 0.5686026936026936,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.9344413665743306,
-    "FrontierMath-Tier-4-v2-Private": 0.8048780487804879,
-    "Mystery Game Puzzles": 0.6144525225820666,
-    "MirrorCode": 0.9777777777777776,
-    "FrontierCode": 0.5209,
-    "Furniture Assembly": 0.6428571428571429,
-    "FrontierSWE": 0.618892994117647,
-    "WeirdML v3": 0.41101513371813364,
-    "SpireClimb": 0.0133333333333333,
-    "ARC-AGI": 0.965,
-    "APEX-Agents": 0.755
+    "SimpleQA Verified": 0.573,
+    "SimpleBench": 0.6664000000000001,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.9566020313942754,
+    "FrontierMath-Tier-4-v2-Private": 0.926829268292683,
+    "EBR-bench": 0.780952380952381,
+    "Mystery Game Puzzles": 0.7135933024895351,
+    "MirrorCode": 0.7666666666666667,
+    "Furniture Assembly": 0.7023809523809524,
+    "WeirdML v3": 0.4494241636822772,
+    "SpireClimb": 0.2233333333333333,
+    "APEX-Agents": 0.6829999999999999
    }
   },
   {
@@ -268,9 +325,9 @@
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2026-09-01",
-   "eci": 166.36,
-   "eciLow": 163.61,
-   "eciHigh": 170.75,
+   "eci": 166.99,
+   "eciLow": 164.23,
+   "eciHigh": 170.11,
    "price": {
     "input": 10,
     "output": 50,
@@ -299,12 +356,15 @@
     "LMCA": 0.7701176470588235,
     "SimpleQA Verified": 0.708,
     "Chess Puzzles": 0.45286195286195285,
+    "SimpleBench": 0.8392,
+    "GeoBench": 0.84,
     "GSO-Bench": 0.8824,
     "FrontierMath-Tiers-1-3-v2-Private": 0.9492151431209604,
     "FrontierMath-Tier-4-v2-Private": 0.8780487804878049,
     "EBR-bench": 0.5714285714285714,
     "Mystery Game Puzzles": 0.5373430270984798,
     "MirrorCode": 0.9333333333333332,
+    "PostTrainBench": 0.4465,
     "Remote Labor Index": 0.1792,
     "FrontierCode": 0.5091,
     "Furniture Assembly": 0.5714285714285714,
@@ -316,15 +376,67 @@
    }
   },
   {
+   "id": "anthropic/claude-sonnet-5.5",
+   "name": "Claude Sonnet 5.5",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-09-28",
+   "eci": 166.56,
+   "eciLow": 163.76,
+   "eciHigh": 169.58,
+   "price": {
+    "input": 2,
+    "output": 10,
+    "cachedInput": 0.1
+   },
+   "batchPrice": {
+    "input": 1,
+    "output": 5
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.8388888888888889,
+    "ProofBench": 1,
+    "GPQA diamond": 0.9802890011223344,
+    "OTIS Mock AIME 2024-2025": 1,
+    "DTBench": 0.9555000000000001,
+    "LMCA": 0.8030588235294119,
+    "SimpleQA Verified": 0.465,
+    "Chess Puzzles": 0.5686026936026936,
+    "SimpleBench": 0.7108000000000002,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.9344413665743306,
+    "FrontierMath-Tier-4-v2-Private": 0.8048780487804879,
+    "Mystery Game Puzzles": 0.6144525225820666,
+    "MirrorCode": 0.9777777777777776,
+    "FrontierCode": 0.5209,
+    "Furniture Assembly": 0.6428571428571429,
+    "FrontierSWE": 0.618892994117647,
+    "WeirdML v3": 0.41101513371813364,
+    "SpireClimb": 0.0133333333333333,
+    "ARC-AGI": 0.965,
+    "APEX-Agents": 0.755
+   }
+  },
+  {
    "id": "google/gemini-4-argon",
    "name": "Gemini 4 Argon",
    "lab": "Google DeepMind",
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-09-30",
-   "eci": 166.07,
-   "eciLow": 163.14,
-   "eciHigh": 170.27,
+   "eci": 166.48,
+   "eciLow": 163.77,
+   "eciHigh": 169.46,
    "price": {
     "input": 2,
     "output": 10,
@@ -355,16 +467,18 @@
     "LMCA": 0.7492941176470589,
     "SimpleQA Verified": 0.76,
     "Chess Puzzles": 0.5686026936026936,
+    "SimpleBench": 0.9004000000000001,
     "FrontierMath-Tiers-1-3-v2-Private": 0.9048938134810711,
     "FrontierMath-Tier-4-v2-Private": 0.7804878048780488,
     "EBR-bench": 0.6476190476190476,
     "Mystery Game Puzzles": 0.6034368803701257,
     "MirrorCode": 0.5888888888888889,
+    "PostTrainBench": 0.4044,
     "Remote Labor Index": 0.1707999999999999,
     "FrontierCode": 0.4755,
     "Furniture Assembly": 0.6071428571428572,
     "FrontierSWE": 0.5496118588235293,
-    "WeirdML v3": 0.4568940892255892,
+    "WeirdML v3": 0.4597597373737373,
     "ARC-AGI": 0.985,
     "APEX-Agents": 0.8240000000000001
    }
@@ -376,9 +490,9 @@
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2026-07-24",
-   "eci": 164.47,
-   "eciLow": 161.69,
-   "eciHigh": 168.29,
+   "eci": 164.68,
+   "eciLow": 162.14,
+   "eciHigh": 167.49,
    "price": {
     "input": 5,
     "output": 25,
@@ -415,7 +529,7 @@
     "EBR-bench": 0.4571428571428571,
     "Mystery Game Puzzles": 0.5483586693104208,
     "MirrorCode": 0.8777777777777778,
-    "PostTrainBench": 0.3504,
+    "PostTrainBench": 0.3566,
     "FrontierCode": 0.5338,
     "Furniture Assembly": 0.44047619047619047,
     "FrontierSWE": 0.5201176764705882,
@@ -426,15 +540,73 @@
    }
   },
   {
+   "id": "anthropic/claude-fable-5",
+   "name": "Claude Fable 5",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-06-09",
+   "eci": 164.13,
+   "eciLow": 161.68,
+   "eciHigh": 166.83,
+   "price": {
+    "input": 10,
+    "output": 50,
+    "cachedInput": 1
+   },
+   "batchPrice": {
+    "input": 5,
+    "output": 25
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.8916666666666667,
+    "ProofBench": 0.95,
+    "GPQA diamond": 0.8452581369248036,
+    "OTIS Mock AIME 2024-2025": 1,
+    "DTBench": 0.9733333333333333,
+    "WeirdML": 0.9194,
+    "LMCA": 0.7194117647058824,
+    "SimpleQA Verified": 0.707,
+    "Chess Puzzles": 0.4423400673400673,
+    "SimpleBench": 0.7828,
+    "GeoBench": 0.89,
+    "GSO-Bench": 0.7843000000000001,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.9159741458910435,
+    "FrontierMath-Tier-4-v2-Private": 0.902,
+    "EBR-bench": 0.395238,
+    "Mystery Game Puzzles": 0.4712491738268342,
+    "MirrorCode": 0.7,
+    "PostTrainBench": 0.3727,
+    "Remote Labor Index": 0.161,
+    "Surface Evolver Bench": 0.95,
+    "FrontierCode": 0.5348,
+    "Furniture Assembly": 0.08333333333333329,
+    "FrontierSWE": 0.4696449352941177,
+    "WeirdML v3": 0.30957720875420874,
+    "ARC-AGI": 0.985,
+    "APEX-Agents": 0.636
+   }
+  },
+  {
    "id": "openai/gpt-6-sol",
    "name": "GPT-6 Sol",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-09-22",
-   "eci": 163.78,
-   "eciLow": 161.1,
-   "eciHigh": 167.29,
+   "eci": 163.75,
+   "eciLow": 161.33,
+   "eciHigh": 166.42,
    "price": {
     "input": 2,
     "output": 10,
@@ -463,16 +635,77 @@
     "LMCA": 0.6950588235294117,
     "SimpleQA Verified": 0.607,
     "Chess Puzzles": 0.5370370370370371,
+    "SimpleBench": 0.6772,
     "FrontierMath-Tiers-1-3-v2-Private": 0.9455216989843029,
     "FrontierMath-Tier-4-v2-Private": 0.9,
     "EBR-bench": 0.5333333333333333,
     "Mystery Game Puzzles": 0.515311742674598,
+    "MirrorCode": 0.4888888888888889,
     "FrontierCode": 0.4927,
     "Furniture Assembly": 0.4047619047619049,
     "WeirdML v3": 0.306252835016835,
-    "SpireClimb": 0.075,
+    "SpireClimb": 0.0916666666666666,
     "ARC-AGI": 0.955,
     "APEX-Agents": 0.543
+   }
+  },
+  {
+   "id": "openai/gpt-5.6-sol",
+   "name": "GPT-5.6 Sol",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2026-07-09",
+   "eci": 162.99,
+   "eciLow": 160.68,
+   "eciHigh": 165.49,
+   "price": {
+    "input": 4.4,
+    "output": 22,
+    "cachedInput": 0.44
+   },
+   "batchPrice": {
+    "input": 2,
+    "output": 10
+   },
+   "context": 1050000,
+   "maxOutput": 128000,
+   "inputs": [
+    "file",
+    "image",
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.925,
+    "ProofBench": 0.8300000000000001,
+    "GPQA diamond": 0.9513538159371495,
+    "OTIS Mock AIME 2024-2025": 1,
+    "DTBench": 0.9333333333333332,
+    "WeirdML": 0.8943000000000001,
+    "LMCA": 0.6965882352941177,
+    "SimpleQA Verified": 0.697,
+    "Chess Puzzles": 0.6632996632996634,
+    "SimpleBench": 0.6604000000000001,
+    "Balrog": 0.6,
+    "GeoBench": 0.73,
+    "GSO-Bench": 0.7647,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.938134810710988,
+    "FrontierMath-Tier-4-v2-Private": 0.8292682926829268,
+    "EBR-bench": 0.4476190476190475,
+    "Mystery Game Puzzles": 0.5373430270984798,
+    "MirrorCode": 0.2,
+    "PostTrainBench": 0.3101,
+    "Surface Evolver Bench": 0.93125,
+    "FrontierCode": 0.4749,
+    "Furniture Assembly": 0.380952380952381,
+    "FrontierSWE": 0.3220246705882353,
+    "WeirdML v3": 0.2383218181818181,
+    "OSWorld 2.0": 0.2734,
+    "ARC-AGI": 0.975,
+    "APEX-Agents": 0.514
    }
   },
   {
@@ -482,9 +715,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-04-23",
-   "eci": 163.11,
-   "eciLow": 159.99,
-   "eciHigh": 166.63,
+   "eci": 162.7,
+   "eciLow": 159.98,
+   "eciHigh": 165.86,
    "price": {
     "input": 30,
     "output": 180
@@ -517,130 +750,15 @@
    }
   },
   {
-   "id": "anthropic/claude-fable-5",
-   "name": "Claude Fable 5",
-   "lab": "Anthropic",
-   "labEntity": "anthropic",
-   "openWeights": false,
-   "released": "2026-06-09",
-   "eci": 163.02,
-   "eciLow": 160.56,
-   "eciHigh": 167.1,
-   "price": {
-    "input": 10,
-    "output": 50,
-    "cachedInput": 1
-   },
-   "batchPrice": {
-    "input": 5,
-    "output": 25
-   },
-   "context": 1000000,
-   "maxOutput": 128000,
-   "inputs": [
-    "text",
-    "image",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.8916666666666667,
-    "ProofBench": 0.95,
-    "GPQA diamond": 0.8452581369248036,
-    "OTIS Mock AIME 2024-2025": 1,
-    "DTBench": 0.9733333333333333,
-    "WeirdML": 0.9194,
-    "LMCA": 0.7194117647058824,
-    "SimpleQA Verified": 0.707,
-    "Chess Puzzles": 0.4423400673400673,
-    "SimpleBench": 0.7828,
-    "GSO-Bench": 0.7843000000000001,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.9159741458910435,
-    "FrontierMath-Tier-4-v2-Private": 0.902,
-    "EBR-bench": 0.395238,
-    "Mystery Game Puzzles": 0.4712491738268342,
-    "MirrorCode": 0.638888888888889,
-    "PostTrainBench": 0.4179,
-    "Remote Labor Index": 0.161,
-    "Surface Evolver Bench": 0.95,
-    "FrontierCode": 0.5348,
-    "Furniture Assembly": 0.08333333333333329,
-    "FrontierSWE": 0.4696449352941177,
-    "WeirdML v3": 0.30957720875420874,
-    "ARC-AGI": 0.985,
-    "APEX-Agents": 0.636
-   }
-  },
-  {
-   "id": "openai/gpt-5.6-sol",
-   "name": "GPT-5.6 Sol",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2026-07-09",
-   "eci": 162.55,
-   "eciLow": 159.63,
-   "eciHigh": 166.19,
-   "price": {
-    "input": 4,
-    "output": 20,
-    "cachedInput": 0.4
-   },
-   "batchPrice": {
-    "input": 2,
-    "output": 10
-   },
-   "context": 1050000,
-   "maxOutput": 128000,
-   "inputs": [
-    "file",
-    "image",
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.925,
-    "ProofBench": 0.8300000000000001,
-    "GPQA diamond": 0.9513538159371495,
-    "OTIS Mock AIME 2024-2025": 1,
-    "DTBench": 0.9333333333333332,
-    "WeirdML": 0.8943000000000001,
-    "LMCA": 0.6965882352941177,
-    "SimpleQA Verified": 0.697,
-    "Chess Puzzles": 0.6632996632996634,
-    "SimpleBench": 0.6604000000000001,
-    "Balrog": 0.6,
-    "GSO-Bench": 0.7647,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.938134810710988,
-    "FrontierMath-Tier-4-v2-Private": 0.8292682926829268,
-    "EBR-bench": 0.4476190476190475,
-    "Mystery Game Puzzles": 0.5373430270984798,
-    "MirrorCode": 0.2,
-    "PostTrainBench": 0.3622999999999999,
-    "Surface Evolver Bench": 0.93125,
-    "FrontierCode": 0.4749,
-    "Furniture Assembly": 0.380952380952381,
-    "FrontierSWE": 0.3220246705882353,
-    "WeirdML v3": 0.2383218181818181,
-    "OSWorld 2.0": 0.2734,
-    "ARC-AGI": 0.975,
-    "APEX-Agents": 0.514
-   }
-  },
-  {
    "id": "meta/muse-wonder",
    "name": "Muse Wonder",
    "lab": "Meta AI",
    "labEntity": "meta",
    "openWeights": false,
    "released": "2026-10-12",
-   "eci": 161.71,
-   "eciLow": 159.16,
-   "eciHigh": 164.63,
+   "eci": 161.68,
+   "eciLow": 159.36,
+   "eciHigh": 164.34,
    "price": {
     "input": 4,
     "output": 20,
@@ -668,60 +786,55 @@
     "EBR-bench": 0.3142857142857143,
     "Mystery Game Puzzles": 0.46023353161489317,
     "MirrorCode": 0.4555555555555555,
+    "PostTrainBench": 0.2419,
     "Furniture Assembly": 0.34523809523809523,
-    "WeirdML v3": 0.27979357142857136,
+    "WeirdML v3": 0.2770344471500721,
     "APEX-Agents": 0.6609999999999999
    }
   },
   {
-   "id": "anthropic/claude-haiku-5.5",
-   "name": "Claude Haiku 5.5",
-   "lab": "Anthropic",
-   "labEntity": "anthropic",
-   "openWeights": false,
-   "released": "2026-10-07",
-   "eci": 160.37,
-   "eciLow": 157.33,
-   "eciHigh": 163.84,
+   "id": "moonshotai/kimi-k3.1-pro",
+   "name": "Kimi K3.1 Pro",
+   "lab": "Moonshot",
+   "labEntity": "moonshot",
+   "openWeights": true,
+   "released": "2026-10-23",
+   "eci": 161.37,
+   "eciLow": 158.99,
+   "eciHigh": 164,
    "price": {
-    "input": 0.1,
-    "output": 0.5,
-    "cachedInput": 0.01
+    "input": 2,
+    "output": 10,
+    "cachedInput": 0.2
    },
    "batchPrice": {
-    "input": 0.05,
-    "output": 0.25
+    "input": 0.7,
+    "output": 6
    },
-   "context": 1000000,
-   "maxOutput": 128000,
+   "context": 1048576,
+   "maxOutput": 943718,
    "inputs": [
     "text",
     "image",
-    "file"
+    "video"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "ARC-AGI-2": 0.6125,
-    "ProofBench": 0.89,
-    "GPQA diamond": 0.8978675645342313,
-    "OTIS Mock AIME 2024-2025": 0.9888777666555444,
-    "DTBench": 0.9165,
-    "LMCA": 0.6007058823529412,
-    "SimpleQA Verified": 0.238,
-    "Chess Puzzles": 0.5265151515151516,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.7903970452446907,
-    "FrontierMath-Tier-4-v2-Private": 0.4634146341463415,
-    "EBR-bench": 0.438095238095238,
-    "Mystery Game Puzzles": 0.22890504516413307,
-    "MirrorCode": 0.7888888888888889,
-    "FrontierCode": 0.4636,
-    "Furniture Assembly": 0.25,
-    "FrontierSWE": 0.4376868294117648,
-    "WeirdML v3": 0.26812431313131313,
-    "ARC-AGI": 0.89,
-    "APEX-Agents": 0.561
+    "ProofBench": 0.91,
+    "GPQA diamond": 0.9609988776655446,
+    "OTIS Mock AIME 2024-2025": 1,
+    "DTBench": 0.8888333333333334,
+    "LMCA": 0.677764705882353,
+    "SimpleQA Verified": 0.622,
+    "Chess Puzzles": 0.42129629629629634,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.8236380424746076,
+    "FrontierMath-Tier-4-v2-Private": 0.6585365853658537,
+    "Mystery Game Puzzles": 0.36109275170742455,
+    "Furniture Assembly": 0.3690476190476191,
+    "WeirdML v3": 0.21010166666666666,
+    "APEX-Agents": 0.655
    }
   },
   {
@@ -731,9 +844,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-07-09",
-   "eci": 160.09,
-   "eciLow": 157.81,
-   "eciHigh": 163.35,
+   "eci": 160.73,
+   "eciLow": 158.47,
+   "eciHigh": 163.25,
    "price": {
     "input": 2,
     "output": 12,
@@ -777,15 +890,66 @@
    }
   },
   {
+   "id": "anthropic/claude-haiku-5.5",
+   "name": "Claude Haiku 5.5",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-10-07",
+   "eci": 160.43,
+   "eciLow": 158.27,
+   "eciHigh": 162.87,
+   "price": {
+    "input": 0.1,
+    "output": 0.5,
+    "cachedInput": 0.01
+   },
+   "batchPrice": {
+    "input": 0.05,
+    "output": 0.25
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.6125,
+    "ProofBench": 0.89,
+    "GPQA diamond": 0.8978675645342313,
+    "OTIS Mock AIME 2024-2025": 0.9888777666555444,
+    "DTBench": 0.9165,
+    "LMCA": 0.6007058823529412,
+    "SimpleQA Verified": 0.238,
+    "Chess Puzzles": 0.5265151515151516,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.7903970452446907,
+    "FrontierMath-Tier-4-v2-Private": 0.4634146341463415,
+    "EBR-bench": 0.438095238095238,
+    "Mystery Game Puzzles": 0.22890504516413307,
+    "MirrorCode": 0.7888888888888889,
+    "FrontierCode": 0.4636,
+    "Furniture Assembly": 0.25,
+    "FrontierSWE": 0.4376868294117648,
+    "WeirdML v3": 0.26812431313131313,
+    "ARC-AGI": 0.89,
+    "APEX-Agents": 0.561
+   }
+  },
+  {
    "id": "openai/gpt-5.4-pro",
    "name": "GPT-5.4 Pro",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-03-05",
-   "eci": 159.81,
-   "eciLow": 157.38,
-   "eciHigh": 162.99,
+   "eci": 160.24,
+   "eciLow": 157.75,
+   "eciHigh": 163.04,
    "price": {
     "input": 30,
     "output": 180
@@ -817,72 +981,15 @@
    }
   },
   {
-   "id": "anthropic/claude-opus-4.8",
-   "name": "Claude Opus 4.8",
-   "lab": "Anthropic",
-   "labEntity": "anthropic",
-   "openWeights": false,
-   "released": "2026-05-28",
-   "eci": 159.57,
-   "eciLow": 157.44,
-   "eciHigh": 162.44,
-   "price": {
-    "input": 5,
-    "output": 25,
-    "cachedInput": 0.5
-   },
-   "batchPrice": {
-    "input": 2.5,
-    "output": 12.5
-   },
-   "context": 1000000,
-   "maxOutput": 128000,
-   "inputs": [
-    "text",
-    "image",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.7208,
-    "ProofBench": 0.6900000000000001,
-    "GPQA diamond": 0.9171576879910214,
-    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
-    "DTBench": 0.9155000000000001,
-    "WeirdML": 0.8289,
-    "LMCA": 0.6765882352941176,
-    "SimpleQA Verified": 0.53,
-    "Chess Puzzles": 0.494949494949495,
-    "SimpleBench": 0.5776,
-    "GSO-Bench": 0.4706,
-    "DeepResearch Bench": 0.502,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.8421052631578948,
-    "FrontierMath-Tier-4-v2-Private": 0.5609756097560976,
-    "EBR-bench": 0.2857142857142857,
-    "Mystery Game Puzzles": 0.2949988984357788,
-    "MirrorCode": 0.6555555555555556,
-    "PostTrainBench": 0.3384,
-    "Remote Labor Index": 0.0833,
-    "Surface Evolver Bench": 0.875,
-    "FrontierCode": 0.465,
-    "Furniture Assembly": 0.17857142857142858,
-    "OSWorld 2.0": 0.206,
-    "ARC-AGI": 0.925,
-    "APEX-Agents": 0.489
-   }
-  },
-  {
    "id": "openai/gpt-5.5",
    "name": "GPT-5.5",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-04-23",
-   "eci": 159.38,
-   "eciLow": 156.91,
-   "eciHigh": 162.8,
+   "eci": 160.1,
+   "eciLow": 158.12,
+   "eciHigh": 162.36,
    "price": {
     "input": 5,
     "output": 30,
@@ -919,8 +1026,8 @@
     "FrontierMath-Tier-4-v2-Private": 0.725,
     "EBR-bench": 0.3428571428571428,
     "Mystery Game Puzzles": 0.515311742674598,
-    "MirrorCode": 0.1,
-    "PostTrainBench": 0.2723,
+    "MirrorCode": 0.2333333333333333,
+    "PostTrainBench": 0.2387,
     "Remote Labor Index": 0.0625,
     "Surface Evolver Bench": 0.88125,
     "FrontierCode": 0.4296,
@@ -934,22 +1041,84 @@
    }
   },
   {
+   "id": "anthropic/claude-opus-4.8",
+   "name": "Claude Opus 4.8",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-05-28",
+   "eci": 159.94,
+   "eciLow": 157.86,
+   "eciHigh": 162.2,
+   "price": {
+    "input": 5,
+    "output": 25,
+    "cachedInput": 0.5
+   },
+   "batchPrice": {
+    "input": 2.5,
+    "output": 12.5
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.7208,
+    "ProofBench": 0.6900000000000001,
+    "GPQA diamond": 0.9171576879910214,
+    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
+    "DTBench": 0.9155000000000001,
+    "WeirdML": 0.8289,
+    "LMCA": 0.6765882352941176,
+    "SimpleQA Verified": 0.53,
+    "Chess Puzzles": 0.494949494949495,
+    "SimpleBench": 0.5776,
+    "GeoBench": 0.81,
+    "GSO-Bench": 0.4706,
+    "DeepResearch Bench": 0.502,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.8421052631578948,
+    "FrontierMath-Tier-4-v2-Private": 0.5609756097560976,
+    "EBR-bench": 0.2857142857142857,
+    "Mystery Game Puzzles": 0.2949988984357788,
+    "MirrorCode": 0.6555555555555556,
+    "PostTrainBench": 0.31,
+    "Remote Labor Index": 0.0833,
+    "Surface Evolver Bench": 0.875,
+    "FrontierCode": 0.465,
+    "Furniture Assembly": 0.17857142857142858,
+    "OSWorld 2.0": 0.206,
+    "ARC-AGI": 0.925,
+    "APEX-Agents": 0.489
+   }
+  },
+  {
    "id": "deepseek/deepseek-v4.1-flash-1017",
    "name": "DeepSeek V4.1 Flash 1017",
    "lab": "DeepSeek",
    "labEntity": "deepseek",
    "openWeights": true,
    "released": "2026-10-17",
-   "eci": 158.83,
-   "eciLow": 156.71,
-   "eciHigh": 162.2,
+   "eci": 159.41,
+   "eciLow": 157.01,
+   "eciHigh": 162,
    "price": {
-    "input": 0.15,
-    "output": 0.6,
-    "cachedInput": 0.003
+    "input": 0.038,
+    "output": 0.5,
+    "cachedInput": 0.01
+   },
+   "batchPrice": {
+    "input": 0.05,
+    "output": 0.15
    },
    "context": 1048576,
-   "maxOutput": 393216,
+   "maxOutput": 943718,
    "inputs": [
     "text",
     "image"
@@ -972,15 +1141,72 @@
    }
   },
   {
+   "id": "google/gemini-3.8-flash",
+   "name": "Gemini 3.8 Flash",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
+   "openWeights": false,
+   "released": "2026-09-02",
+   "eci": 158.79,
+   "eciLow": 156.77,
+   "eciHigh": 160.94,
+   "price": {
+    "input": 0.825,
+    "output": 4.125,
+    "cachedInput": 0.0825
+   },
+   "batchPrice": {
+    "input": 0.375,
+    "output": 1.875
+   },
+   "context": 1048576,
+   "maxOutput": 65536,
+   "inputs": [
+    "text",
+    "image",
+    "video",
+    "file",
+    "audio"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.8916666666666667,
+    "ProofBench": 0.48,
+    "GPQA diamond": 0.9776585297418632,
+    "OTIS Mock AIME 2024-2025": 0.9888777666555444,
+    "DTBench": 0.9286666666666668,
+    "WeirdML": 0.8481000000000001,
+    "LMCA": 0.6223529411764707,
+    "SimpleQA Verified": 0.697,
+    "Chess Puzzles": 0.5580808080808081,
+    "SimpleBench": 0.7888000000000001,
+    "GeoBench": 0.86,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.7202216066481995,
+    "FrontierMath-Tier-4-v2-Private": 0.2195121951219512,
+    "Mystery Game Puzzles": 0.41617096276712934,
+    "MirrorCode": 0.3888888888888889,
+    "Remote Labor Index": 0.0583,
+    "Surface Evolver Bench": 0.76875,
+    "FrontierCode": 0.4119,
+    "Furniture Assembly": 0.023809523809523725,
+    "FrontierSWE": 0.1962690294117646,
+    "WeirdML v3": 0.1619341212121211,
+    "ARC-AGI": 0.985,
+    "APEX-Agents": 0.643
+   }
+  },
+  {
    "id": "moonshotai/kimi-k3",
    "name": "Kimi K3",
    "lab": "Moonshot",
    "labEntity": "moonshot",
    "openWeights": true,
    "released": "2026-07-16",
-   "eci": 158.33,
-   "eciLow": 155.79,
-   "eciHigh": 161.35,
+   "eci": 158.58,
+   "eciLow": 156.6,
+   "eciHigh": 160.8,
    "price": {
     "input": 0.192,
     "output": 16,
@@ -1015,7 +1241,7 @@
     "FrontierMath-Tier-4-v2-Private": 0.3902439024390244,
     "Mystery Game Puzzles": 0.18484247631636927,
     "MirrorCode": 0.5444444444444444,
-    "PostTrainBench": 0.3196,
+    "PostTrainBench": 0.3148,
     "Surface Evolver Bench": 0.95,
     "FrontierCode": 0.4417,
     "Furniture Assembly": 0.059523809523809555,
@@ -1032,9 +1258,9 @@
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-08-13",
-   "eci": 158.17,
-   "eciLow": 156.18,
-   "eciHigh": 161.36,
+   "eci": 158.36,
+   "eciLow": 156.35,
+   "eciHigh": 160.59,
    "price": {
     "input": 0.75,
     "output": 3.75,
@@ -1078,111 +1304,15 @@
    }
   },
   {
-   "id": "qwen/qwen3.8-max-0902",
-   "name": "Qwen 3.8 Max",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
-   "openWeights": false,
-   "released": "2026-08-02",
-   "eci": 157.98,
-   "eciLow": 155.71,
-   "eciHigh": 160.77,
-   "price": {
-    "input": 2,
-    "output": 6,
-    "cachedInput": 0.25
-   },
-   "context": 1000000,
-   "maxOutput": 131072,
-   "inputs": [
-    "text",
-    "image",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.58,
-    "GPQA diamond": 0.9399551066217734,
-    "OTIS Mock AIME 2024-2025": 0.9944388833277721,
-    "DTBench": 0.8666666666666667,
-    "LMCA": 0.544,
-    "SimpleQA Verified": 0.458,
-    "Chess Puzzles": 0.4318181818181819,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.7867036011080333,
-    "FrontierMath-Tier-4-v2-Private": 0.4634146341463415,
-    "Mystery Game Puzzles": 0.3170301828596607,
-    "MirrorCode": 0.5222222222222223,
-    "FrontierSWE": 0.1580935058823529,
-    "APEX-Agents": 0.633
-   }
-  },
-  {
-   "id": "google/gemini-3.8-flash",
-   "name": "Gemini 3.8 Flash",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": false,
-   "released": "2026-09-02",
-   "eci": 157.64,
-   "eciLow": 155.48,
-   "eciHigh": 160.88,
-   "price": {
-    "input": 0.825,
-    "output": 4.125,
-    "cachedInput": 0.0825
-   },
-   "batchPrice": {
-    "input": 0.375,
-    "output": 1.875
-   },
-   "context": 1048576,
-   "maxOutput": 65536,
-   "inputs": [
-    "text",
-    "image",
-    "video",
-    "file",
-    "audio"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.8916666666666667,
-    "ProofBench": 0.48,
-    "GPQA diamond": 0.9776585297418632,
-    "OTIS Mock AIME 2024-2025": 0.9888777666555444,
-    "DTBench": 0.9286666666666668,
-    "WeirdML": 0.8481000000000001,
-    "LMCA": 0.6223529411764707,
-    "SimpleQA Verified": 0.697,
-    "Chess Puzzles": 0.5580808080808081,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.7202216066481995,
-    "FrontierMath-Tier-4-v2-Private": 0.2195121951219512,
-    "Mystery Game Puzzles": 0.41617096276712934,
-    "MirrorCode": 0.3888888888888889,
-    "Remote Labor Index": 0.0583,
-    "Surface Evolver Bench": 0.76875,
-    "FrontierCode": 0.4119,
-    "Furniture Assembly": 0.023809523809523725,
-    "FrontierSWE": 0.1962690294117646,
-    "WeirdML v3": 0.1619341212121211,
-    "ARC-AGI": 0.985,
-    "APEX-Agents": 0.643
-   }
-  },
-  {
    "id": "meta/muse-spark-1.3",
    "name": "Muse Spark 1.3",
    "lab": "Meta AI",
    "labEntity": "meta",
    "openWeights": false,
    "released": "2026-09-02",
-   "eci": 157.37,
-   "eciLow": 155.42,
-   "eciHigh": 159.9,
+   "eci": 158.24,
+   "eciLow": 156.03,
+   "eciHigh": 160.58,
    "price": {
     "input": 1.25,
     "output": 4.25,
@@ -1205,9 +1335,12 @@
     "DTBench": 0.9421666666666667,
     "LMCA": 0.6337647058823529,
     "Chess Puzzles": 0.33712121212121215,
+    "SimpleBench": 0.7816,
+    "GeoBench": 0.86,
     "FrontierMath-Tiers-1-3-v2-Private": 0.7830101569713758,
     "FrontierMath-Tier-4-v2-Private": 0.4634146341463415,
     "Mystery Game Puzzles": 0.17382683410442828,
+    "MirrorCode": 0.5444444444444444,
     "FrontierSWE": 0.2580214823529412,
     "WeirdML v3": 0.13477143686868678,
     "APEX-Agents": 0.5860000000000001
@@ -1220,9 +1353,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-03-05",
-   "eci": 157.14,
-   "eciLow": 155.2,
-   "eciHigh": 159.47,
+   "eci": 157.85,
+   "eciLow": 155.93,
+   "eciHigh": 159.9,
    "price": {
     "input": 2.5,
     "output": 15,
@@ -1259,8 +1392,8 @@
     "FrontierMath-Tier-4-v2-Private": 0.49,
     "EBR-bench": 0.253968,
     "Mystery Game Puzzles": 0.30601454064771977,
-    "MirrorCode": 0.1555555555555555,
-    "PostTrainBench": 0.19,
+    "MirrorCode": 0.2333333333333333,
+    "PostTrainBench": 0.1776,
     "Furniture Assembly": 0.10714285714285716,
     "Terminal Bench": 0.818,
     "CL-bench": 0.279,
@@ -1270,63 +1403,15 @@
    }
   },
   {
-   "id": "anthropic/claude-sonnet-5",
-   "name": "Claude Sonnet 5",
-   "lab": "Anthropic",
-   "labEntity": "anthropic",
-   "openWeights": false,
-   "released": "2026-06-30",
-   "eci": 157.03,
-   "eciLow": 154.23,
-   "eciHigh": 159.71,
-   "price": {
-    "input": 2,
-    "output": 10,
-    "cachedInput": 0.2
-   },
-   "batchPrice": {
-    "input": 1,
-    "output": 5
-   },
-   "context": 1000000,
-   "maxOutput": 128000,
-   "inputs": [
-    "text",
-    "image",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.77,
-    "GPQA diamond": 0.9101430976430978,
-    "OTIS Mock AIME 2024-2025": 0.9471693916138361,
-    "DTBench": 0.8746666666666666,
-    "WeirdML": 0.6878000000000001,
-    "LMCA": 0.5884705882352942,
-    "SimpleQA Verified": 0.337,
-    "Chess Puzzles": 0.42129629629629634,
-    "SimpleBench": 0.5272,
-    "GSO-Bench": 0.3725,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.69067405355494,
-    "FrontierMath-Tier-4-v2-Private": 0.2926829268292683,
-    "Mystery Game Puzzles": 0.28398325622383785,
-    "Surface Evolver Bench": 0.6,
-    "FrontierCode": 0.4273,
-    "APEX-Agents": 0.545
-   }
-  },
-  {
    "id": "x-ai/grok-4.6",
    "name": "Grok 4.6",
    "lab": "xAI",
    "labEntity": "xai",
    "openWeights": false,
    "released": "2026-08-12",
-   "eci": 156.91,
-   "eciLow": 155.09,
-   "eciHigh": 159.38,
+   "eci": 157.79,
+   "eciLow": 155.77,
+   "eciHigh": 159.95,
    "price": {
     "input": 2,
     "output": 6,
@@ -1370,15 +1455,351 @@
    }
   },
   {
+   "id": "qwen/qwen3.8-max-0902",
+   "name": "Qwen 3.8 Max",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
+   "openWeights": false,
+   "released": "2026-08-02",
+   "eci": 157.59,
+   "eciLow": 155.42,
+   "eciHigh": 159.96,
+   "price": {
+    "input": 2,
+    "output": 6,
+    "cachedInput": 0.25
+   },
+   "batchPrice": {
+    "input": 1.15,
+    "output": 3.45
+   },
+   "context": 1000000,
+   "maxOutput": 131072,
+   "inputs": [
+    "text",
+    "image",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.58,
+    "GPQA diamond": 0.9399551066217734,
+    "OTIS Mock AIME 2024-2025": 0.9944388833277721,
+    "DTBench": 0.8666666666666667,
+    "LMCA": 0.544,
+    "SimpleQA Verified": 0.458,
+    "Chess Puzzles": 0.4318181818181819,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.7867036011080333,
+    "FrontierMath-Tier-4-v2-Private": 0.4634146341463415,
+    "Mystery Game Puzzles": 0.3170301828596607,
+    "MirrorCode": 0.5222222222222223,
+    "FrontierSWE": 0.1580935058823529,
+    "APEX-Agents": 0.633
+   }
+  },
+  {
+   "id": "anthropic/claude-opus-4.7",
+   "name": "Claude Opus 4.7",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-04-16",
+   "eci": 157.44,
+   "eciLow": 155.52,
+   "eciHigh": 159.56,
+   "price": {
+    "input": 5,
+    "output": 25,
+    "cachedInput": 0.5
+   },
+   "batchPrice": {
+    "input": 2.5,
+    "output": 12.5
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.7583,
+    "ProofBench": 0.54,
+    "GPQA diamond": 0.9048821548821551,
+    "OTIS Mock AIME 2024-2025": 0.9779779779779779,
+    "DTBench": 0.9108333333333334,
+    "WeirdML": 0.7644,
+    "LMCA": 0.6141176470588235,
+    "SimpleQA Verified": 0.517,
+    "Chess Puzzles": 0.3792087542087542,
+    "SimpleBench": 0.5404,
+    "GSO-Bench": 0.4412,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.7386888273314866,
+    "FrontierMath-Tier-4-v2-Private": 0.3170731707317073,
+    "EBR-bench": 0.1904761904761904,
+    "Mystery Game Puzzles": 0.20687376074025118,
+    "MirrorCode": 0.3111111111111111,
+    "PostTrainBench": 0.2434,
+    "FrontierCode": 0.3854,
+    "Furniture Assembly": 0.04761904761904761,
+    "Terminal Bench": 0.8022471910110001,
+    "ExploitBench": 0.265,
+    "OSWorld 2.0": 0.182,
+    "ARC-AGI": 0.935,
+    "APEX-Agents": 0.492
+   }
+  },
+  {
+   "id": "openai/gpt-5.2-pro",
+   "name": "GPT-5.2 Pro",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2025-12-11",
+   "eci": 157.27,
+   "eciLow": 154.92,
+   "eciHigh": 159.87,
+   "price": {
+    "input": 21,
+    "output": 168
+   },
+   "batchPrice": {
+    "input": 10.5,
+    "output": 84
+   },
+   "context": 400000,
+   "maxOutput": 128000,
+   "inputs": [
+    "image",
+    "text",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.5416,
+    "Chess Puzzles": 0.5791245791245792,
+    "SimpleBench": 0.48879999999999996,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.7789473684210526,
+    "FrontierMath-Tier-4-v2-Private": 0.46,
+    "ARC-AGI": 0.905
+   }
+  },
+  {
+   "id": "z-ai/glm-5.3",
+   "name": "GLM-5.3",
+   "lab": "Z.ai (Zhipu AI)",
+   "openWeights": true,
+   "released": "2026-08-14",
+   "eci": 157.1,
+   "eciLow": 154.94,
+   "eciHigh": 159.53,
+   "price": {
+    "input": 0.084,
+    "output": 3.6,
+    "cachedInput": 0.079
+   },
+   "batchPrice": {
+    "input": 0.45,
+    "output": 2
+   },
+   "context": 1048576,
+   "maxOutput": 943718,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.49,
+    "GPQA diamond": 0.9154040404040406,
+    "OTIS Mock AIME 2024-2025": 0.9110221332443555,
+    "DTBench": 0.7945000000000001,
+    "WeirdML": 0.7540000000000001,
+    "LMCA": 0.6530588235294118,
+    "SimpleQA Verified": 0.41,
+    "Chess Puzzles": 0.33712121212121215,
+    "SimpleBench": 0.5944,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.723915050784857,
+    "FrontierMath-Tier-4-v2-Private": 0.2926829268292683,
+    "Mystery Game Puzzles": 0.26195197179995594,
+    "PostTrainBench": 0.3452,
+    "FrontierCode": 0.4014,
+    "FrontierSWE": 0.3018186411764705,
+    "APEX-Agents": 0.5660000000000001
+   }
+  },
+  {
+   "id": "anthropic/claude-sonnet-5",
+   "name": "Claude Sonnet 5",
+   "lab": "Anthropic",
+   "labEntity": "anthropic",
+   "openWeights": false,
+   "released": "2026-06-30",
+   "eci": 156.94,
+   "eciLow": 154.84,
+   "eciHigh": 159.2,
+   "price": {
+    "input": 2,
+    "output": 10,
+    "cachedInput": 0.2
+   },
+   "batchPrice": {
+    "input": 1,
+    "output": 5
+   },
+   "context": 1000000,
+   "maxOutput": 128000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.77,
+    "GPQA diamond": 0.9101430976430978,
+    "OTIS Mock AIME 2024-2025": 0.9471693916138361,
+    "DTBench": 0.8746666666666666,
+    "WeirdML": 0.6878000000000001,
+    "LMCA": 0.5884705882352942,
+    "SimpleQA Verified": 0.337,
+    "Chess Puzzles": 0.42129629629629634,
+    "SimpleBench": 0.5272,
+    "GeoBench": 0.74,
+    "GSO-Bench": 0.3725,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.69067405355494,
+    "FrontierMath-Tier-4-v2-Private": 0.2926829268292683,
+    "Mystery Game Puzzles": 0.28398325622383785,
+    "MirrorCode": 0.6333333333333333,
+    "Surface Evolver Bench": 0.6,
+    "FrontierCode": 0.4273,
+    "APEX-Agents": 0.545
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4.1-flash",
+   "name": "DeepSeek V4.1 Flash",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2026-09-09",
+   "eci": 156.7,
+   "eciLow": 154.79,
+   "eciHigh": 158.78,
+   "price": {
+    "input": 0.3,
+    "output": 1.2,
+    "cachedInput": 0.006
+   },
+   "batchPrice": {
+    "input": 0.112,
+    "output": 0.336
+   },
+   "context": 1048576,
+   "maxOutput": 943718,
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.7291666666666666,
+    "ProofBench": 0.54,
+    "GPQA diamond": 0.9004980359147026,
+    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
+    "DTBench": 0.8311666666666667,
+    "LMCA": 0.5525882352941177,
+    "SimpleQA Verified": 0.429,
+    "Chess Puzzles": 0.45286195286195285,
+    "SimpleBench": 0.6004,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.7091412742382271,
+    "FrontierMath-Tier-4-v2-Private": 0.2682926829268293,
+    "Mystery Game Puzzles": 0.3721083939193655,
+    "MirrorCode": 0.6444444444444445,
+    "Surface Evolver Bench": 0.4625,
+    "FrontierCode": 0.4387,
+    "Furniture Assembly": 0.059523809523809555,
+    "WeirdML v3": 0.1286359848484848,
+    "ARC-AGI": 0.945,
+    "APEX-Agents": 0.395
+   }
+  },
+  {
+   "id": "openai/gpt-5.6-luna",
+   "name": "GPT-5.6 Luna",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2026-07-09",
+   "eci": 156.67,
+   "eciLow": 154.83,
+   "eciHigh": 158.69,
+   "price": {
+    "input": 0.2,
+    "output": 1.2,
+    "cachedInput": 0.02
+   },
+   "batchPrice": {
+    "input": 0.1,
+    "output": 0.6
+   },
+   "context": 1050000,
+   "maxOutput": 128000,
+   "inputs": [
+    "file",
+    "image",
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.5954,
+    "ProofBench": 0.6,
+    "GPQA diamond": 0.9250491021324356,
+    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
+    "DTBench": 0.8178333333333332,
+    "WeirdML": 0.6086,
+    "LMCA": 0.5710588235294117,
+    "SimpleQA Verified": 0.41,
+    "Chess Puzzles": 0.40025252525252525,
+    "SimpleBench": 0.36160000000000014,
+    "Balrog": 0.456,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.8642659279778394,
+    "FrontierMath-Tier-4-v2-Private": 0.6097560975609756,
+    "Mystery Game Puzzles": 0.12976426525666446,
+    "MirrorCode": 0.2111111111111111,
+    "Surface Evolver Bench": 0.61875,
+    "FrontierCode": 0.3981,
+    "Furniture Assembly": 0.17857142857142858,
+    "WeirdML v3": 0.10382267676767667,
+    "ARC-AGI": 0.88,
+    "APEX-Agents": 0.43
+   }
+  },
+  {
    "id": "openai/gpt-6-luna",
    "name": "GPT-6 Luna",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-09-22",
-   "eci": 156.75,
-   "eciLow": 154.01,
-   "eciHigh": 159.45,
+   "eci": 156.41,
+   "eciLow": 154.45,
+   "eciHigh": 158.5,
    "price": {
     "input": 0.1,
     "output": 0.5,
@@ -1420,293 +1841,15 @@
    }
   },
   {
-   "id": "anthropic/claude-opus-4.7",
-   "name": "Claude Opus 4.7",
-   "lab": "Anthropic",
-   "labEntity": "anthropic",
-   "openWeights": false,
-   "released": "2026-04-16",
-   "eci": 156.7,
-   "eciLow": 154.99,
-   "eciHigh": 158.94,
-   "price": {
-    "input": 5,
-    "output": 25,
-    "cachedInput": 0.5
-   },
-   "batchPrice": {
-    "input": 2.5,
-    "output": 12.5
-   },
-   "context": 1000000,
-   "maxOutput": 128000,
-   "inputs": [
-    "text",
-    "image",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.7583,
-    "ProofBench": 0.54,
-    "GPQA diamond": 0.9048821548821551,
-    "OTIS Mock AIME 2024-2025": 0.9779779779779779,
-    "DTBench": 0.9108333333333334,
-    "WeirdML": 0.7644,
-    "LMCA": 0.6141176470588235,
-    "SimpleQA Verified": 0.517,
-    "Chess Puzzles": 0.3792087542087542,
-    "SimpleBench": 0.5404,
-    "GSO-Bench": 0.4412,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.7386888273314866,
-    "FrontierMath-Tier-4-v2-Private": 0.3170731707317073,
-    "EBR-bench": 0.1904761904761904,
-    "Mystery Game Puzzles": 0.20687376074025118,
-    "MirrorCode": 0.3111111111111111,
-    "PostTrainBench": 0.2856,
-    "FrontierCode": 0.3854,
-    "Furniture Assembly": 0.04761904761904761,
-    "Terminal Bench": 0.8022471910110001,
-    "ExploitBench": 0.265,
-    "OSWorld 2.0": 0.182,
-    "ARC-AGI": 0.935,
-    "APEX-Agents": 0.492
-   }
-  },
-  {
-   "id": "openai/gpt-5.6-luna",
-   "name": "GPT-5.6 Luna",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2026-07-09",
-   "eci": 156.67,
-   "eciLow": 154.15,
-   "eciHigh": 159.28,
-   "price": {
-    "input": 0.2,
-    "output": 1.2,
-    "cachedInput": 0.02
-   },
-   "batchPrice": {
-    "input": 0.1,
-    "output": 0.6
-   },
-   "context": 1050000,
-   "maxOutput": 128000,
-   "inputs": [
-    "file",
-    "image",
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.5954,
-    "ProofBench": 0.6,
-    "GPQA diamond": 0.9250491021324356,
-    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
-    "DTBench": 0.8178333333333332,
-    "WeirdML": 0.6086,
-    "LMCA": 0.5710588235294117,
-    "SimpleQA Verified": 0.41,
-    "Chess Puzzles": 0.40025252525252525,
-    "SimpleBench": 0.36160000000000014,
-    "Balrog": 0.456,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.8642659279778394,
-    "FrontierMath-Tier-4-v2-Private": 0.6097560975609756,
-    "Mystery Game Puzzles": 0.12976426525666446,
-    "Surface Evolver Bench": 0.61875,
-    "FrontierCode": 0.3981,
-    "Furniture Assembly": 0.17857142857142858,
-    "WeirdML v3": 0.10382267676767667,
-    "ARC-AGI": 0.88,
-    "APEX-Agents": 0.43
-   }
-  },
-  {
-   "id": "openai/gpt-5.2-pro",
-   "name": "GPT-5.2 Pro",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2025-12-11",
-   "eci": 156.54,
-   "eciLow": 153.89,
-   "eciHigh": 160.64,
-   "price": {
-    "input": 21,
-    "output": 168
-   },
-   "batchPrice": {
-    "input": 10.5,
-    "output": 84
-   },
-   "context": 400000,
-   "maxOutput": 128000,
-   "inputs": [
-    "image",
-    "text",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.5416,
-    "Chess Puzzles": 0.5791245791245792,
-    "SimpleBench": 0.48879999999999996,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.7789473684210526,
-    "FrontierMath-Tier-4-v2-Private": 0.46,
-    "ARC-AGI": 0.905
-   }
-  },
-  {
-   "id": "z-ai/glm-5.3",
-   "name": "GLM-5.3",
-   "lab": "Z.ai (Zhipu AI)",
-   "openWeights": true,
-   "released": "2026-08-14",
-   "eci": 156.17,
-   "eciLow": 154.32,
-   "eciHigh": 158.5,
-   "price": {
-    "input": 0.08,
-    "output": 3.6,
-    "cachedInput": 0.076
-   },
-   "batchPrice": {
-    "input": 0.45,
-    "output": 2
-   },
-   "context": 1048576,
-   "maxOutput": 943718,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.49,
-    "GPQA diamond": 0.9154040404040406,
-    "OTIS Mock AIME 2024-2025": 0.9110221332443555,
-    "DTBench": 0.7945000000000001,
-    "WeirdML": 0.7540000000000001,
-    "LMCA": 0.6530588235294118,
-    "SimpleQA Verified": 0.41,
-    "Chess Puzzles": 0.33712121212121215,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.723915050784857,
-    "FrontierMath-Tier-4-v2-Private": 0.2926829268292683,
-    "Mystery Game Puzzles": 0.26195197179995594,
-    "FrontierCode": 0.4014,
-    "FrontierSWE": 0.3018186411764705,
-    "APEX-Agents": 0.5660000000000001
-   }
-  },
-  {
-   "id": "deepseek/deepseek-v4.1-flash",
-   "name": "DeepSeek V4.1 Flash",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
-   "openWeights": true,
-   "released": "2026-09-09",
-   "eci": 156.11,
-   "eciLow": 153.7,
-   "eciHigh": 158.3,
-   "price": {
-    "input": 0.045,
-    "output": 0.5,
-    "cachedInput": 0.018
-   },
-   "batchPrice": {
-    "input": 0.05,
-    "output": 0.15
-   },
-   "context": 1048576,
-   "maxOutput": 943718,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.7291666666666666,
-    "ProofBench": 0.54,
-    "GPQA diamond": 0.9004980359147026,
-    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
-    "DTBench": 0.8311666666666667,
-    "LMCA": 0.5525882352941177,
-    "SimpleQA Verified": 0.429,
-    "Chess Puzzles": 0.45286195286195285,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.7091412742382271,
-    "FrontierMath-Tier-4-v2-Private": 0.2682926829268293,
-    "Mystery Game Puzzles": 0.3721083939193655,
-    "Surface Evolver Bench": 0.4625,
-    "FrontierCode": 0.4387,
-    "Furniture Assembly": 0.059523809523809555,
-    "WeirdML v3": 0.1286359848484848,
-    "ARC-AGI": 0.945,
-    "APEX-Agents": 0.395
-   }
-  },
-  {
-   "id": "deepseek/deepseek-v4-pro-0813",
-   "name": "DeepSeek V4 Pro 0813",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
-   "openWeights": true,
-   "released": "2026-08-13",
-   "eci": 155.87,
-   "eciLow": 154.17,
-   "eciHigh": 158.08,
-   "price": {
-    "input": 0.115,
-    "output": 4.6,
-    "cachedInput": 0.11
-   },
-   "context": 1048576,
-   "maxOutput": 943718,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.6125,
-    "ProofBench": 0.5,
-    "GPQA diamond": 0.9259259259259259,
-    "OTIS Mock AIME 2024-2025": 0.9860972083194306,
-    "DTBench": 0.8978333333333333,
-    "WeirdML": 0.6622,
-    "LMCA": 0.5347058823529413,
-    "SimpleQA Verified": 0.5290581162324649,
-    "Chess Puzzles": 0.4318181818181819,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.6795937211449677,
-    "FrontierMath-Tier-4-v2-Private": 0.2682926829268293,
-    "Mystery Game Puzzles": 0.3721083939193655,
-    "MirrorCode": 0.3333333333333333,
-    "FrontierCode": 0.2855,
-    "ARC-AGI": 0.905,
-    "APEX-Agents": 0.473
-   }
-  },
-  {
    "id": "anthropic/claude-opus-4.6",
    "name": "Claude Opus 4.6",
    "lab": "Anthropic",
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2026-02-05",
-   "eci": 155.85,
-   "eciLow": 154.09,
-   "eciHigh": 157.98,
+   "eci": 156.34,
+   "eciLow": 154.55,
+   "eciHigh": 158.31,
    "price": {
     "input": 5,
     "output": 25,
@@ -1757,15 +1900,66 @@
    }
   },
   {
+   "id": "x-ai/grok-4.7",
+   "name": "Grok 4.7",
+   "lab": "xAI",
+   "labEntity": "xai",
+   "openWeights": false,
+   "released": "2026-09-21",
+   "eci": 156.18,
+   "eciLow": 154.23,
+   "eciHigh": 158.27,
+   "price": {
+    "input": 2,
+    "output": 6,
+    "cachedInput": 0.5
+   },
+   "batchPrice": {
+    "input": 1.6,
+    "output": 4.8
+   },
+   "context": 500000,
+   "maxOutput": 450000,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.6138888888888888,
+    "ProofBench": 0.26,
+    "GPQA diamond": 0.9408319304152638,
+    "OTIS Mock AIME 2024-2025": 0.9805360916472028,
+    "DTBench": 0.9333333333333332,
+    "LMCA": 0.5809411764705883,
+    "SimpleQA Verified": 0.56,
+    "Chess Puzzles": 0.3792087542087542,
+    "GeoBench": 0.61,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.5577100646352724,
+    "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
+    "Mystery Game Puzzles": 0.2178894029521921,
+    "MirrorCode": 0.5444444444444444,
+    "FrontierCode": 0.4759,
+    "Furniture Assembly": 0,
+    "FrontierSWE": 0.2950476117647059,
+    "WeirdML v3": 0.2080741851851851,
+    "ARC-AGI": 0.9016666666666666,
+    "APEX-Agents": 0.546
+   }
+  },
+  {
    "id": "google/gemini-3.1-pro-preview",
    "name": "Gemini 3.1 Pro",
    "lab": "Google DeepMind",
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-02-19",
-   "eci": 155.24,
-   "eciLow": 153.31,
-   "eciHigh": 157.73,
+   "eci": 156.18,
+   "eciLow": 154.39,
+   "eciHigh": 158.14,
    "price": {
     "input": 2,
     "output": 12,
@@ -1800,6 +1994,7 @@
     "SimpleBench": 0.7551999999999999,
     "METR Time Horizons": 0.77035,
     "Balrog": 0.57,
+    "GeoBench": 0.84,
     "GSO-Bench": 0.2255,
     "DeepResearch Bench": 0.478,
     "FrontierMath-Tiers-1-3-v2-Private": 0.6278855032317636,
@@ -1807,7 +2002,7 @@
     "EBR-bench": 0.1428571428571428,
     "Mystery Game Puzzles": 0.27296761401189695,
     "MirrorCode": 0.0888888888888888,
-    "PostTrainBench": 0.2198999999999999,
+    "PostTrainBench": 0.1811,
     "Furniture Assembly": 0,
     "Terminal Bench": 0.8022471910110001,
     "ExploitBench": 0.261,
@@ -1818,41 +2013,45 @@
    }
   },
   {
-   "id": "meta/muse-spark-1.2",
-   "name": "Muse Spark 1.2",
-   "lab": "Meta AI",
-   "labEntity": "meta",
-   "openWeights": false,
-   "released": "2026-08-05",
-   "eci": 155.2,
-   "eciLow": 152.94,
-   "eciHigh": 157.6,
+   "id": "deepseek/deepseek-v4-pro-0813",
+   "name": "DeepSeek V4 Pro 0813",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2026-08-13",
+   "eci": 155.94,
+   "eciLow": 154.06,
+   "eciHigh": 158.01,
    "price": {
-    "input": 1.25,
-    "output": 4.25,
-    "cachedInput": 0.15
+    "input": 0.111,
+    "output": 4.44,
+    "cachedInput": 0.097
    },
    "context": 1048576,
    "maxOutput": 943718,
    "inputs": [
-    "text",
-    "image",
-    "video",
-    "file"
+    "text"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "ProofBench": 0.43,
-    "DTBench": 0.9111666666666667,
-    "WeirdML": 0.603,
-    "LMCA": 0.5688235294117647,
-    "SimpleQA Verified": 0.6030150753768844,
-    "Chess Puzzles": 0.23190235690235692,
-    "SimpleBench": 0.6940000000000001,
-    "FrontierSWE": 0.1197025647058823,
-    "APEX-Agents": 0.454
+    "ARC-AGI-2": 0.6125,
+    "ProofBench": 0.5,
+    "GPQA diamond": 0.9259259259259259,
+    "OTIS Mock AIME 2024-2025": 0.9860972083194306,
+    "DTBench": 0.8978333333333333,
+    "WeirdML": 0.6622,
+    "LMCA": 0.5347058823529413,
+    "SimpleQA Verified": 0.5290581162324649,
+    "Chess Puzzles": 0.4318181818181819,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.6795937211449677,
+    "FrontierMath-Tier-4-v2-Private": 0.2682926829268293,
+    "Mystery Game Puzzles": 0.3721083939193655,
+    "MirrorCode": 0.3333333333333333,
+    "FrontierCode": 0.2855,
+    "ARC-AGI": 0.905,
+    "APEX-Agents": 0.473
    }
   },
   {
@@ -1862,9 +2061,9 @@
    "labEntity": "meta",
    "openWeights": true,
    "released": "2026-10-15",
-   "eci": 155.05,
-   "eciLow": 153.13,
-   "eciHigh": 157.31,
+   "eci": 155.42,
+   "eciLow": 153.36,
+   "eciHigh": 157.7,
    "price": {
     "input": 1.25,
     "output": 4.25,
@@ -1900,9 +2099,9 @@
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-05-19",
-   "eci": 155.03,
-   "eciLow": 153.03,
-   "eciHigh": 157.41,
+   "eci": 155.28,
+   "eciLow": 153.47,
+   "eciHigh": 157.27,
    "price": {
     "input": 1.5,
     "output": 9,
@@ -1935,6 +2134,7 @@
     "SimpleQA Verified": 0.662,
     "Chess Puzzles": 0.42129629629629634,
     "SimpleBench": 0.7204,
+    "GeoBench": 0.85,
     "FrontierMath-Tiers-1-3-v2-Private": 0.6611265004616805,
     "FrontierMath-Tier-4-v2-Private": 0.2682926829268293,
     "EBR-bench": 0.0476190476190476,
@@ -1945,56 +2145,15 @@
    }
   },
   {
-   "id": "deepseek/deepseek-v4-flash-0731",
-   "name": "DeepSeek V4 Flash 0731",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
-   "openWeights": true,
-   "released": "2026-07-31",
-   "eci": 154.94,
-   "eciLow": 152.59,
-   "eciHigh": 156.83,
-   "price": {
-    "input": 0.059,
-    "output": 0.3,
-    "cachedInput": 0.035
-   },
-   "context": 1048576,
-   "maxOutput": 943718,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.6138888888888888,
-    "ProofBench": 0.56,
-    "GPQA diamond": 0.9171576879910214,
-    "OTIS Mock AIME 2024-2025": 0.9443888332777222,
-    "DTBench": 0.8488333333333333,
-    "WeirdML": 0.6296,
-    "LMCA": 0.49094117647058827,
-    "SimpleQA Verified": 0.3363363363363363,
-    "Chess Puzzles": 0.28451178451178455,
-    "SimpleBench": 0.5332,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.605724838411819,
-    "FrontierMath-Tier-4-v2-Private": 0.2439024390243902,
-    "Mystery Game Puzzles": 0.27296761401189695,
-    "FrontierCode": 0.188,
-    "ARC-AGI": 0.89
-   }
-  },
-  {
    "id": "google/gemini-3.6-flash",
    "name": "Gemini 3.6 Flash",
    "lab": "Google DeepMind",
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-07-21",
-   "eci": 154.69,
-   "eciLow": 153.02,
-   "eciHigh": 156.72,
+   "eci": 155.21,
+   "eciLow": 153.39,
+   "eciHigh": 157.2,
    "price": {
     "input": 0.75,
     "output": 3.75,
@@ -2029,6 +2188,7 @@
     "FrontierMath-Tiers-1-3-v2-Private": 0.6204986149584487,
     "FrontierMath-Tier-4-v2-Private": 0.2195121951219512,
     "Mystery Game Puzzles": 0.22890504516413307,
+    "MirrorCode": 0.2333333333333333,
     "FrontierCode": 0.3437,
     "Furniture Assembly": 0,
     "ARC-AGI": 0.9116666666666666,
@@ -2036,52 +2196,41 @@
    }
   },
   {
-   "id": "x-ai/grok-4.7",
-   "name": "Grok 4.7",
-   "lab": "xAI",
-   "labEntity": "xai",
+   "id": "meta/muse-spark-1.2",
+   "name": "Muse Spark 1.2",
+   "lab": "Meta AI",
+   "labEntity": "meta",
    "openWeights": false,
-   "released": "2026-09-21",
-   "eci": 154.55,
-   "eciLow": 152.58,
-   "eciHigh": 157.08,
+   "released": "2026-08-05",
+   "eci": 155.04,
+   "eciLow": 152.77,
+   "eciHigh": 157.54,
    "price": {
-    "input": 2,
-    "output": 6,
-    "cachedInput": 0.5
+    "input": 1.25,
+    "output": 4.25,
+    "cachedInput": 0.15
    },
-   "batchPrice": {
-    "input": 1.6,
-    "output": 4.8
-   },
-   "context": 500000,
-   "maxOutput": 450000,
+   "context": 1048576,
+   "maxOutput": 943718,
    "inputs": [
     "text",
     "image",
+    "video",
     "file"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "ARC-AGI-2": 0.6138888888888888,
-    "ProofBench": 0.26,
-    "GPQA diamond": 0.9408319304152638,
-    "OTIS Mock AIME 2024-2025": 0.9805360916472028,
-    "DTBench": 0.9333333333333332,
-    "LMCA": 0.5809411764705883,
-    "SimpleQA Verified": 0.56,
-    "Chess Puzzles": 0.3792087542087542,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.5577100646352724,
-    "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
-    "Mystery Game Puzzles": 0.2178894029521921,
-    "FrontierCode": 0.4759,
-    "Furniture Assembly": 0,
-    "FrontierSWE": 0.2950476117647059,
-    "WeirdML v3": 0.2080741851851851,
-    "ARC-AGI": 0.9016666666666666,
-    "APEX-Agents": 0.546
+    "ProofBench": 0.43,
+    "DTBench": 0.9111666666666667,
+    "WeirdML": 0.603,
+    "LMCA": 0.5688235294117647,
+    "SimpleQA Verified": 0.6030150753768844,
+    "Chess Puzzles": 0.23190235690235692,
+    "SimpleBench": 0.6940000000000001,
+    "FrontierSWE": 0.1197025647058823,
+    "APEX-Agents": 0.454
    }
   },
   {
@@ -2091,9 +2240,9 @@
    "labEntity": "xai",
    "openWeights": false,
    "released": "2026-07-08",
-   "eci": 154.36,
-   "eciLow": 152.84,
-   "eciHigh": 156.55,
+   "eci": 154.98,
+   "eciLow": 153.22,
+   "eciHigh": 156.88,
    "price": {
     "input": 2,
     "output": 6,
@@ -2123,50 +2272,12 @@
     "FrontierMath-Tiers-1-3-v2-Private": 0.6020313942751616,
     "FrontierMath-Tier-4-v2-Private": 0.2439024390243902,
     "MirrorCode": 0.3222222222222222,
-    "PostTrainBench": 0.2345,
+    "PostTrainBench": 0.2262,
     "Surface Evolver Bench": 0.74375,
     "FrontierCode": 0.4244,
     "Furniture Assembly": 0,
     "ARC-AGI": 0.8717,
     "APEX-Agents": 0.562
-   }
-  },
-  {
-   "id": "qwen/qwen3.7-max",
-   "name": "Qwen3.7-Max",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
-   "openWeights": false,
-   "released": "2026-05-19",
-   "eci": 154.22,
-   "eciLow": 152.43,
-   "eciHigh": 156.75,
-   "price": {
-    "input": 1.475,
-    "output": 4.425,
-    "cachedInput": 0.295
-   },
-   "context": 1000000,
-   "maxOutput": 131072,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.26,
-    "GPQA diamond": 0.9154040404040406,
-    "OTIS Mock AIME 2024-2025": 0.9555110666221778,
-    "DTBench": 0.8711666666666666,
-    "LMCA": 0.5178823529411766,
-    "SimpleQA Verified": 0.5576730190571715,
-    "Chess Puzzles": 0.22138047138047137,
-    "SimpleBench": 0.6448000000000002,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.6795937211449677,
-    "FrontierMath-Tier-4-v2-Private": 0.3414634146341463,
-    "EBR-bench": 0.0952380952380952,
-    "Mystery Game Puzzles": 0.250936329588015
    }
   },
   {
@@ -2176,9 +2287,9 @@
    "labEntity": "meta",
    "openWeights": false,
    "released": "2026-07-09",
-   "eci": 154.18,
-   "eciLow": 151.27,
-   "eciHigh": 156.36,
+   "eci": 154.87,
+   "eciLow": 152.25,
+   "eciHigh": 157.62,
    "price": {
     "input": 1.25,
     "output": 4.25,
@@ -2206,15 +2317,87 @@
    }
   },
   {
+   "id": "mistralai/mistral-large-4-0",
+   "name": "Mistral Large 4",
+   "lab": "Mistral AI",
+   "labEntity": "mistral",
+   "openWeights": true,
+   "released": "2026-10-29",
+   "eci": 154.62,
+   "eciLow": 151.79,
+   "eciHigh": 157.54,
+   "price": {
+    "input": 0.7,
+    "output": 2.1,
+    "cachedInput": 0.07
+   },
+   "context": 1048576,
+   "maxOutput": 262144,
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.9048821548821551,
+    "OTIS Mock AIME 2024-2025": 0.9944388833277721,
+    "SimpleQA Verified": 0.224,
+    "Chess Puzzles": 0.2529461279461279,
+    "EBR-bench": 0.1809523809523809,
+    "Mystery Game Puzzles": 0.11874862304472353,
+    "Furniture Assembly": 0.011904761904761862
+   }
+  },
+  {
+   "id": "qwen/qwen3.7-max",
+   "name": "Qwen3.7-Max",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
+   "openWeights": false,
+   "released": "2026-05-19",
+   "eci": 154.54,
+   "eciLow": 152.52,
+   "eciHigh": 156.67,
+   "price": {
+    "input": 1.475,
+    "output": 4.425,
+    "cachedInput": 0.295
+   },
+   "context": 1000000,
+   "maxOutput": 131072,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.26,
+    "GPQA diamond": 0.9154040404040406,
+    "OTIS Mock AIME 2024-2025": 0.9555110666221778,
+    "DTBench": 0.8711666666666666,
+    "LMCA": 0.5178823529411766,
+    "SimpleQA Verified": 0.5576730190571715,
+    "Chess Puzzles": 0.23190235690235692,
+    "SimpleBench": 0.6448000000000002,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.6795937211449677,
+    "FrontierMath-Tier-4-v2-Private": 0.3414634146341463,
+    "EBR-bench": 0.0952380952380952,
+    "Mystery Game Puzzles": 0.250936329588015
+   }
+  },
+  {
    "id": "openai/gpt-5.2",
    "name": "GPT-5.2",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2025-12-11",
-   "eci": 153.83,
-   "eciLow": 152.19,
-   "eciHigh": 155.93,
+   "eci": 154.46,
+   "eciLow": 152.83,
+   "eciHigh": 156.22,
    "price": {
     "input": 1.75,
     "output": 14,
@@ -2253,6 +2436,7 @@
     "FrontierMath-Tier-4-v2-Private": 0.317,
     "EBR-bench": 0.230159,
     "Mystery Game Puzzles": 0.1517955496805464,
+    "MirrorCode": 0.3222222222222222,
     "Remote Labor Index": 0.0250199999999999,
     "Furniture Assembly": 0.11904761904761903,
     "WeirdML v3": 0.108003663059163,
@@ -2263,18 +2447,63 @@
    }
   },
   {
+   "id": "deepseek/deepseek-v4-flash-0731",
+   "name": "DeepSeek V4 Flash 0731",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2026-07-31",
+   "eci": 154.41,
+   "eciLow": 152.56,
+   "eciHigh": 156.38,
+   "price": {
+    "input": 0.0434,
+    "output": 0.3,
+    "cachedInput": 0.035
+   },
+   "batchPrice": {
+    "input": 0.048,
+    "output": 0.144
+   },
+   "context": 1048576,
+   "maxOutput": 943718,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.6138888888888888,
+    "ProofBench": 0.56,
+    "GPQA diamond": 0.9171576879910214,
+    "OTIS Mock AIME 2024-2025": 0.9443888332777222,
+    "DTBench": 0.8488333333333333,
+    "WeirdML": 0.6296,
+    "LMCA": 0.49094117647058827,
+    "SimpleQA Verified": 0.3363363363363363,
+    "Chess Puzzles": 0.28451178451178455,
+    "SimpleBench": 0.5332,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.605724838411819,
+    "FrontierMath-Tier-4-v2-Private": 0.2439024390243902,
+    "Mystery Game Puzzles": 0.27296761401189695,
+    "FrontierCode": 0.188,
+    "ARC-AGI": 0.89
+   }
+  },
+  {
    "id": "z-ai/glm-5.3-flash",
    "name": "GLM-5.3-Flash",
    "lab": "Z.ai (Zhipu AI)",
    "openWeights": true,
    "released": "2026-08-20",
-   "eci": 153.22,
-   "eciLow": 150.85,
-   "eciHigh": 155.41,
+   "eci": 153.82,
+   "eciLow": 152,
+   "eciHigh": 155.78,
    "price": {
-    "input": 0.0269,
-    "output": 0.0996,
-    "cachedInput": 0.0269
+    "input": 0.0399,
+    "output": 0.0784,
+    "cachedInput": 0.03
    },
    "batchPrice": {
     "input": 0.05,
@@ -2299,11 +2528,61 @@
     "FrontierMath-Tiers-1-3-v2-Private": 0.5872576177285318,
     "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
     "Mystery Game Puzzles": 0,
+    "PostTrainBench": 0.3679,
     "Surface Evolver Bench": 0.525,
     "FrontierCode": 0.3183,
     "FrontierSWE": 0.1812520588235294,
     "ARC-AGI": 0.91,
     "APEX-Agents": 0.528
+   }
+  },
+  {
+   "id": "z-ai/glm-5.2",
+   "name": "GLM-5.2",
+   "lab": "Z.ai (Zhipu AI)",
+   "openWeights": true,
+   "released": "2026-06-16",
+   "eci": 153.03,
+   "eciLow": 151.34,
+   "eciHigh": 154.83,
+   "price": {
+    "input": 0.007,
+    "output": 6.8,
+    "cachedInput": 0.006
+   },
+   "batchPrice": {
+    "input": 0.298,
+    "output": 0.916
+   },
+   "context": 1048576,
+   "maxOutput": 943718,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.22775,
+    "ProofBench": 0.35,
+    "GPQA diamond": 0.9285563973063972,
+    "OTIS Mock AIME 2024-2025": 0.8637526415304193,
+    "DTBench": 0.8933333333333334,
+    "WeirdML": 0.7012,
+    "LMCA": 0.5390588235294118,
+    "SimpleQA Verified": 0.342,
+    "Chess Puzzles": 0.17929292929292928,
+    "SimpleBench": 0.5055999999999999,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.6232186965608968,
+    "FrontierMath-Tier-4-v2-Private": 0.2926829268292683,
+    "EBR-bench": 0.0952380952380952,
+    "Mystery Game Puzzles": 0.10773298083278256,
+    "MirrorCode": 0.3666666666666666,
+    "PostTrainBench": 0.304,
+    "Surface Evolver Bench": 0.55625,
+    "FrontierCode": 0.245,
+    "ARC-AGI": 0.77,
+    "APEX-Agents": 0.452
    }
   },
   {
@@ -2313,9 +2592,9 @@
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2026-02-17",
-   "eci": 152.9,
-   "eciLow": 150.11,
-   "eciHigh": 155.42,
+   "eci": 152.86,
+   "eciLow": 151.17,
+   "eciHigh": 154.65,
    "price": {
     "input": 3,
     "output": 15,
@@ -2346,6 +2625,7 @@
     "SimpleQA Verified": 0.355,
     "Chess Puzzles": 0.18981481481481483,
     "FrontierMath-2025-02-28-Private": 0.568421052631579,
+    "GeoBench": 0.73,
     "FrontierMath-Tier-4-2025-07-01-Private": 0.13833333333333334,
     "DeepResearch Bench": 0.549,
     "OSWorld": 0.721,
@@ -2359,15 +2639,110 @@
    }
   },
   {
+   "id": "qwen/qwen3.8-27b",
+   "name": "Qwen 3.8 27B",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
+   "openWeights": true,
+   "released": "2026-08-14",
+   "eci": 152.64,
+   "eciLow": 150.64,
+   "eciHigh": 154.76,
+   "price": {
+    "input": 0.15,
+    "output": 1.875,
+    "cachedInput": 0.0375
+   },
+   "batchPrice": {
+    "input": 0.16,
+    "output": 2
+   },
+   "context": 1048575,
+   "maxOutput": 235929,
+   "inputs": [
+    "text",
+    "image",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.4236111111111111,
+    "ProofBench": 0.16,
+    "DTBench": 0.8,
+    "LMCA": 0.4865882352941177,
+    "SimpleBench": 0.5224000000000001,
+    "GeoBench": 0.38,
+    "Surface Evolver Bench": 0.45,
+    "ARC-AGI": 0.875,
+    "APEX-Agents": 0.475
+   }
+  },
+  {
+   "id": "google/gemini-3-flash-preview",
+   "name": "Gemini 3 Flash",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
+   "openWeights": false,
+   "released": "2025-12-17",
+   "eci": 152.32,
+   "eciLow": 150.75,
+   "eciHigh": 154.03,
+   "price": {
+    "input": 0.5,
+    "output": 3,
+    "cachedInput": 0.05
+   },
+   "batchPrice": {
+    "input": 0.25,
+    "output": 1.5
+   },
+   "context": 1048576,
+   "maxOutput": 65536,
+   "inputs": [
+    "text",
+    "image",
+    "file",
+    "audio",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.3361,
+    "ProofBench": 0.15,
+    "GPQA diamond": 0.8943602693602694,
+    "OTIS Mock AIME 2024-2025": 0.9555110666221778,
+    "DTBench": 0.8178333333333332,
+    "WeirdML": 0.616,
+    "LMCA": 0.5074117647058823,
+    "SimpleQA Verified": 0.668,
+    "Chess Puzzles": 0.36868686868686873,
+    "SimpleBench": 0.5332,
+    "Balrog": 0.481,
+    "GeoBench": 0.88,
+    "VPCT": 0.589,
+    "GSO-Bench": 0.098,
+    "DeepResearch Bench": 0.498,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.5392428439519853,
+    "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
+    "Mystery Game Puzzles": 0.18484247631636927,
+    "Terminal Bench": 0.642696629213,
+    "ARC-AGI": 0.8467
+   }
+  },
+  {
    "id": "x-ai/grok-4.20",
    "name": "Grok 4.20",
    "lab": "xAI",
    "labEntity": "xai",
    "openWeights": false,
    "released": "2026-02-17",
-   "eci": 152.26,
-   "eciLow": 149.53,
-   "eciHigh": 154.72,
+   "eci": 152.28,
+   "eciLow": 150.58,
+   "eciHigh": 154.08,
    "price": {
     "input": 1.25,
     "output": 2.5,
@@ -2402,344 +2777,15 @@
    }
   },
   {
-   "id": "z-ai/glm-5.2",
-   "name": "GLM-5.2",
-   "lab": "Z.ai (Zhipu AI)",
-   "openWeights": true,
-   "released": "2026-06-16",
-   "eci": 152.07,
-   "eciLow": 150.13,
-   "eciHigh": 154.11,
-   "price": {
-    "input": 0.006,
-    "output": 6.8,
-    "cachedInput": 0.005
-   },
-   "context": 1048576,
-   "maxOutput": 943718,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.22775,
-    "ProofBench": 0.35,
-    "GPQA diamond": 0.9285563973063972,
-    "OTIS Mock AIME 2024-2025": 0.8637526415304193,
-    "DTBench": 0.8933333333333334,
-    "WeirdML": 0.7012,
-    "LMCA": 0.5390588235294118,
-    "SimpleQA Verified": 0.342,
-    "Chess Puzzles": 0.17929292929292928,
-    "SimpleBench": 0.5055999999999999,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.6232186965608968,
-    "FrontierMath-Tier-4-v2-Private": 0.2926829268292683,
-    "EBR-bench": 0.0952380952380952,
-    "Mystery Game Puzzles": 0.10773298083278256,
-    "PostTrainBench": 0.317,
-    "Surface Evolver Bench": 0.55625,
-    "FrontierCode": 0.245,
-    "ARC-AGI": 0.77,
-    "APEX-Agents": 0.452
-   }
-  },
-  {
-   "id": "google/gemini-3-flash-preview",
-   "name": "Gemini 3 Flash",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": false,
-   "released": "2025-12-17",
-   "eci": 152.01,
-   "eciLow": 150.63,
-   "eciHigh": 153.68,
-   "price": {
-    "input": 0.5,
-    "output": 3,
-    "cachedInput": 0.05
-   },
-   "batchPrice": {
-    "input": 0.25,
-    "output": 1.5
-   },
-   "context": 1048576,
-   "maxOutput": 65536,
-   "inputs": [
-    "text",
-    "image",
-    "file",
-    "audio",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.3361,
-    "ProofBench": 0.15,
-    "GPQA diamond": 0.8943602693602694,
-    "OTIS Mock AIME 2024-2025": 0.9555110666221778,
-    "DTBench": 0.8178333333333332,
-    "WeirdML": 0.616,
-    "LMCA": 0.5074117647058823,
-    "SimpleQA Verified": 0.668,
-    "Chess Puzzles": 0.3581649831649832,
-    "SimpleBench": 0.5332,
-    "Balrog": 0.481,
-    "GeoBench": 0.88,
-    "VPCT": 0.589,
-    "GSO-Bench": 0.098,
-    "DeepResearch Bench": 0.498,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.5392428439519853,
-    "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
-    "Mystery Game Puzzles": 0.18484247631636927,
-    "Terminal Bench": 0.642696629213,
-    "ARC-AGI": 0.8467
-   }
-  },
-  {
-   "id": "qwen/qwen3.8-27b",
-   "name": "Qwen 3.8 27B",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
-   "openWeights": true,
-   "released": "2026-08-14",
-   "eci": 151.8,
-   "eciLow": 149.85,
-   "eciHigh": 153.63,
-   "price": {
-    "input": 0.15,
-    "output": 1.875,
-    "cachedInput": 0.0375
-   },
-   "context": 1024000,
-   "maxOutput": 235929,
-   "inputs": [
-    "text",
-    "image",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.4236111111111111,
-    "ProofBench": 0.16,
-    "DTBench": 0.8,
-    "LMCA": 0.4865882352941177,
-    "Surface Evolver Bench": 0.45,
-    "ARC-AGI": 0.875,
-    "APEX-Agents": 0.475
-   }
-  },
-  {
-   "id": "moonshotai/kimi-k2.6",
-   "name": "Kimi K2.6",
-   "lab": "Moonshot",
-   "labEntity": "moonshot",
-   "openWeights": true,
-   "released": "2026-04-20",
-   "eci": 151.06,
-   "eciLow": 149.06,
-   "eciHigh": 152.88,
-   "price": {
-    "input": 0.65,
-    "output": 3.41,
-    "cachedInput": 0.15
-   },
-   "context": 262144,
-   "maxOutput": 235929,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.16,
-    "GPQA diamond": 0.9136503928170594,
-    "OTIS Mock AIME 2024-2025": 0.9610721832944057,
-    "DTBench": 0.8488333333333333,
-    "WeirdML": 0.5586,
-    "LMCA": 0.4383529411764706,
-    "SimpleQA Verified": 0.349,
-    "Chess Puzzles": 0.15824915824915825,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.6020313942751616,
-    "FrontierMath-Tier-4-v2-Private": 0.2564102564102564,
-    "EBR-bench": 0.0238095238095238,
-    "Mystery Game Puzzles": 0.09671733862084159,
-    "Furniture Assembly": 0,
-    "ExploitBench": 0.184,
-    "OSWorld 2.0": 0.046
-   }
-  },
-  {
-   "id": "openai/gpt-5-pro",
-   "name": "GPT-5 Pro",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2025-10-07",
-   "eci": 150.74,
-   "eciLow": 148.89,
-   "eciHigh": 154.57,
-   "price": {
-    "input": 15,
-    "output": 120
-   },
-   "batchPrice": {
-    "input": 7.5,
-    "output": 60
-   },
-   "context": 400000,
-   "maxOutput": 128000,
-   "inputs": [
-    "image",
-    "text",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.1833,
-    "WeirdML": 0.6039,
-    "Chess Puzzles": 0.45286195286195285,
-    "SimpleBench": 0.5392,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.5872576177285318,
-    "FrontierMath-Tier-4-v2-Private": 0.1951219512195122,
-    "ARC-AGI": 0.702
-   }
-  },
-  {
-   "id": "mistralai/mistral-large-4-0",
-   "name": "Mistral Large 4",
-   "lab": "Mistral AI",
-   "labEntity": "mistral",
-   "openWeights": true,
-   "released": "2026-10-06",
-   "eci": 150.59,
-   "eciLow": 147.4,
-   "eciHigh": 153.49,
-   "price": {
-    "input": 0.7,
-    "output": 2.1,
-    "cachedInput": 0.07
-   },
-   "context": 1048576,
-   "maxOutput": 262144,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.1,
-    "GPQA diamond": 0.8759469696969698,
-    "OTIS Mock AIME 2024-2025": 0.9833166499833165,
-    "DTBench": 0.8039999999999999,
-    "LMCA": 0.42105882352941176,
-    "SimpleQA Verified": 0.2,
-    "Chess Puzzles": 0.2950336700336701,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.6168051708217914,
-    "FrontierMath-Tier-4-v2-Private": 0.2682926829268293,
-    "Mystery Game Puzzles": 0.08570169640890066,
-    "Surface Evolver Bench": 0.28125,
-    "FrontierCode": 0.3943,
-    "Furniture Assembly": 0,
-    "WeirdML v3": 0.13564015993265988,
-    "APEX-Agents": 0.516
-   }
-  },
-  {
-   "id": "thinkingmachines/inkling-small",
-   "name": "Inkling-Small",
-   "lab": "Thinking Machines",
-   "openWeights": true,
-   "released": "2026-07-15",
-   "eci": 150.46,
-   "eciLow": 147.7,
-   "eciHigh": 152.38,
-   "price": {
-    "input": 0.45,
-    "output": 1.2,
-    "cachedInput": 0.1
-   },
-   "context": 524288,
-   "maxOutput": 262144,
-   "inputs": [
-    "text",
-    "image",
-    "audio"
-   ],
-   "tools": true,
-   "structured": false,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.4013888888888888,
-    "ProofBench": 0.06,
-    "GPQA diamond": 0.8820847362514029,
-    "OTIS Mock AIME 2024-2025": 0.8998998998998999,
-    "SimpleQA Verified": 0.191,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.48753462603878117,
-    "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
-    "Mystery Game Puzzles": 0,
-    "ARC-AGI": 0.84
-   }
-  },
-  {
-   "id": "moonshotai/kimi-k2.7-code",
-   "name": "Kimi K2.7 Code",
-   "lab": "Moonshot",
-   "labEntity": "moonshot",
-   "openWeights": true,
-   "released": "2026-06-12",
-   "eci": 150.23,
-   "eciLow": 148.09,
-   "eciHigh": 151.94,
-   "price": {
-    "input": 0.6,
-    "output": 3.5,
-    "cachedInput": 0.15
-   },
-   "context": 262144,
-   "maxOutput": 235929,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.8733164983164984,
-    "OTIS Mock AIME 2024-2025": 0.9555110666221778,
-    "WeirdML": 0.5412,
-    "SimpleQA Verified": 0.365,
-    "Chess Puzzles": 0.09511784511784513,
-    "SimpleBench": 0.49479999999999996,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.5687903970452447,
-    "FrontierMath-Tier-4-v2-Private": 0.1219512195121951,
-    "Surface Evolver Bench": 0.4875,
-    "FrontierCode": 0.3006,
-    "APEX-Agents": 0.376
-   }
-  },
-  {
    "id": "anthropic/claude-opus-4.5",
    "name": "Claude Opus 4.5",
    "lab": "Anthropic",
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2025-11-24",
-   "eci": 150.2,
-   "eciLow": 148.04,
-   "eciHigh": 153.23,
+   "eci": 151.92,
+   "eciLow": 150.32,
+   "eciHigh": 153.58,
    "price": {
     "input": 5,
     "output": 25,
@@ -2789,6 +2835,291 @@
     "GDPval": 0.455,
     "CL-bench": 0.211,
     "ARC-AGI": 0.8
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2.6",
+   "name": "Kimi K2.6",
+   "lab": "Moonshot",
+   "labEntity": "moonshot",
+   "openWeights": true,
+   "released": "2026-04-20",
+   "eci": 151.56,
+   "eciLow": 149.79,
+   "eciHigh": 153.46,
+   "price": {
+    "input": 0.65,
+    "output": 3.41,
+    "cachedInput": 0.15
+   },
+   "context": 262144,
+   "maxOutput": 235929,
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.16,
+    "GPQA diamond": 0.9136503928170594,
+    "OTIS Mock AIME 2024-2025": 0.9610721832944057,
+    "DTBench": 0.8488333333333333,
+    "WeirdML": 0.5586,
+    "LMCA": 0.4383529411764706,
+    "SimpleQA Verified": 0.349,
+    "Chess Puzzles": 0.15824915824915825,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.6020313942751616,
+    "FrontierMath-Tier-4-v2-Private": 0.2564102564102564,
+    "EBR-bench": 0.0238095238095238,
+    "Mystery Game Puzzles": 0.09671733862084159,
+    "Furniture Assembly": 0,
+    "ExploitBench": 0.184,
+    "OSWorld 2.0": 0.046
+   }
+  },
+  {
+   "id": "openai/gpt-5-pro",
+   "name": "GPT-5 Pro",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2025-10-07",
+   "eci": 151.23,
+   "eciLow": 149.31,
+   "eciHigh": 153.29,
+   "price": {
+    "input": 15,
+    "output": 120
+   },
+   "batchPrice": {
+    "input": 7.5,
+    "output": 60
+   },
+   "context": 400000,
+   "maxOutput": 128000,
+   "inputs": [
+    "image",
+    "text",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.1833,
+    "WeirdML": 0.6039,
+    "Chess Puzzles": 0.45286195286195285,
+    "SimpleBench": 0.5392,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.5872576177285318,
+    "FrontierMath-Tier-4-v2-Private": 0.1951219512195122,
+    "ARC-AGI": 0.702
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2.7-code",
+   "name": "Kimi K2.7 Code",
+   "lab": "Moonshot",
+   "labEntity": "moonshot",
+   "openWeights": true,
+   "released": "2026-06-12",
+   "eci": 151.15,
+   "eciLow": 149.08,
+   "eciHigh": 153.28,
+   "price": {
+    "input": 0.6,
+    "output": 3.5,
+    "cachedInput": 0.16
+   },
+   "context": 262144,
+   "maxOutput": 235929,
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.8733164983164984,
+    "OTIS Mock AIME 2024-2025": 0.9555110666221778,
+    "WeirdML": 0.5412,
+    "SimpleQA Verified": 0.365,
+    "Chess Puzzles": 0.09511784511784513,
+    "SimpleBench": 0.49479999999999996,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.5687903970452447,
+    "FrontierMath-Tier-4-v2-Private": 0.1219512195121951,
+    "Surface Evolver Bench": 0.4875,
+    "FrontierCode": 0.3006,
+    "APEX-Agents": 0.376
+   }
+  },
+  {
+   "id": "openai/gpt-5.1",
+   "name": "GPT-5.1",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2025-11-13",
+   "eci": 150.94,
+   "eciLow": 149.36,
+   "eciHigh": 152.58,
+   "price": {
+    "input": 1.25,
+    "output": 10,
+    "cachedInput": 0.125
+   },
+   "batchPrice": {
+    "input": 0.625,
+    "output": 5
+   },
+   "context": 400000,
+   "maxOutput": 128000,
+   "inputs": [
+    "image",
+    "text",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.1764,
+    "GPQA diamond": 0.8698092031425365,
+    "OTIS Mock AIME 2024-2025": 0.8859971082193304,
+    "DTBench": 0.8355,
+    "WeirdML": 0.6077,
+    "LMCA": 0.5163529411764706,
+    "SimpleQA Verified": 0.48,
+    "Chess Puzzles": 0.3897306397306397,
+    "SimpleBench": 0.43840000000000007,
+    "FrontierMath-2025-02-28-Private": 0.544464609800363,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0.20833333333333334,
+    "VPCT": 0.38049999999999995,
+    "GSO-Bench": 0.1373,
+    "DeepResearch Bench": 0.428,
+    "Mystery Game Puzzles": 0.10773298083278256,
+    "Terminal Bench": 0.476,
+    "CL-bench": 0.237,
+    "CL-bench Life": 0.173,
+    "ARC-AGI": 0.7283
+   }
+  },
+  {
+   "id": "thinkingmachines/inkling-small",
+   "name": "Inkling-Small",
+   "lab": "Thinking Machines",
+   "openWeights": true,
+   "released": "2026-07-15",
+   "eci": 150.75,
+   "eciLow": 149,
+   "eciHigh": 152.61,
+   "price": {
+    "input": 0.45,
+    "output": 1.2,
+    "cachedInput": 0.1
+   },
+   "batchPrice": {
+    "input": 0.36,
+    "output": 0.96
+   },
+   "context": 524288,
+   "maxOutput": 262144,
+   "inputs": [
+    "text",
+    "image",
+    "audio"
+   ],
+   "tools": true,
+   "structured": false,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.4013888888888888,
+    "ProofBench": 0.06,
+    "GPQA diamond": 0.8820847362514029,
+    "OTIS Mock AIME 2024-2025": 0.8998998998998999,
+    "SimpleQA Verified": 0.191,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.48753462603878117,
+    "FrontierMath-Tier-4-v2-Private": 0.1707317073170731,
+    "Mystery Game Puzzles": 0,
+    "ARC-AGI": 0.84
+   }
+  },
+  {
+   "id": "z-ai/glm-5.1",
+   "name": "GLM-5.1",
+   "lab": "Z.ai (Zhipu AI)",
+   "openWeights": true,
+   "released": "2026-04-07",
+   "eci": 150.73,
+   "eciLow": 148.59,
+   "eciHigh": 152.88,
+   "price": {
+    "input": 1.4,
+    "output": 4.4,
+    "cachedInput": 0.26
+   },
+   "context": 204800,
+   "maxOutput": 131072,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.22222,
+    "GPQA diamond": 0.9013748597081931,
+    "OTIS Mock AIME 2024-2025": 0.9332665999332665,
+    "WeirdML": 0.5710000000000001,
+    "SimpleQA Verified": 0.34,
+    "Chess Puzzles": 0.15824915824915825,
+    "SimpleBench": 0.46120000000000005,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0.20833333333333334,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.3878116343490305,
+    "ExploitBench": 0.181,
+    "APEX-Agents": 0.409
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4-pro",
+   "name": "DeepSeek-V4-Pro",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2026-04-24",
+   "eci": 150.17,
+   "eciLow": 148.4,
+   "eciHigh": 152.01,
+   "price": {
+    "input": 0.9,
+    "output": 1.5,
+    "cachedInput": 0.25
+   },
+   "context": 1048576,
+   "maxOutput": 393216,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ProofBench": 0.16,
+    "GPQA diamond": 0.9154040404040406,
+    "OTIS Mock AIME 2024-2025": 0.9666332999666334,
+    "DTBench": 0.8444999999999999,
+    "WeirdML": 0.489,
+    "LMCA": 0.4847058823529412,
+    "SimpleQA Verified": 0.469939879759519,
+    "Chess Puzzles": 0.1477272727272727,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.47645429362880887,
+    "FrontierMath-Tier-4-v2-Private": 0.024390243902439,
+    "Mystery Game Puzzles": 0.08570169640890066,
+    "Surface Evolver Bench": 0.4,
+    "FrontierCode": 0.1764,
+    "CL-bench Life": 0.135
    }
   },
   {
@@ -2852,142 +3183,15 @@
    }
   },
   {
-   "id": "openai/gpt-5.1",
-   "name": "GPT-5.1",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2025-11-13",
-   "eci": 149.89,
-   "eciLow": 148.53,
-   "eciHigh": 151.57,
-   "price": {
-    "input": 1.25,
-    "output": 10,
-    "cachedInput": 0.125
-   },
-   "batchPrice": {
-    "input": 0.625,
-    "output": 5
-   },
-   "context": 400000,
-   "maxOutput": 128000,
-   "inputs": [
-    "image",
-    "text",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.1764,
-    "GPQA diamond": 0.8698092031425365,
-    "OTIS Mock AIME 2024-2025": 0.8859971082193304,
-    "DTBench": 0.8355,
-    "WeirdML": 0.6077,
-    "LMCA": 0.5163529411764706,
-    "SimpleQA Verified": 0.48,
-    "Chess Puzzles": 0.3897306397306397,
-    "SimpleBench": 0.43840000000000007,
-    "FrontierMath-2025-02-28-Private": 0.544464609800363,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0.20833333333333334,
-    "VPCT": 0.38049999999999995,
-    "GSO-Bench": 0.1373,
-    "DeepResearch Bench": 0.428,
-    "Mystery Game Puzzles": 0.10773298083278256,
-    "Terminal Bench": 0.476,
-    "CL-bench": 0.237,
-    "CL-bench Life": 0.173,
-    "ARC-AGI": 0.7283
-   }
-  },
-  {
-   "id": "z-ai/glm-5.1",
-   "name": "GLM-5.1",
-   "lab": "Z.ai (Zhipu AI)",
-   "openWeights": true,
-   "released": "2026-04-07",
-   "eci": 149.88,
-   "eciLow": 148.05,
-   "eciHigh": 151.71,
-   "price": {
-    "input": 1.4,
-    "output": 4.4,
-    "cachedInput": 0.26
-   },
-   "context": 204800,
-   "maxOutput": 131072,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.22222,
-    "GPQA diamond": 0.9013748597081931,
-    "OTIS Mock AIME 2024-2025": 0.9332665999332665,
-    "WeirdML": 0.5710000000000001,
-    "SimpleQA Verified": 0.34,
-    "Chess Puzzles": 0.15824915824915825,
-    "SimpleBench": 0.46120000000000005,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0.20833333333333334,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.3878116343490305,
-    "ExploitBench": 0.181,
-    "APEX-Agents": 0.409
-   }
-  },
-  {
-   "id": "deepseek/deepseek-v4-pro",
-   "name": "DeepSeek-V4-Pro",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
-   "openWeights": true,
-   "released": "2026-04-24",
-   "eci": 149.13,
-   "eciLow": 147.22,
-   "eciHigh": 150.86,
-   "price": {
-    "input": 1.6,
-    "output": 3.2,
-    "cachedInput": 0.135
-   },
-   "context": 1048576,
-   "maxOutput": 393216,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.16,
-    "GPQA diamond": 0.9154040404040406,
-    "OTIS Mock AIME 2024-2025": 0.9666332999666334,
-    "DTBench": 0.8444999999999999,
-    "WeirdML": 0.489,
-    "LMCA": 0.4847058823529412,
-    "SimpleQA Verified": 0.469939879759519,
-    "Chess Puzzles": 0.1477272727272727,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.47645429362880887,
-    "FrontierMath-Tier-4-v2-Private": 0.024390243902439,
-    "Mystery Game Puzzles": 0.08570169640890066,
-    "Surface Evolver Bench": 0.4,
-    "FrontierCode": 0.1764,
-    "CL-bench Life": 0.135
-   }
-  },
-  {
    "id": "x-ai/grok-4.3",
    "name": "Grok 4.3 Beta",
    "lab": "xAI",
    "labEntity": "xai",
    "openWeights": false,
    "released": "2026-04-17",
-   "eci": 148.95,
-   "eciLow": 147.31,
-   "eciHigh": 150.41,
+   "eci": 149.89,
+   "eciLow": 147.95,
+   "eciHigh": 151.87,
    "price": {
     "input": 1.25,
     "output": 2.5,
@@ -3016,6 +3220,7 @@
     "LMCA": 0.45094117647058823,
     "SimpleQA Verified": 0.332,
     "Chess Puzzles": 0.1372053872053872,
+    "GeoBench": 0.56,
     "FrontierMath-Tiers-1-3-v2-Private": 0.45060018467220686,
     "FrontierMath-Tier-4-v2-Private": 0.1463414634146341
    }
@@ -3027,9 +3232,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-03-17",
-   "eci": 148.82,
-   "eciLow": 146.91,
-   "eciHigh": 150.77,
+   "eci": 149.34,
+   "eciLow": 147.68,
+   "eciHigh": 151.06,
    "price": {
     "input": 0.75,
     "output": 4.5,
@@ -3068,14 +3273,92 @@
    }
   },
   {
+   "id": "qwen/qwen3.6-plus",
+   "name": "Qwen 3.6 Plus",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
+   "openWeights": false,
+   "released": "2026-03-31",
+   "eci": 148.88,
+   "eciLow": 146.81,
+   "eciHigh": 151.03,
+   "price": {
+    "input": 0.325,
+    "output": 1.95
+   },
+   "context": 1000000,
+   "maxOutput": 65536,
+   "inputs": [
+    "text",
+    "image",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.8803310886644221,
+    "OTIS Mock AIME 2024-2025": 0.9332665999332665,
+    "DTBench": 0.6978333333333335,
+    "LMCA": 0.38929411764705885,
+    "SimpleQA Verified": 0.4414414414414414,
+    "Chess Puzzles": 0.11616161616161616,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0.13888888888888884,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.40258541089566025,
+    "Mystery Game Puzzles": 0.03062348534919585,
+    "CL-bench": 0.203
+   }
+  },
+  {
+   "id": "moonshotai/kimi-k2.5",
+   "name": "Kimi K2.5",
+   "lab": "Moonshot",
+   "labEntity": "moonshot",
+   "openWeights": true,
+   "released": "2026-01-27",
+   "eci": 148.76,
+   "eciLow": 147.22,
+   "eciHigh": 150.35,
+   "price": {
+    "input": 0.5,
+    "output": 2.5,
+    "cachedInput": 0.15
+   },
+   "context": 262144,
+   "maxOutput": 235929,
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.1181,
+    "GPQA diamond": 0.8694444444444445,
+    "OTIS Mock AIME 2024-2025": 0.921921921921922,
+    "WeirdML": 0.456,
+    "SimpleQA Verified": 0.343,
+    "SimpleBench": 0.3616,
+    "FrontierMath-2025-02-28-Private": 0.4894736842105264,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0.07,
+    "Fiction.LiveBench": 0.861,
+    "OSWorld": 0.633,
+    "Terminal Bench": 0.43202247191,
+    "CL-bench": 0.193,
+    "CL-bench Life": 0.132,
+    "ARC-AGI": 0.6533
+   }
+  },
+  {
    "id": "thinkingmachines/inkling",
    "name": "Inkling",
    "lab": "Thinking Machines",
    "openWeights": true,
    "released": "2026-07-15",
-   "eci": 148.51,
-   "eciLow": 145.81,
-   "eciHigh": 150.38,
+   "eci": 148.39,
+   "eciLow": 146.77,
+   "eciHigh": 150.01,
    "price": {
     "input": 1,
     "output": 4.05,
@@ -3112,62 +3395,22 @@
    }
   },
   {
-   "id": "moonshotai/kimi-k2.5",
-   "name": "Kimi K2.5",
-   "lab": "Moonshot",
-   "labEntity": "moonshot",
-   "openWeights": true,
-   "released": "2026-01-27",
-   "eci": 148.11,
-   "eciLow": 146.3,
-   "eciHigh": 149.45,
-   "price": {
-    "input": 0.5,
-    "output": 2.5,
-    "cachedInput": 0.15
-   },
-   "context": 262144,
-   "maxOutput": 235929,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.1181,
-    "GPQA diamond": 0.8694444444444445,
-    "OTIS Mock AIME 2024-2025": 0.921921921921922,
-    "WeirdML": 0.456,
-    "SimpleQA Verified": 0.343,
-    "SimpleBench": 0.3616,
-    "FrontierMath-2025-02-28-Private": 0.4894736842105264,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0.07,
-    "Fiction.LiveBench": 0.861,
-    "OSWorld": 0.633,
-    "Terminal Bench": 0.43202247191,
-    "CL-bench": 0.193,
-    "CL-bench Life": 0.132,
-    "ARC-AGI": 0.6533
-   }
-  },
-  {
-   "id": "qwen/qwen3.6-plus",
-   "name": "Qwen 3.6 Plus",
+   "id": "qwen/qwen3.5-397b-a17b",
+   "name": "Qwen3.5 397B-A17B",
    "lab": "Alibaba",
    "labEntity": "alibaba",
-   "openWeights": false,
-   "released": "2026-03-31",
-   "eci": 147.81,
-   "eciLow": 145.78,
-   "eciHigh": 149.6,
+   "openWeights": true,
+   "released": "2026-02-13",
+   "eci": 147.9,
+   "eciLow": 145.75,
+   "eciHigh": 150.12,
    "price": {
-    "input": 0.325,
-    "output": 1.95
+    "input": 0.6,
+    "output": 3.6,
+    "cachedInput": 0.12
    },
-   "context": 1000000,
-   "maxOutput": 65536,
+   "context": 262144,
+   "maxOutput": 64000,
    "inputs": [
     "text",
     "image",
@@ -3177,50 +3420,13 @@
    "structured": true,
    "reasoning": true,
    "bench": {
-    "GPQA diamond": 0.8803310886644221,
-    "OTIS Mock AIME 2024-2025": 0.9332665999332665,
-    "DTBench": 0.6978333333333335,
-    "LMCA": 0.38929411764705885,
-    "SimpleQA Verified": 0.4414414414414414,
-    "Chess Puzzles": 0.09511784511784513,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0.13888888888888884,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.40258541089566025,
-    "Mystery Game Puzzles": 0.03062348534919585,
-    "CL-bench": 0.203
-   }
-  },
-  {
-   "id": "openai/o3-pro",
-   "name": "o3-pro",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2025-06-10",
-   "eci": 147.41,
-   "eciLow": 145.82,
-   "eciHigh": 150.16,
-   "price": {
-    "input": 20,
-    "output": 80
-   },
-   "context": 200000,
-   "maxOutput": 100000,
-   "inputs": [
-    "text",
-    "file",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.0486,
-    "DTBench": 0.7821666666666668,
-    "WeirdML": 0.5821000000000001,
-    "LMCA": 0.4527058823529412,
-    "Aider polyglot": 0.8490000000000001,
-    "Fiction.LiveBench": 0.972,
-    "ARC-AGI": 0.5933
+    "GPQA diamond": 0.8522727272727273,
+    "OTIS Mock AIME 2024-2025": 0.8887776665554443,
+    "DTBench": 0.7911666666666667,
+    "LMCA": 0.44576470588235295,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.32871652816251157,
+    "Mystery Game Puzzles": 0.09671733862084159,
+    "APEX-Agents": 0.249
    }
   },
   {
@@ -3230,9 +3436,9 @@
    "labEntity": "alibaba",
    "openWeights": false,
    "released": "2026-06-02",
-   "eci": 147.11,
-   "eciLow": 145.07,
-   "eciHigh": 148.65,
+   "eci": 147.87,
+   "eciLow": 145.8,
+   "eciHigh": 149.96,
    "price": {
     "input": 0.32,
     "output": 1.28,
@@ -3269,13 +3475,17 @@
    "labEntity": "minimax",
    "openWeights": true,
    "released": "2026-06-01",
-   "eci": 146.92,
-   "eciLow": 142.41,
-   "eciHigh": 150.26,
+   "eci": 147.74,
+   "eciLow": 145.56,
+   "eciHigh": 149.98,
    "price": {
     "input": 0.3,
     "output": 1.2,
     "cachedInput": 0.06
+   },
+   "batchPrice": {
+    "input": 0.224,
+    "output": 0.88
    },
    "context": 1048576,
    "maxOutput": 512000,
@@ -3293,7 +3503,7 @@
     "OTIS Mock AIME 2024-2025": 0.7108219330441553,
     "DTBench": 0.6488333333333335,
     "LMCA": 0.39647058823529413,
-    "Chess Puzzles": 0.0845959595959596,
+    "Chess Puzzles": 0.12668350168350168,
     "SimpleBench": 0.34959999999999997,
     "Mystery Game Puzzles": 0,
     "Surface Evolver Bench": 0.5499999999999999,
@@ -3303,107 +3513,15 @@
    }
   },
   {
-   "id": "openai/o3",
-   "name": "o3",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": false,
-   "released": "2025-04-16",
-   "eci": 146.86,
-   "eciLow": 145,
-   "eciHigh": 148.83,
-   "price": {
-    "input": 2,
-    "output": 8,
-    "cachedInput": 0.5
-   },
-   "batchPrice": {
-    "input": 1,
-    "output": 4
-   },
-   "context": 200000,
-   "maxOutput": 100000,
-   "inputs": [
-    "image",
-    "text",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.0653,
-    "GPQA diamond": 0.7891414141414143,
-    "MATH level 5": 0.9777190332326284,
-    "OTIS Mock AIME 2024-2025": 0.8442887331776221,
-    "DTBench": 0.7466666666666666,
-    "WeirdML": 0.5242,
-    "CadEval": 0.74,
-    "LMCA": 0.4670588235294118,
-    "SimpleQA Verified": 0.494,
-    "Chess Puzzles": 0.33712121212121215,
-    "SimpleBench": 0.43720000000000003,
-    "METR Time Horizons": 0.654376,
-    "Aider polyglot": 0.813,
-    "GeoBench": 0.74,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0.03472222222222217,
-    "VPCT": 0.28,
-    "GSO-Bench": 0.0882,
-    "DeepResearch Bench": 0.452,
-    "Fiction.LiveBench": 0.889,
-    "OSWorld": 0.23,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.3508771929824561,
-    "Mystery Game Puzzles": 0.2178894029521921,
-    "GDPval": 0.308,
-    "CL-bench": 0.178,
-    "ARC-AGI": 0.6083
-   }
-  },
-  {
-   "id": "qwen/qwen3.5-397b-a17b",
-   "name": "Qwen3.5 397B-A17B",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
-   "openWeights": true,
-   "released": "2026-02-13",
-   "eci": 146.85,
-   "eciLow": 145.16,
-   "eciHigh": 148.89,
-   "price": {
-    "input": 0.5,
-    "output": 3.6,
-    "cachedInput": 0.3
-   },
-   "context": 262144,
-   "maxOutput": 235929,
-   "inputs": [
-    "text",
-    "image",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.8522727272727273,
-    "OTIS Mock AIME 2024-2025": 0.8887776665554443,
-    "DTBench": 0.7911666666666667,
-    "LMCA": 0.44576470588235295,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.32871652816251157,
-    "Mystery Game Puzzles": 0.09671733862084159,
-    "APEX-Agents": 0.249
-   }
-  },
-  {
    "id": "anthropic/claude-sonnet-4.5",
    "name": "Claude Sonnet 4.5",
    "lab": "Anthropic",
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2025-09-29",
-   "eci": 146.8,
-   "eciLow": 144.75,
-   "eciHigh": 148.67,
+   "eci": 147.63,
+   "eciLow": 146.17,
+   "eciHigh": 149.15,
    "price": {
     "input": 3,
     "output": 15,
@@ -3437,6 +3555,7 @@
     "Cybench": 0.6,
     "SimpleBench": 0.45160000000000006,
     "METR Time Horizons": 0.673842,
+    "GeoBench": 0.6,
     "VPCT": 0.09700000000000004,
     "GSO-Bench": 0.1471,
     "DeepResearch Bench": 0.526,
@@ -3452,22 +3571,113 @@
    }
   },
   {
-   "id": "minimax/minimax-m2.5",
-   "name": "MiniMax-M2.5",
-   "lab": "MiniMax",
-   "labEntity": "minimax",
-   "openWeights": true,
-   "released": "2026-02-12",
-   "eci": 146.68,
-   "eciLow": 141.31,
-   "eciHigh": 147.87,
+   "id": "openai/o3-pro",
+   "name": "o3-pro",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2025-06-10",
+   "eci": 147.46,
+   "eciLow": 145.61,
+   "eciHigh": 149.34,
    "price": {
-    "input": 0.27,
-    "output": 0.95,
-    "cachedInput": 0.03
+    "input": 20,
+    "output": 80
    },
-   "context": 204800,
-   "maxOutput": 32768,
+   "context": 200000,
+   "maxOutput": 100000,
+   "inputs": [
+    "text",
+    "file",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.0486,
+    "DTBench": 0.7821666666666668,
+    "WeirdML": 0.5821000000000001,
+    "LMCA": 0.4527058823529412,
+    "Aider polyglot": 0.8490000000000001,
+    "Fiction.LiveBench": 0.972,
+    "ARC-AGI": 0.5933
+   }
+  },
+  {
+   "id": "openai/o3",
+   "name": "o3",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": false,
+   "released": "2025-04-16",
+   "eci": 147.05,
+   "eciLow": 145.54,
+   "eciHigh": 148.62,
+   "price": {
+    "input": 2,
+    "output": 8,
+    "cachedInput": 0.5
+   },
+   "batchPrice": {
+    "input": 1,
+    "output": 4
+   },
+   "context": 200000,
+   "maxOutput": 100000,
+   "inputs": [
+    "image",
+    "text",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "ARC-AGI-2": 0.0653,
+    "GPQA diamond": 0.7891414141414143,
+    "MATH level 5": 0.9777190332326284,
+    "OTIS Mock AIME 2024-2025": 0.8442887331776221,
+    "DTBench": 0.7466666666666666,
+    "CadEval": 0.74,
+    "WeirdML": 0.5242,
+    "LMCA": 0.4670588235294118,
+    "SimpleQA Verified": 0.494,
+    "Chess Puzzles": 0.33712121212121215,
+    "SimpleBench": 0.43720000000000003,
+    "METR Time Horizons": 0.654376,
+    "Aider polyglot": 0.813,
+    "GeoBench": 0.74,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0.03472222222222217,
+    "VPCT": 0.28,
+    "GSO-Bench": 0.0882,
+    "DeepResearch Bench": 0.452,
+    "Fiction.LiveBench": 0.889,
+    "OSWorld": 0.23,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.3508771929824561,
+    "Mystery Game Puzzles": 0.2178894029521921,
+    "GDPval": 0.308,
+    "CL-bench": 0.178,
+    "ARC-AGI": 0.6083
+   }
+  },
+  {
+   "id": "nvidia/nemotron-3-ultra-550b-a55b",
+   "name": "Nemotron 3 Ultra",
+   "lab": "Nvidia",
+   "labEntity": "nvidia",
+   "openWeights": true,
+   "released": "2026-06-04",
+   "eci": 146.95,
+   "eciLow": 144.75,
+   "eciHigh": 149.19,
+   "price": {
+    "input": 0.6,
+    "output": 2.4,
+    "cachedInput": 0.12
+   },
+   "context": 262144,
+   "maxOutput": 182520,
    "inputs": [
     "text"
    ],
@@ -3475,12 +3685,46 @@
    "structured": true,
    "reasoning": true,
    "bench": {
-    "ARC-AGI-2": 0.0486,
-    "ProofBench": 0.04,
-    "Terminal Bench": 0.426966292135,
-    "CL-bench": 0.114,
-    "CL-bench Life": 0.063,
-    "ARC-AGI": 0.6367
+    "ProofBench": 0.02,
+    "GPQA diamond": 0.8382435465768798,
+    "OTIS Mock AIME 2024-2025": 0.8665331998665332,
+    "DTBench": 0.8355,
+    "WeirdML": 0.4345,
+    "LMCA": 0.43411764705882355,
+    "SimpleBench": 0.30040000000000006,
+    "Mystery Game Puzzles": 0.11874862304472353,
+    "FrontierCode": 0.1361,
+    "APEX-Agents": 0.227
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4-flash",
+   "name": "DeepSeek-V4-Flash",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2026-04-24",
+   "eci": 146.85,
+   "eciLow": 143.58,
+   "eciHigh": 150.14,
+   "price": {
+    "input": 0.09,
+    "output": 0.18,
+    "cachedInput": 0.018
+   },
+   "context": 1048576,
+   "maxOutput": 393216,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "DTBench": 0.7733333333333335,
+    "WeirdML": 0.4563,
+    "LMCA": 0.42211764705882354,
+    "SimpleBench": 0.35559999999999997
    }
   },
   {
@@ -3490,15 +3734,15 @@
    "labEntity": "alibaba",
    "openWeights": true,
    "released": "2026-04-22",
-   "eci": 146.32,
-   "eciLow": 144.05,
-   "eciHigh": 147.84,
+   "eci": 146.73,
+   "eciLow": 144.48,
+   "eciHigh": 149.04,
    "price": {
-    "input": 0.45,
-    "output": 2.7
+    "input": 0.32,
+    "output": 3.2
    },
    "context": 262144,
-   "maxOutput": 65536,
+   "maxOutput": 81920,
    "inputs": [
     "text",
     "image",
@@ -3517,22 +3761,21 @@
    }
   },
   {
-   "id": "deepseek/deepseek-v4-flash",
-   "name": "DeepSeek-V4-Flash",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
+   "id": "z-ai/glm-5",
+   "name": "GLM-5",
+   "lab": "Z.ai (Zhipu AI)",
    "openWeights": true,
-   "released": "2026-04-24",
-   "eci": 146.2,
-   "eciLow": 143.93,
-   "eciHigh": 148.24,
+   "released": "2026-02-11",
+   "eci": 146.48,
+   "eciLow": 144.84,
+   "eciHigh": 148.16,
    "price": {
-    "input": 0.091,
-    "output": 0.182,
-    "cachedInput": 0.0182
+    "input": 1,
+    "output": 3.2,
+    "cachedInput": 0.2
    },
-   "context": 1048576,
-   "maxOutput": 943717,
+   "context": 204800,
+   "maxOutput": 131072,
    "inputs": [
     "text"
    ],
@@ -3540,10 +3783,16 @@
    "structured": true,
    "reasoning": true,
    "bench": {
-    "DTBench": 0.7733333333333335,
-    "WeirdML": 0.4563,
-    "LMCA": 0.42211764705882354,
-    "SimpleBench": 0.35559999999999997
+    "ARC-AGI-2": 0.0486,
+    "GPQA diamond": 0.8724619289340101,
+    "OTIS Mock AIME 2024-2025": 0.7997997997997999,
+    "WeirdML": 0.4817,
+    "SimpleBench": 0.43840000000000007,
+    "FrontierMath-2025-02-28-Private": 0.2883081830450251,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0.035,
+    "Terminal Bench": 0.524157303371,
+    "CL-bench": 0.187,
+    "ARC-AGI": 0.4467
    }
   },
   {
@@ -3553,9 +3802,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2026-03-17",
-   "eci": 146.14,
-   "eciLow": 143.61,
-   "eciHigh": 148.47,
+   "eci": 146.4,
+   "eciLow": 144.72,
+   "eciHigh": 148.1,
    "price": {
     "input": 0.2,
     "output": 1.25,
@@ -3598,9 +3847,9 @@
    "labEntity": "deepseek",
    "openWeights": true,
    "released": "2025-12-01",
-   "eci": 146.14,
-   "eciLow": 144.36,
-   "eciHigh": 147.46,
+   "eci": 146.25,
+   "eciLow": 144.72,
+   "eciHigh": 147.79,
    "price": {
     "input": 0.26,
     "output": 0.38,
@@ -3632,149 +3881,15 @@
    }
   },
   {
-   "id": "nvidia/nemotron-3-ultra-550b-a55b",
-   "name": "Nemotron 3 Ultra",
-   "lab": "Nvidia",
-   "labEntity": "nvidia",
-   "openWeights": true,
-   "released": "2026-06-04",
-   "eci": 146.02,
-   "eciLow": 143.53,
-   "eciHigh": 148.49,
-   "price": {
-    "input": 0.6,
-    "output": 2.4,
-    "cachedInput": 0.12
-   },
-   "context": 262144,
-   "maxOutput": 182520,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.02,
-    "GPQA diamond": 0.8382435465768798,
-    "OTIS Mock AIME 2024-2025": 0.8665331998665332,
-    "DTBench": 0.8355,
-    "WeirdML": 0.4345,
-    "LMCA": 0.43411764705882355,
-    "Mystery Game Puzzles": 0.11874862304472353,
-    "FrontierCode": 0.1361,
-    "APEX-Agents": 0.227
-   }
-  },
-  {
-   "id": "minimax/minimax-m2.7",
-   "name": "MiniMax-M2.7",
-   "lab": "MiniMax",
-   "labEntity": "minimax",
-   "openWeights": true,
-   "released": "2026-03-18",
-   "eci": 145.88,
-   "eciLow": 138.62,
-   "eciHigh": 147.97,
-   "price": {
-    "input": 0.3,
-    "output": 1.2,
-    "cachedInput": 0.06
-   },
-   "context": 204800,
-   "maxOutput": 131072,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ProofBench": 0.03,
-    "WeirdML": 0.3695,
-    "Terminal Bench": 0.450561797753,
-    "ExploitBench": 0.133
-   }
-  },
-  {
-   "id": "moonshotai/kimi-k2-thinking",
-   "name": "Kimi K2 Thinking",
-   "lab": "Moonshot",
-   "labEntity": "moonshot",
-   "openWeights": true,
-   "released": "2025-11-06",
-   "eci": 145.87,
-   "eciLow": 143.3,
-   "eciHigh": 147.42,
-   "price": {
-    "input": 0.6,
-    "output": 2.5,
-    "cachedInput": 0.15
-   },
-   "context": 262144,
-   "maxOutput": 98304,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.8224607182940515,
-    "OTIS Mock AIME 2024-2025": 0.8303859414970527,
-    "WeirdML": 0.4279,
-    "METR Time Horizons": 0.591943,
-    "FrontierMath-2025-02-28-Private": 0.3755001538935056,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0,
-    "Terminal Bench": 0.357303370787,
-    "CL-bench": 0.176
-   }
-  },
-  {
-   "id": "z-ai/glm-5",
-   "name": "GLM-5",
-   "lab": "Z.ai (Zhipu AI)",
-   "openWeights": true,
-   "released": "2026-02-11",
-   "eci": 145.79,
-   "eciLow": 143.77,
-   "eciHigh": 147.8,
-   "price": {
-    "input": 1,
-    "output": 3.2,
-    "cachedInput": 0.2
-   },
-   "context": 204800,
-   "maxOutput": 131072,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.0486,
-    "GPQA diamond": 0.8724619289340101,
-    "OTIS Mock AIME 2024-2025": 0.7997997997997999,
-    "WeirdML": 0.4817,
-    "SimpleBench": 0.43840000000000007,
-    "FrontierMath-2025-02-28-Private": 0.2883081830450251,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0.035,
-    "Terminal Bench": 0.524157303371,
-    "CL-bench": 0.187,
-    "ARC-AGI": 0.4467
-   }
-  },
-  {
    "id": "openai/gpt-5-mini",
    "name": "GPT-5 mini",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2025-08-07",
-   "eci": 145.42,
-   "eciLow": 143.52,
-   "eciHigh": 147.08,
+   "eci": 146.09,
+   "eciLow": 144.57,
+   "eciHigh": 147.62,
    "price": {
     "input": 0.25,
     "output": 2,
@@ -3815,97 +3930,15 @@
    }
   },
   {
-   "id": "google/gemini-2.5-pro",
-   "name": "Gemini 2.5 Pro (Jun 2025)",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": false,
-   "released": "2025-06-05",
-   "eci": 145.28,
-   "eciLow": 143.58,
-   "eciHigh": 146.85,
-   "price": {
-    "input": 1.25,
-    "output": 10,
-    "cachedInput": 0.125
-   },
-   "context": 1048576,
-   "maxOutput": 65536,
-   "inputs": [
-    "text",
-    "image",
-    "file",
-    "audio",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "ARC-AGI-2": 0.0486,
-    "GPQA diamond": 0.8373667227833895,
-    "OTIS Mock AIME 2024-2025": 0.847069291513736,
-    "DTBench": 0.7066666666666668,
-    "WeirdML": 0.5403,
-    "LMCA": 0.40905882352941186,
-    "SimpleBench": 0.5488000000000001,
-    "METR Time Horizons": 0.5544,
-    "Aider polyglot": 0.831,
-    "VPCT": 0.19600000000000004,
-    "GSO-Bench": 0.0392,
-    "DeepResearch Bench": 0.428,
-    "Fiction.LiveBench": 0.917,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.25854108956602023,
-    "FrontierMath-Tier-4-v2-Private": 0,
-    "Remote Labor Index": 0.0083,
-    "Terminal Bench": 0.326404494382,
-    "GDPval": 0.233,
-    "ARC-AGI": 0.41
-   }
-  },
-  {
-   "id": "deepseek/deepseek-v3.2-exp",
-   "name": "DeepSeek-V3.2-Exp",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
-   "openWeights": true,
-   "released": "2025-09-29",
-   "eci": 144.98,
-   "eciLow": 142.5,
-   "eciHigh": 147.07,
-   "price": {
-    "input": 0.27,
-    "output": 0.41
-   },
-   "context": 163840,
-   "maxOutput": 147456,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "DTBench": 0.7955000000000001,
-    "WeirdML": 0.3948,
-    "LMCA": 0.34247058823529414,
-    "Aider polyglot": 0.742,
-    "The Agent Company": 0.429,
-    "Fiction.LiveBench": 0.833,
-    "CL-bench": 0.132,
-    "CL-bench Life": 0.095
-   }
-  },
-  {
    "id": "google/gemini-3.5-flash-lite",
    "name": "Gemini 3.5 Flash-Lite",
    "lab": "Google DeepMind",
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-07-21",
-   "eci": 144.97,
-   "eciLow": 142.6,
-   "eciHigh": 146.32,
+   "eci": 145.63,
+   "eciLow": 143.98,
+   "eciHigh": 147.33,
    "price": {
     "input": 0.3,
     "output": 2.5,
@@ -3944,15 +3977,50 @@
    }
   },
   {
+   "id": "moonshotai/kimi-k2-thinking",
+   "name": "Kimi K2 Thinking",
+   "lab": "Moonshot",
+   "labEntity": "moonshot",
+   "openWeights": true,
+   "released": "2025-11-06",
+   "eci": 145.43,
+   "eciLow": 143.58,
+   "eciHigh": 147.25,
+   "price": {
+    "input": 0.6,
+    "output": 2.5,
+    "cachedInput": 0.15
+   },
+   "context": 262144,
+   "maxOutput": 98304,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.8224607182940515,
+    "OTIS Mock AIME 2024-2025": 0.8303859414970527,
+    "WeirdML": 0.4279,
+    "SimpleBench": 0.2752000000000001,
+    "METR Time Horizons": 0.591943,
+    "FrontierMath-2025-02-28-Private": 0.3755001538935056,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0,
+    "Terminal Bench": 0.357303370787,
+    "CL-bench": 0.176
+   }
+  },
+  {
    "id": "google/gemini-3.1-flash-lite",
    "name": "Gemini 3.1 Flash-Lite",
    "lab": "Google",
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2026-03-03",
-   "eci": 144.34,
-   "eciLow": 142.34,
-   "eciHigh": 145.91,
+   "eci": 145.01,
+   "eciLow": 142.75,
+   "eciHigh": 147.21,
    "price": {
     "input": 0.25,
     "output": 1.5,
@@ -3980,40 +4048,59 @@
     "DTBench": 0.6133333333333334,
     "WeirdML": 0.5219,
     "LMCA": 0.4118823529411764,
+    "GeoBench": 0.8300000000000001,
     "DeepResearch Bench": 0.373,
     "FrontierMath-Tiers-1-3-v2-Private": 0.2917820867959372
    }
   },
   {
-   "id": "qwen/qwen3.7-flash",
-   "name": "Qwen3.7 Flash",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
+   "id": "google/gemini-2.5-pro",
+   "name": "Gemini 2.5 Pro (Jun 2025)",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
    "openWeights": false,
-   "released": "2026-07-27",
-   "eci": 144.14,
-   "eciLow": 141.82,
-   "eciHigh": 146.18,
+   "released": "2025-06-05",
+   "eci": 144.87,
+   "eciLow": 143.39,
+   "eciHigh": 146.33,
    "price": {
-    "input": 0.03,
-    "output": 0.13,
-    "cachedInput": 0.006
+    "input": 1.25,
+    "output": 10,
+    "cachedInput": 0.125
    },
-   "context": 1000000,
+   "context": 1048576,
    "maxOutput": 65536,
    "inputs": [
     "text",
     "image",
+    "file",
+    "audio",
     "video"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "GPQA diamond": 0.7961560044893378,
-    "OTIS Mock AIME 2024-2025": 0.8665331998665332,
-    "FrontierMath-Tiers-1-3-v2-Private": 0.20313942751615877,
-    "Mystery Game Puzzles": 0.06367041198501872
+    "ARC-AGI-2": 0.0486,
+    "GPQA diamond": 0.8373667227833895,
+    "OTIS Mock AIME 2024-2025": 0.847069291513736,
+    "DTBench": 0.7066666666666668,
+    "WeirdML": 0.5403,
+    "LMCA": 0.40905882352941186,
+    "SimpleBench": 0.5488000000000001,
+    "METR Time Horizons": 0.5544,
+    "Aider polyglot": 0.831,
+    "GeoBench": 0.81,
+    "VPCT": 0.19600000000000004,
+    "GSO-Bench": 0.0392,
+    "DeepResearch Bench": 0.428,
+    "Fiction.LiveBench": 0.917,
+    "FrontierMath-Tiers-1-3-v2-Private": 0.25854108956602023,
+    "FrontierMath-Tier-4-v2-Private": 0,
+    "Remote Labor Index": 0.0083,
+    "Terminal Bench": 0.326404494382,
+    "GDPval": 0.233,
+    "ARC-AGI": 0.41
    }
   },
   {
@@ -4023,9 +4110,9 @@
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2025-08-05",
-   "eci": 143.93,
-   "eciLow": 141.5,
-   "eciHigh": 146.07,
+   "eci": 144.84,
+   "eciLow": 142.99,
+   "eciHigh": 146.6,
    "price": {
     "input": 15,
     "output": 75,
@@ -4065,15 +4152,82 @@
    }
   },
   {
+   "id": "deepseek/deepseek-v3.2-exp",
+   "name": "DeepSeek-V3.2-Exp",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2025-09-29",
+   "eci": 144.38,
+   "eciLow": 142.14,
+   "eciHigh": 146.76,
+   "price": {
+    "input": 0.27,
+    "output": 0.41
+   },
+   "context": 163840,
+   "maxOutput": 147456,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "DTBench": 0.7955000000000001,
+    "WeirdML": 0.3948,
+    "LMCA": 0.34247058823529414,
+    "Aider polyglot": 0.742,
+    "The Agent Company": 0.429,
+    "Fiction.LiveBench": 0.833,
+    "CL-bench": 0.132,
+    "CL-bench Life": 0.095
+   }
+  },
+  {
+   "id": "google/gemma-4-31b-it",
+   "name": "Gemma 4 31B IT",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
+   "openWeights": true,
+   "released": "2026-04-02",
+   "eci": 144.27,
+   "eciLow": 141.71,
+   "eciHigh": 146.83,
+   "price": {
+    "input": 0.2,
+    "output": 0.4
+   },
+   "context": 262144,
+   "maxOutput": 16384,
+   "inputs": [
+    "image",
+    "text",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.70496632996633,
+    "OTIS Mock AIME 2024-2025": 0.7330663997330663,
+    "DTBench": 0.7111666666666666,
+    "WeirdML": 0.5226,
+    "LMCA": 0.46176470588235297,
+    "SimpleQA Verified": 0.104,
+    "Surface Evolver Bench": 0.3062499999999999
+   }
+  },
+  {
    "id": "qwen/qwen3.6-35b-a3b",
    "name": "Qwen 3.6 35B-A3B",
    "lab": "Alibaba",
    "labEntity": "alibaba",
    "openWeights": true,
    "released": "2026-04-14",
-   "eci": 143.81,
-   "eciLow": 141.08,
-   "eciHigh": 145.96,
+   "eci": 144.02,
+   "eciLow": 142.08,
+   "eciHigh": 145.9,
    "price": {
     "input": 0.1,
     "output": 0.9,
@@ -4102,39 +4256,35 @@
    }
   },
   {
-   "id": "z-ai/glm-4.7",
-   "name": "GLM-4.7",
-   "lab": "Z.ai (Zhipu AI)",
+   "id": "qwen/qwen3.5-35b-a3b",
+   "name": "Qwen3.5-35B-A3B",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
    "openWeights": true,
-   "released": "2025-12-22",
-   "eci": 143.65,
-   "eciLow": 141.42,
-   "eciHigh": 145.84,
+   "released": "2026-02-24",
+   "eci": 143.98,
+   "eciLow": 141.41,
+   "eciHigh": 146.63,
    "price": {
-    "input": 0.6,
-    "output": 2.2,
-    "cachedInput": 0.11
+    "input": 0.14,
+    "output": 1,
+    "cachedInput": 0.05
    },
-   "context": 204800,
-   "maxOutput": 131072,
+   "context": 262144,
+   "maxOutput": 81920,
    "inputs": [
-    "text"
+    "text",
+    "image",
+    "video"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "ProofBench": 0.06,
-    "GPQA diamond": 0.8101851851851852,
-    "OTIS Mock AIME 2024-2025": 0.8331664998331665,
-    "SimpleQA Verified": 0.322,
-    "Chess Puzzles": 0.16877104377104377,
-    "SimpleBench": 0.3724,
-    "FrontierMath-2025-02-28-Private": 0.04278990158322632,
-    "FrontierMath-Tier-4-2025-07-01-Private": 0,
-    "Terminal Bench": 0.333895131086,
-    "CL-bench": 0.159,
-    "CL-bench Life": 0.109
+    "GPQA diamond": 0.811938832772166,
+    "OTIS Mock AIME 2024-2025": 0.6996996996996997,
+    "DTBench": 0.6666666666666667,
+    "LMCA": 0.3467058823529412
    }
   },
   {
@@ -4144,9 +4294,9 @@
    "labEntity": "alibaba",
    "openWeights": false,
    "released": "2026-02-25",
-   "eci": 143.61,
-   "eciLow": 141.4,
-   "eciHigh": 145.03,
+   "eci": 143.81,
+   "eciLow": 141.84,
+   "eciHigh": 145.74,
    "price": {
     "input": 0.065,
     "output": 0.26
@@ -4174,49 +4324,15 @@
    }
   },
   {
-   "id": "google/gemma-4-31b-it",
-   "name": "Gemma 4 31B IT",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": true,
-   "released": "2026-04-02",
-   "eci": 143.08,
-   "eciLow": 140.78,
-   "eciHigh": 145.92,
-   "price": {
-    "input": 0.2,
-    "output": 0.4
-   },
-   "context": 262144,
-   "maxOutput": 16384,
-   "inputs": [
-    "image",
-    "text",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.70496632996633,
-    "OTIS Mock AIME 2024-2025": 0.7330663997330663,
-    "DTBench": 0.7111666666666666,
-    "WeirdML": 0.5226,
-    "LMCA": 0.46176470588235297,
-    "SimpleQA Verified": 0.104,
-    "Surface Evolver Bench": 0.3062499999999999
-   }
-  },
-  {
    "id": "qwen/qwen3.6-flash",
    "name": "Qwen 3.6 Flash",
    "lab": "Alibaba",
    "labEntity": "alibaba",
    "openWeights": false,
    "released": "2026-04-27",
-   "eci": 142.97,
-   "eciLow": 140.28,
-   "eciHigh": 144.4,
+   "eci": 143.65,
+   "eciLow": 141.63,
+   "eciHigh": 145.66,
    "price": {
     "input": 0.1875,
     "output": 1.125
@@ -4245,69 +4361,39 @@
    }
   },
   {
-   "id": "google/gemini-2.5-flash",
-   "name": "Gemini 2.5 Flash (Sep 2025)",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": false,
-   "released": "2025-09-25",
-   "eci": 142.94,
-   "eciLow": 139.25,
-   "eciHigh": 146.31,
-   "price": {
-    "input": 0.3,
-    "output": 2.5,
-    "cachedInput": 0.03
-   },
-   "context": 1048576,
-   "maxOutput": 65535,
-   "inputs": [
-    "file",
-    "image",
-    "text",
-    "audio",
-    "video"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "WeirdML": 0.4191,
-    "VPCT": 0.19300000000000003,
-    "The Agent Company": 0.411,
-    "Terminal Bench": 0.171
-   }
-  },
-  {
-   "id": "qwen/qwen3.5-35b-a3b",
-   "name": "Qwen3.5-35B-A3B",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
+   "id": "z-ai/glm-4.7",
+   "name": "GLM-4.7",
+   "lab": "Z.ai (Zhipu AI)",
    "openWeights": true,
-   "released": "2026-02-24",
-   "eci": 142.56,
-   "eciLow": 140.42,
-   "eciHigh": 145.19,
+   "released": "2025-12-22",
+   "eci": 143.28,
+   "eciLow": 141.29,
+   "eciHigh": 145.28,
    "price": {
-    "input": 0.14,
-    "output": 1,
-    "cachedInput": 0.05
+    "input": 0.6,
+    "output": 2.2,
+    "cachedInput": 0.11
    },
-   "context": 262144,
-   "maxOutput": 81920,
+   "context": 204800,
+   "maxOutput": 131072,
    "inputs": [
-    "text",
-    "image",
-    "video"
+    "text"
    ],
    "tools": true,
    "structured": true,
    "reasoning": true,
    "bench": {
-    "GPQA diamond": 0.811938832772166,
-    "OTIS Mock AIME 2024-2025": 0.6996996996996997,
-    "DTBench": 0.6666666666666667,
-    "LMCA": 0.3467058823529412
+    "ProofBench": 0.06,
+    "GPQA diamond": 0.8101851851851852,
+    "OTIS Mock AIME 2024-2025": 0.8331664998331665,
+    "SimpleQA Verified": 0.322,
+    "Chess Puzzles": 0.16877104377104377,
+    "SimpleBench": 0.3724,
+    "FrontierMath-2025-02-28-Private": 0.04278990158322632,
+    "FrontierMath-Tier-4-2025-07-01-Private": 0,
+    "Terminal Bench": 0.333895131086,
+    "CL-bench": 0.159,
+    "CL-bench Life": 0.109
    }
   },
   {
@@ -4317,9 +4403,9 @@
    "labEntity": "anthropic",
    "openWeights": false,
    "released": "2025-10-15",
-   "eci": 142.21,
-   "eciLow": 139.37,
-   "eciHigh": 143.85,
+   "eci": 142.83,
+   "eciLow": 141.13,
+   "eciHigh": 144.48,
    "price": {
     "input": 1,
     "output": 5,
@@ -4359,22 +4445,56 @@
    }
   },
   {
+   "id": "google/gemini-2.5-flash",
+   "name": "Gemini 2.5 Flash (Sep 2025)",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
+   "openWeights": false,
+   "released": "2025-09-25",
+   "eci": 141.93,
+   "eciLow": 139.12,
+   "eciHigh": 144.59,
+   "price": {
+    "input": 0.3,
+    "output": 2.5,
+    "cachedInput": 0.03
+   },
+   "context": 1048576,
+   "maxOutput": 65535,
+   "inputs": [
+    "file",
+    "image",
+    "text",
+    "audio",
+    "video"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "WeirdML": 0.4191,
+    "VPCT": 0.19300000000000003,
+    "The Agent Company": 0.411,
+    "Terminal Bench": 0.171
+   }
+  },
+  {
    "id": "google/gemma-4-26b-a4b-it",
    "name": "Gemma 4 26B A4B",
    "lab": "Google DeepMind",
    "labEntity": "alphabet",
    "openWeights": true,
    "released": "2026-04-02",
-   "eci": 141.95,
-   "eciLow": 138.97,
-   "eciHigh": 143.72,
+   "eci": 141.64,
+   "eciLow": 139.09,
+   "eciHigh": 144.14,
    "price": {
-    "input": 0.1,
+    "input": 0.09,
     "output": 0.3,
     "cachedInput": 0.05
    },
    "context": 262144,
-   "maxOutput": 32768,
+   "maxOutput": 235929,
    "inputs": [
     "image",
     "text",
@@ -4398,9 +4518,9 @@
    "labEntity": "mistral",
    "openWeights": true,
    "released": "2026-04-28",
-   "eci": 141.46,
-   "eciLow": 138.51,
-   "eciHigh": 143.89,
+   "eci": 141.59,
+   "eciLow": 138.38,
+   "eciHigh": 144.64,
    "price": {
     "input": 1.5,
     "output": 7.5
@@ -4435,9 +4555,9 @@
    "labEntity": "moonshot",
    "openWeights": true,
    "released": "2025-07-12",
-   "eci": 139.91,
-   "eciLow": 136.3,
-   "eciHigh": 141.59,
+   "eci": 141.24,
+   "eciLow": 138.27,
+   "eciHigh": 143.93,
    "price": {
     "input": 0.57,
     "output": 2.3
@@ -4460,15 +4580,46 @@
    }
   },
   {
+   "id": "deepseek/deepseek-chat-v3.1",
+   "name": "DeepSeek-V3.1",
+   "lab": "DeepSeek",
+   "labEntity": "deepseek",
+   "openWeights": true,
+   "released": "2025-08-21",
+   "eci": 140.85,
+   "eciLow": 137.55,
+   "eciHigh": 143.95,
+   "price": {
+    "input": 0.25,
+    "output": 0.95,
+    "cachedInput": 0.13
+   },
+   "context": 163840,
+   "maxOutput": 147456,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "DTBench": 0.7111666666666666,
+    "WeirdML": 0.3836,
+    "LMCA": 0.285764705882353,
+    "SimpleBench": 0.2800000000000001,
+    "Fiction.LiveBench": 0.528
+   }
+  },
+  {
    "id": "openai/gpt-oss-120b",
    "name": "gpt-oss-120b",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": true,
    "released": "2025-08-05",
-   "eci": 139.83,
-   "eciLow": 135.6,
-   "eciHigh": 142.19,
+   "eci": 140.16,
+   "eciLow": 138.18,
+   "eciHigh": 142.05,
    "price": {
     "input": 0.15,
     "output": 0.6,
@@ -4503,52 +4654,22 @@
    }
   },
   {
-   "id": "deepseek/deepseek-chat-v3.1",
-   "name": "DeepSeek-V3.1",
-   "lab": "DeepSeek",
-   "labEntity": "deepseek",
-   "openWeights": true,
-   "released": "2025-08-21",
-   "eci": 139.83,
-   "eciLow": 135.63,
-   "eciHigh": 143.2,
-   "price": {
-    "input": 0.25,
-    "output": 0.95,
-    "cachedInput": 0.13
-   },
-   "context": 163840,
-   "maxOutput": 147456,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "DTBench": 0.7111666666666666,
-    "WeirdML": 0.3836,
-    "LMCA": 0.285764705882353,
-    "SimpleBench": 0.2800000000000001,
-    "Fiction.LiveBench": 0.528
-   }
-  },
-  {
    "id": "qwen/qwen3.5-9b",
    "name": "Qwen3.5-9B",
    "lab": "Alibaba",
    "labEntity": "alibaba",
    "openWeights": true,
    "released": "2026-02-24",
-   "eci": 139.37,
-   "eciLow": 136.14,
-   "eciHigh": 141.01,
+   "eci": 139.32,
+   "eciLow": 136.95,
+   "eciHigh": 141.58,
    "price": {
-    "input": 0.17,
-    "output": 0.25
+    "input": 0.069,
+    "output": 0.101,
+    "cachedInput": 0.062
    },
    "context": 262144,
-   "maxOutput": 235929,
+   "maxOutput": 40960,
    "inputs": [
     "text",
     "image",
@@ -4572,9 +4693,9 @@
    "labEntity": "openai",
    "openWeights": false,
    "released": "2025-08-07",
-   "eci": 139.25,
-   "eciLow": 134.34,
-   "eciHigh": 141.45,
+   "eci": 139.1,
+   "eciLow": 137.04,
+   "eciHigh": 141.05,
    "price": {
     "input": 0.05,
     "output": 0.4,
@@ -4621,9 +4742,9 @@
    "labEntity": "alibaba",
    "openWeights": true,
    "released": "2025-04-29",
-   "eci": 138.48,
-   "eciLow": 135.01,
-   "eciHigh": 140.24,
+   "eci": 136.89,
+   "eciLow": 134.37,
+   "eciHigh": 139.28,
    "price": {
     "input": 0.08,
     "output": 0.28
@@ -4646,111 +4767,15 @@
    }
   },
   {
-   "id": "qwen/qwen3-14b",
-   "name": "Qwen3-14B",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
-   "openWeights": true,
-   "released": "2025-04-29",
-   "eci": 138.2,
-   "eciLow": 133.61,
-   "eciHigh": 139.98,
-   "price": {
-    "input": 0.12,
-    "output": 0.24
-   },
-   "context": 40960,
-   "maxOutput": 16384,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.5383698092031426,
-    "OTIS Mock AIME 2024-2025": 0.6635524413302191,
-    "DTBench": 0.4,
-    "LMCA": 0.21400000000000002,
-    "Fiction.LiveBench": 0.625
-   }
-  },
-  {
-   "id": "openai/gpt-oss-20b",
-   "name": "gpt-oss-20b",
-   "lab": "OpenAI",
-   "labEntity": "openai",
-   "openWeights": true,
-   "released": "2025-08-05",
-   "eci": 137.75,
-   "eciLow": 133.08,
-   "eciHigh": 139.68,
-   "price": {
-    "input": 0.03,
-    "output": 0.13,
-    "cachedInput": 0.03
-   },
-   "batchPrice": {
-    "input": 0.024,
-    "output": 0.112
-   },
-   "context": 131072,
-   "maxOutput": 117964,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": true,
-   "bench": {
-    "GPQA diamond": 0.4971590909090909,
-    "OTIS Mock AIME 2024-2025": 0.6524302079857636,
-    "DTBench": 0.46666666666666673,
-    "WeirdML": 0.4093,
-    "LMCA": 0.17070588235294118,
-    "Terminal Bench": 0.034
-   }
-  },
-  {
-   "id": "qwen/qwen3-30b-a3b-instruct-2507",
-   "name": "Qwen3-30B-A3B-Instruct (Jul 2025)",
-   "lab": "Alibaba",
-   "labEntity": "alibaba",
-   "openWeights": true,
-   "released": "2025-07-29",
-   "eci": 137.32,
-   "eciLow": 131.74,
-   "eciHigh": 139.39,
-   "price": {
-    "input": 0.1,
-    "output": 0.3,
-    "cachedInput": 0.1
-   },
-   "context": 262144,
-   "maxOutput": 235929,
-   "inputs": [
-    "text"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": false,
-   "bench": {
-    "GPQA diamond": 0.42525953984287324,
-    "OTIS Mock AIME 2024-2025": 0.6218440662885107,
-    "DTBench": 0.45333333333333337,
-    "LMCA": 0.2631764705882353
-   }
-  },
-  {
    "id": "openai/gpt-4.1",
    "name": "GPT-4.1",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2025-04-14",
-   "eci": 136.73,
-   "eciLow": 133.95,
-   "eciHigh": 138.48,
+   "eci": 136.15,
+   "eciLow": 134.1,
+   "eciHigh": 138.03,
    "price": {
     "input": 2,
     "output": 8,
@@ -4776,11 +4801,11 @@
     "MATH level 5": 0.8300604229607251,
     "OTIS Mock AIME 2024-2025": 0.38271604938271603,
     "DTBench": 0.4711666666666666,
-    "WeirdML": 0.3904,
     "CadEval": 0.42,
+    "WeirdML": 0.3904,
     "LMCA": 0.3012941176470588,
     "SimpleQA Verified": 0.311,
-    "Chess Puzzles": 0,
+    "Chess Puzzles": 0.06355218855218855,
     "SimpleBench": 0.1240000000000001,
     "Aider polyglot": 0.524,
     "GeoBench": 0.72,
@@ -4791,21 +4816,51 @@
    }
   },
   {
+   "id": "qwen/qwen3-14b",
+   "name": "Qwen3-14B",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
+   "openWeights": true,
+   "released": "2025-04-29",
+   "eci": 136.14,
+   "eciLow": 133.42,
+   "eciHigh": 138.69,
+   "price": {
+    "input": 0.12,
+    "output": 0.24
+   },
+   "context": 40960,
+   "maxOutput": 16384,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.5383698092031426,
+    "OTIS Mock AIME 2024-2025": 0.6635524413302191,
+    "DTBench": 0.4,
+    "LMCA": 0.21400000000000002,
+    "Fiction.LiveBench": 0.625
+   }
+  },
+  {
    "id": "deepseek/deepseek-chat",
    "name": "DeepSeek-V3 (Mar 2025)",
    "lab": "DeepSeek",
    "labEntity": "deepseek",
    "openWeights": true,
    "released": "2025-03-24",
-   "eci": 135.88,
-   "eciLow": 132.45,
-   "eciHigh": 137.72,
+   "eci": 135.18,
+   "eciLow": 132.9,
+   "eciHigh": 137.35,
    "price": {
-    "input": 0.2574,
-    "output": 1.0287
+    "input": 0.32,
+    "output": 0.89
    },
    "context": 163840,
-   "maxOutput": 16000,
+   "maxOutput": 16384,
    "inputs": [
     "text"
    ],
@@ -4826,15 +4881,81 @@
    }
   },
   {
+   "id": "qwen/qwen3-30b-a3b-instruct-2507",
+   "name": "Qwen3-30B-A3B-Instruct (Jul 2025)",
+   "lab": "Alibaba",
+   "labEntity": "alibaba",
+   "openWeights": true,
+   "released": "2025-07-29",
+   "eci": 135.15,
+   "eciLow": 132.2,
+   "eciHigh": 137.97,
+   "price": {
+    "input": 0.1,
+    "output": 0.3,
+    "cachedInput": 0.1
+   },
+   "context": 262144,
+   "maxOutput": 235929,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": false,
+   "bench": {
+    "GPQA diamond": 0.42525953984287324,
+    "OTIS Mock AIME 2024-2025": 0.6218440662885107,
+    "DTBench": 0.45333333333333337,
+    "LMCA": 0.2631764705882353
+   }
+  },
+  {
+   "id": "openai/gpt-oss-20b",
+   "name": "gpt-oss-20b",
+   "lab": "OpenAI",
+   "labEntity": "openai",
+   "openWeights": true,
+   "released": "2025-08-05",
+   "eci": 134.97,
+   "eciLow": 132.27,
+   "eciHigh": 137.46,
+   "price": {
+    "input": 0.018,
+    "output": 0.09,
+    "cachedInput": 0.009
+   },
+   "batchPrice": {
+    "input": 0.024,
+    "output": 0.112
+   },
+   "context": 131072,
+   "maxOutput": 117964,
+   "inputs": [
+    "text"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": true,
+   "bench": {
+    "GPQA diamond": 0.4971590909090909,
+    "OTIS Mock AIME 2024-2025": 0.6524302079857636,
+    "DTBench": 0.46666666666666673,
+    "WeirdML": 0.4093,
+    "LMCA": 0.17070588235294118,
+    "Terminal Bench": 0.034
+   }
+  },
+  {
    "id": "openai/gpt-4.1-mini",
    "name": "GPT-4.1 mini",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2025-04-14",
-   "eci": 134.92,
-   "eciLow": 131.14,
-   "eciHigh": 136.4,
+   "eci": 134.2,
+   "eciLow": 131.88,
+   "eciHigh": 136.34,
    "price": {
     "input": 0.4,
     "output": 1.6,
@@ -4860,8 +4981,8 @@
     "MATH level 5": 0.8729229607250756,
     "OTIS Mock AIME 2024-2025": 0.4466688911133355,
     "DTBench": 0.47999999999999987,
-    "WeirdML": 0.3761,
     "CadEval": 0.16,
+    "WeirdML": 0.3761,
     "LMCA": 0.24847058823529417,
     "SimpleQA Verified": 0.127,
     "Chess Puzzles": 0,
@@ -4873,48 +4994,15 @@
    }
   },
   {
-   "id": "mistralai/mistral-medium-3",
-   "name": "Mistral Medium 3",
-   "lab": "Mistral AI",
-   "labEntity": "mistral",
-   "openWeights": false,
-   "released": "2025-05-07",
-   "eci": 134.01,
-   "eciLow": 130.43,
-   "eciHigh": 135.38,
-   "price": {
-    "input": 0.4,
-    "output": 2,
-    "cachedInput": 0.04
-   },
-   "context": 131072,
-   "maxOutput": 104857,
-   "inputs": [
-    "text",
-    "image",
-    "file"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": false,
-   "bench": {
-    "GPQA diamond": 0.4796226150392818,
-    "MATH level 5": 0.8162764350453172,
-    "OTIS Mock AIME 2024-2025": 0.3215437659882104,
-    "DTBench": 0.3711666666666667,
-    "FrontierMath-2025-02-28-Private": 0.006070539670976667
-   }
-  },
-  {
    "id": "google/gemini-2.5-flash-lite",
    "name": "Gemini 2.5 Flash-Lite (Jun 2025)",
    "lab": "Google DeepMind",
    "labEntity": "alphabet",
    "openWeights": false,
    "released": "2025-06-17",
-   "eci": 133.84,
-   "eciLow": 130.07,
-   "eciHigh": 136.08,
+   "eci": 133.05,
+   "eciLow": 129.12,
+   "eciHigh": 136.84,
    "price": {
     "input": 0.1,
     "output": 0.4,
@@ -4940,22 +5028,55 @@
    }
   },
   {
+   "id": "mistralai/mistral-medium-3",
+   "name": "Mistral Medium 3",
+   "lab": "Mistral AI",
+   "labEntity": "mistral",
+   "openWeights": false,
+   "released": "2025-05-07",
+   "eci": 132.81,
+   "eciLow": 130.09,
+   "eciHigh": 135.26,
+   "price": {
+    "input": 0.4,
+    "output": 2,
+    "cachedInput": 0.04
+   },
+   "context": 131072,
+   "maxOutput": 104857,
+   "inputs": [
+    "text",
+    "image",
+    "file"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": false,
+   "bench": {
+    "GPQA diamond": 0.4796226150392818,
+    "MATH level 5": 0.8162764350453172,
+    "OTIS Mock AIME 2024-2025": 0.3215437659882104,
+    "DTBench": 0.3711666666666667,
+    "FrontierMath-2025-02-28-Private": 0.006070539670976667
+   }
+  },
+  {
    "id": "meta-llama/llama-4-maverick",
    "name": "Llama 4 Maverick",
    "lab": "Meta AI",
    "labEntity": "meta",
    "openWeights": true,
    "released": "2025-04-06",
-   "eci": 132.34,
-   "eciLow": 128.55,
-   "eciHigh": 134.2,
+   "eci": 132.08,
+   "eciLow": 129.58,
+   "eciHigh": 134.27,
    "price": {
-    "input": 0.1875,
-    "output": 0.6525,
-    "cachedInput": 0.05
+    "input": 0.35,
+    "output": 1,
+    "cachedInput": 0.17
    },
    "context": 524288,
-   "maxOutput": 16384,
+   "maxOutput": 32768,
    "inputs": [
     "text",
     "image"
@@ -4980,50 +5101,15 @@
    }
   },
   {
-   "id": "google/gemma-3-27b-it",
-   "name": "Gemma 3 27B",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": true,
-   "released": "2025-03-12",
-   "eci": 129.89,
-   "eciLow": 124.16,
-   "eciHigh": 132.05,
-   "price": {
-    "input": 0.08,
-    "output": 0.35,
-    "cachedInput": 0.04
-   },
-   "context": 131072,
-   "maxOutput": 117964,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": false,
-   "bench": {
-    "GPQA diamond": 0.3156565656565657,
-    "MATH level 5": 0.740370090634441,
-    "OTIS Mock AIME 2024-2025": 0.22422422422422422,
-    "DTBench": 0.2088333333333333,
-    "LMCA": 0.1444705882352941,
-    "Aider polyglot": 0.049,
-    "GeoBench": 0.52,
-    "Fiction.LiveBench": 0.333
-   }
-  },
-  {
    "id": "meta-llama/llama-4-scout",
    "name": "Llama 4 Scout",
    "lab": "Meta AI",
    "labEntity": "meta",
    "openWeights": true,
    "released": "2025-04-05",
-   "eci": 129.64,
-   "eciLow": 125.23,
-   "eciHigh": 131.22,
+   "eci": 127.68,
+   "eciLow": 124.73,
+   "eciHigh": 130.29,
    "price": {
     "input": 0.1,
     "output": 0.3
@@ -5050,15 +5136,50 @@
    }
   },
   {
+   "id": "google/gemma-3-27b-it",
+   "name": "Gemma 3 27B",
+   "lab": "Google DeepMind",
+   "labEntity": "alphabet",
+   "openWeights": true,
+   "released": "2025-03-12",
+   "eci": 127.51,
+   "eciLow": 124.29,
+   "eciHigh": 130.42,
+   "price": {
+    "input": 0.08,
+    "output": 0.35,
+    "cachedInput": 0.04
+   },
+   "context": 131072,
+   "maxOutput": 117964,
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "tools": true,
+   "structured": true,
+   "reasoning": false,
+   "bench": {
+    "GPQA diamond": 0.3156565656565657,
+    "MATH level 5": 0.740370090634441,
+    "OTIS Mock AIME 2024-2025": 0.22422422422422422,
+    "DTBench": 0.2088333333333333,
+    "LMCA": 0.1444705882352941,
+    "Aider polyglot": 0.049,
+    "GeoBench": 0.52,
+    "Fiction.LiveBench": 0.333
+   }
+  },
+  {
    "id": "openai/gpt-4.1-nano",
    "name": "GPT-4.1 nano",
    "lab": "OpenAI",
    "labEntity": "openai",
    "openWeights": false,
    "released": "2025-04-14",
-   "eci": 129.55,
-   "eciLow": 124.49,
-   "eciHigh": 131.79,
+   "eci": 126.77,
+   "eciLow": 123.76,
+   "eciHigh": 129.43,
    "price": {
     "input": 0.1,
     "output": 0.4,
@@ -5092,66 +5213,6 @@
     "Aider polyglot": 0.08900000000000001,
     "Fiction.LiveBench": 0.25,
     "ARC-AGI": 0
-   }
-  },
-  {
-   "id": "google/gemma-3-12b-it",
-   "name": "Gemma 3 12B",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": true,
-   "released": "2025-03-12",
-   "eci": 123.5,
-   "eciLow": 116.88,
-   "eciHigh": 128.38,
-   "price": {
-    "input": 0.05,
-    "output": 0.15
-   },
-   "context": 131072,
-   "maxOutput": 16384,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": true,
-   "structured": true,
-   "reasoning": false,
-   "bench": {
-    "GPQA diamond": 0.20079264870931532,
-    "OTIS Mock AIME 2024-2025": 0.16583249916583243,
-    "DTBench": 0.1466666666666666,
-    "LMCA": 0.05247058823529412
-   }
-  },
-  {
-   "id": "google/gemma-3-4b-it",
-   "name": "Gemma 3 4B",
-   "lab": "Google DeepMind",
-   "labEntity": "alphabet",
-   "openWeights": true,
-   "released": "2025-03-12",
-   "eci": 115.8,
-   "eciLow": 97.87,
-   "eciHigh": 123.78,
-   "price": {
-    "input": 0.05,
-    "output": 0.1
-   },
-   "context": 131072,
-   "maxOutput": 16384,
-   "inputs": [
-    "text",
-    "image"
-   ],
-   "tools": false,
-   "structured": true,
-   "reasoning": false,
-   "bench": {
-    "GPQA diamond": 0,
-    "OTIS Mock AIME 2024-2025": 0.07407407407407407,
-    "DTBench": 0.1821666666666666,
-    "LMCA": 0.032705882352941175
    }
   }
  ]
