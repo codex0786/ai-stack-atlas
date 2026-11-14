@@ -3,35 +3,35 @@
   "name": "SEC EDGAR filings",
   "cadenceHours": 24,
   "homepage": "https://www.sec.gov/edgar/search/",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-04T10:57:23.463Z",
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
   "ok": true,
-  "observations": 743
+  "observations": 752
  },
  "openrouter": {
   "name": "OpenRouter list prices",
   "cadenceHours": 24,
   "homepage": "https://openrouter.ai/models",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-04T10:57:23.463Z",
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
   "ok": true,
-  "observations": 69
+  "observations": 92
  },
  "eia": {
   "name": "EIA grid demand",
   "cadenceHours": 24,
   "homepage": "https://www.eia.gov/electricity/gridmonitor/",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-04T10:57:23.463Z",
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
   "ok": true,
-  "observations": 57
+  "observations": 90
  },
  "epoch": {
   "name": "Epoch AI model compute",
   "cadenceHours": 168,
   "homepage": "https://epoch.ai/data",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-04T10:57:23.463Z",
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
   "ok": true,
   "observations": 81
  },
@@ -39,29 +39,28 @@
   "name": "GPU marketplace prices",
   "cadenceHours": 24,
   "homepage": "https://vast.ai/pricing",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-04T10:57:23.463Z",
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
   "ok": true,
-  "observations": 8
+  "observations": 12
  },
  "models": {
   "name": "Model catalog (prices × benchmarks)",
   "cadenceHours": 24,
   "homepage": "https://epoch.ai/benchmarks",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-04T10:57:23.463Z",
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
   "ok": true,
-  "observations": 119,
+  "observations": 117,
   "unit": "models"
  },
  "fx": {
   "name": "USD→INR exchange rate",
   "cadenceHours": 24,
   "homepage": "https://frankfurter.dev",
-  "lastRun": "2026-11-04T10:57:23.463Z",
-  "lastSuccess": "2026-11-03T10:54:43.361Z",
-  "ok": false,
-  "observations": 280,
-  "error": "HTTP 522 from https://api.frankfurter.dev/v1/2025-09-30..2026-11-04?base=USD&symbols=INR"
+  "lastRun": "2026-11-14T10:27:21.800Z",
+  "lastSuccess": "2026-11-14T10:27:21.800Z",
+  "ok": true,
+  "observations": 289
  }
 }
