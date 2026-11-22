@@ -98,5 +98,66 @@
   "mean": 2.4,
   "lo": 2.004246171873682,
   "hi": 2.873898466581691
+ },
+ {
+  "made": "2026-11-22",
+  "status": "pending",
+  "unit": "INR per USD",
+  "kind": "price",
+  "id": "fx_usdinr_20261222",
+  "label": "Rupees per US dollar, 2026-12-22",
+  "target": {
+   "entity_id": "india",
+   "metric_id": "fx_rate",
+   "dims": {},
+   "period": "2026-12-22"
+  },
+  "method": "Random walk, volatility from 293 daily changes",
+  "mean": 92.68,
+  "lo": 89.97607233244747,
+  "hi": 95.46518510235522
+ },
+ {
+  "made": "2026-11-22",
+  "status": "pending",
+  "unit": "per million tokens",
+  "kind": "price",
+  "id": "or_median_output_20261222",
+  "label": "OpenRouter median output price, 2026-12-22",
+  "target": {
+   "entity_id": "openrouter",
+   "metric_id": "llm_api_price_median",
+   "dims": {
+    "direction": "output"
+   },
+   "currency": "USD",
+   "period": "2026-12-22"
+  },
+  "method": "Random walk, volatility from a default 2%/day (too little history)",
+  "mean": 2.225,
+  "lo": 1.8581032218412263,
+  "hi": 2.66434337006011
+ },
+ {
+  "made": "2026-11-22",
+  "status": "pending",
+  "unit": "per GPU-hour",
+  "kind": "price",
+  "id": "vast_h100_20261222",
+  "label": "H100 on Vast.ai, median, 2026-12-22",
+  "target": {
+   "entity_id": "h100",
+   "metric_id": "gpu_rental_price",
+   "dims": {
+    "provider": "vast_ai",
+    "contract": "marketplace"
+   },
+   "currency": "USD",
+   "period": "2026-12-22"
+  },
+  "method": "Random walk, volatility from a default 2%/day (too little history)",
+  "mean": 1.73,
+  "lo": 1.4447274488922792,
+  "hi": 2.071601811327636
  }
 ]
