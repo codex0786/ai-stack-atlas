@@ -1,6 +1,6 @@
 {
  "feed": "gpu",
- "updated": "2026-11-04T10:57:23.463Z",
+ "updated": "2026-11-24T13:44:36.955Z",
  "sources": [
   {
    "id": "vast_ai_marketplace",
@@ -9,7 +9,7 @@
    "url": "https://vast.ai/pricing",
    "tier": 1,
    "kind": "company",
-   "accessed": "2026-11-04",
+   "accessed": "2026-11-24",
    "verified": true,
    "automated": true,
    "note": "Read daily from the public offer-search API; total hourly price ÷ GPUs per offer."
@@ -57,6 +57,27 @@
    "published": "2026-11-04",
    "confidence": 0.75,
    "note": "Median of 45 live offers; range is 10th–90th percentile."
+  },
+  {
+   "id": "vast_a100_20261124",
+   "entity_id": "a100",
+   "metric_id": "gpu_rental_price",
+   "value": 0.84,
+   "low": 0.48,
+   "high": 1.15,
+   "currency": "USD",
+   "dims": {
+    "provider": "vast_ai",
+    "contract": "marketplace"
+   },
+   "period": "2026-11-24",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "vast_ai_marketplace",
+   "published": "2026-11-24",
+   "confidence": 0.75,
+   "note": "Median of 33 live offers; range is 10th–90th percentile."
   },
   {
    "id": "vast_b200_20261103",
@@ -141,6 +162,27 @@
    "published": "2026-11-04",
    "confidence": 0.75,
    "note": "Median of 23 live offers; range is 10th–90th percentile."
+  },
+  {
+   "id": "vast_h100_20261124",
+   "entity_id": "h100",
+   "metric_id": "gpu_rental_price",
+   "value": 1.79,
+   "low": 1.79,
+   "high": 1.79,
+   "currency": "USD",
+   "dims": {
+    "provider": "vast_ai",
+    "contract": "marketplace"
+   },
+   "period": "2026-11-24",
+   "period_type": "point",
+   "status": "actual",
+   "method": "derived",
+   "source_id": "vast_ai_marketplace",
+   "published": "2026-11-24",
+   "confidence": 0.75,
+   "note": "Median of 3 live offers; range is 10th–90th percentile."
   },
   {
    "id": "vast_h200_20261103",
